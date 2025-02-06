@@ -1,0 +1,23 @@
+meta {
+  name: DB Scale Request
+  type: http
+  seq: 6
+}
+
+post {
+  url: http://127.0.0.1:8090/fitscale/scale
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "scale_id": "d290f1ee-6c54-4b01-90e6-d701748f0851",
+    "weight": 70,
+    "age": 22,
+    "gender": "Male",
+    "body_fat_percentage": 15.1,
+    "height": 174,
+    "timestamp": "2016-08-29T09:12:33.001Z"
+  }
+}

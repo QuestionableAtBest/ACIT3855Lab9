@@ -1,0 +1,23 @@
+meta {
+  name: Submit Watch Data
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://127.0.0.1:8080/fitscale/watch
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "device_id": "d290f1ee-6c54-4b01-90e6-d701748f0851",
+    "user_id": "Tim",
+    "exercise_type": "Swimming",
+    "distance": 120,
+    "duration": 5,
+    "avg_heart_rate": 100,
+    "timestamp": "2016-08-29T09:12:33.001Z"
+  }
+}

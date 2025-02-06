@@ -1,0 +1,23 @@
+meta {
+  name: DB Watch Request
+  type: http
+  seq: 5
+}
+
+post {
+  url: http://127.0.0.1:8090/fitscale/watch
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "device_id": "d290f1ee-6c54-4b01-90e6-d701748f0851",
+    "user_id": "Harry",
+    "exercise_type": "Swimming",
+    "distance": 120,
+    "duration": 5,
+    "avg_heart_rate": 100,
+    "timestamp": "2016-08-29T09:12:33.001Z"
+  }
+}
