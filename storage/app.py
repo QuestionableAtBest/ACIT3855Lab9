@@ -7,6 +7,7 @@ from connexion import NoContent
 from models import Base,Watch,Scale
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.sql import select
 from datetime import datetime 
 app = connexion.FlaskApp(__name__, specification_dir='')
 app.add_api("fitscale.yaml", strict_validation=True,validate_responses=True)
@@ -61,6 +62,34 @@ def report_scale(body):
     session.close()
     logger.debug(f"Stored watch results with trace id of {body['trace_id']}")
     return NoContent, 201
+
+
+def get_scale_readings(start_time, end_time):
+    session = make_session()
+    #Formatting times
+    start = datetime.fromtimestamp(start_time)
+    end = datetime.fromtimestamp(end_time)
+    #SQLAlchemy filter statement
+    statement = select(Scale).where(Scale.date_created >= start).where(Scale.date_created <= end)
+    #Formatting the results in a dictionary
+    results = [results.to_dict() for result in session.execute(statement).scalars().all()]
+    session.close()
+    logger.info("Found %d scale readings (start: %s, end: %s )", len(results),start,end)
+    return results
+
+def get_watch_readings(start_time, end_time):
+    session = make_session()    
+    #Formatting times
+    start = datetime.fromtimestamp(start_time)
+    end = datetime.fromtimestamp(end_time)
+    #SQLAlchemy filter statement
+    statement = select(Watch).where(Watch.date_created >= start).where(Watch.date_created <= end)
+    #Formatting the results in a dictionary
+    results = [results.to_dict() for result in session.execute(statement).scalars().all()]
+    session.close()
+    logger.info("Found %d scale readings (start: %s, end: %s )", len(results),start,end)
+    return results
+
 
 if __name__ == "__main__":
     live.make_tables()

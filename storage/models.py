@@ -18,6 +18,20 @@ class Watch(Base):
     date_created = mapped_column(DateTime, nullable=False, default=func.now())
     trace_id = mapped_column(BigInteger,nullable=False,default=time.time_ns())
 
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "device_id": self.device_id,
+            "user_id": self.user_id,
+            "exercise_type": self.exercise_type,
+            "distance": self.distance,
+            "duration": self.duration,
+            "avg_heart_rate": self.avg_heart_rate,
+            "timestamp": self.timestamp,
+            "date_created": self.date_created,
+            "trace_id": self.trace_id
+            }
+
 class Scale(Base):
     __tablename__ = "scale"
     id = mapped_column(Integer, primary_key=True)
@@ -30,3 +44,16 @@ class Scale(Base):
     timestamp = mapped_column(DateTime, nullable=False)
     date_created = mapped_column(DateTime, nullable=False, default=func.now())
     trace_id = mapped_column(BigInteger,nullable=False, default=time.time_ns())
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "scale_id": self.scale_id,
+            "weight": self.weight,
+            "age": self.age,
+            "gender": self.gender,
+            "body_fat_percentage": self.body_fat_percentage,
+            "height": self.height,
+            "timestamp": self.timestamp,
+            "trace_id": self.trace_id
+            }

@@ -1,0 +1,3 @@
+version: 1
+scheduler:
+  interval: 30

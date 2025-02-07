@@ -16,13 +16,43 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Watch"
+              $ref: '#/components/schemas/Watch'
       responses:
-        "201":
+        '201':
           description: item created
-        "400":
-          description: "invalid input, object invalid"
+        '400':
+          description: 'invalid input, object invalid'
     parameters: []
+    get: 
+      tags:
+        - watches
+      summary: Watch stats from exercise events.
+      operationId: app.report_watch
+      description: Gets exercise event stats added after a timestamp
+      parameters:
+        - name: start_timestamp
+      in: query
+      description: Limits the number of readings returned
+      schema:
+        type: string
+        format: date-time
+        example: 2016-08-29T09:12:33.001Z
+      - name: end_timestamp
+      in: query
+      description: Limits the number of readings returned
+      schema:
+        type: string
+        format: date-time
+        example: 2016-08-29T09:12:33.001Z
+      responses:
+        '200':
+          description: Successfully returned a list of exercise events
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Watch'
   /fitscale/scale:
     post:
       summary: reports scale data
@@ -33,13 +63,43 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Scale"
+              $ref: '#/components/schemas/Scale'
       responses:
-        "201":
+        '201':
           description: item created
-        "400":
-          description: "invalid input, object invalid"
+        '400':
+          description: 'invalid input, object invalid'
     parameters: []
+    get: 
+      tags:
+        - devices
+      summary: Scale event statistics
+      operationId: app.report_scale
+      description: Gets scale event stats added after a timestamp
+      parameters:
+        - name: start_timestamp
+      in: query
+      description: Limits the number of readings returned
+      schema:
+        type: string
+        format: date-time
+        example: 2016-08-29T09:12:33.001Z
+      - name: end_timestamp
+      in: query
+      description: Limits the number of readings returned
+      schema:
+        type: string
+        format: date-time
+        example: 2016-08-29T09:12:33.001Z
+      responses:
+        '200':
+          description: Successfully returned a scale events
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Scale'
 components:
   schemas:
     Watch:
@@ -53,6 +113,7 @@ components:
         - duration
         - avg_heart_rate
         - timestamp
+        - trace_id
       properties:
         device_id:
           type: string
@@ -77,7 +138,7 @@ components:
           type: integer
           x-stoplight:
             id: l2est8hnv4ciq
-          example: "60"
+          example: '60'
           minimum: 0
         avg_heart_rate:
           type: integer
@@ -88,9 +149,12 @@ components:
           type: string
           description: timestamp when exercise was logged
           format: date-time
-          example: "2016-08-29T09:12:33.001Z"
+          example: '2016-08-29T09:12:33.001Z'
         trace_id:
           type: integer
+          x-stoplight:
+            id: hierz7ewve097
+          minimum: 0
     Scale:
       type: object
       required:
@@ -117,7 +181,6 @@ components:
           x-stoplight:
             id: 8z0wbcvtqy272
           example: 10
-          minimum: 0
         gender:
           type: string
           x-stoplight:
@@ -138,6 +201,8 @@ components:
         timestamp:
           type: string
           format: date-time
-          example: "2016-08-29T09:12:33.001Z"
+          example: '2016-08-29T09:12:33.001Z'
         trace_id:
           type: integer
+          x-stoplight:
+            id: benra8ewve087

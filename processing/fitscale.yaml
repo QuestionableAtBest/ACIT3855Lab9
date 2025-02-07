@@ -1,0 +1,58 @@
+openapi: 3.0.0
+info:
+  title: FitScale API
+  description: Simple API for smart watches and smart scales.
+  contact:
+    email: hzhou51@my.bcit.ca
+  version: 1.0.0
+paths:
+  /stats:
+    get:
+      summary: Gets the event stats
+      operationId: app.populate_stats
+      description: Gets Exercise and Scale processsed statistics
+      responses:
+        '200':
+          description: Successfully returned a list of blood pressure events
+          content:
+            application/json:
+              schema:
+                type: object
+                items:
+                  $ref: '#/components/schemas/ReadingStats'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+components:
+  schemas:
+    ReadingStats:
+      required:
+        - avg_exercise_duration
+        - avg_distance_traveled
+        - max_weight
+        - min_weight
+        - max_hr_readings
+      properties:
+        avg_exercise_duration:
+          type: number
+          example: 35.40
+        avg_distance_traveled:
+          type: number
+          example: 5000
+        max_weight:
+          type: number 
+          example: 70.90
+        min_weight:
+          type: number
+          example: 50.12
+        max_hr_readings:
+          type: integer
+          example: 130
+      type: object
+
