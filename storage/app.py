@@ -1,5 +1,6 @@
 import connexion
 import live
+from sqlalchemy import text
 import logging
 import logging.config
 import yaml
@@ -24,7 +25,9 @@ Base.metadata.create_all(engine)
 logger = logging.getLogger('basicLogger')
 #New storage
 def make_session():
-    return sessionmaker(bind=engine)()
+    session = sessionmaker(bind=engine)()
+    session.execute(text("SET time_zone = 'UTC'"))
+    return session
 
 def report_watch(body):
     session = make_session()
@@ -66,30 +69,24 @@ def report_scale(body):
 
 def get_scale_readings(start_timestamp, end_timestamp):
     session = make_session()
-    #Formatting times
-    start = datetime.fromtimestamp(start_timestamp, tz=timezone.utc)
-    end = datetime.fromtimestamp(end_timestamp, tz=timezone.utc)
     #SQLAlchemy filter statement
-    statement = select(Scale).where(Scale.date_created >= start).where(Scale.date_created <= end)
+    statement = select(Scale).where(Scale.date_created > start_timestamp).where(Scale.date_created < end_timestamp)
     #Formatting the results in a dictionary
     results = [result.to_dict() for result in session.execute(statement).scalars().all()]
     session.close()
-    logger.info("Found %d scale readings (start: %s, end: %s )", len(results),start,end)
+    logger.info("Found %d scale readings (start: %s, end: %s )", len(results),start_timestamp,end_timestamp)
 
     #Should add a status code here?
     return results
 
 def get_watch_readings(start_timestamp, end_timestamp):
     session = make_session()    
-    #Formatting times
-    start = datetime.fromtimestamp(start_timestamp, tz=timezone.utc)
-    end = datetime.fromtimestamp(end_timestamp, tz=timezone.utc)
     #SQLAlchemy filter statement
-    statement = select(Watch).where(Watch.date_created >= start).where(Watch.date_created <= end)
+    statement = select(Watch).where(Watch.date_created > start_timestamp).where(Watch.date_created < end_timestamp)
     #Formatting the results in a dictionary
     results = [result.to_dict() for result in session.execute(statement).scalars().all()]
     session.close()
-    logger.info("Found %d scale readings (start: %s, end: %s )", len(results),start,end)
+    logger.info("Found %d scale readings (start: %s, end: %s )", len(results),start_timestamp,end_timestamp)
 
     #Should add a status code here?
     return results

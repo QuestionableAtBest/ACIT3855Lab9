@@ -34,14 +34,16 @@ paths:
           in: query
           description: Limits the number of readings returned
           schema:
-            type: number
-            example: 0.00
+            type: string
+            format: date-time
+            example: '2025-02-13T12:11:59.000Z'
         - name: end_timestamp
           in: query
           description: Limits the number of readings returned
           schema:
-            type: number
-            example: 0.00
+            type: string
+            format: date-time
+            example: '2025-02-13T12:11:59.000Z'
       responses:
         '200':
           description: Successfully returned watch events
@@ -79,14 +81,16 @@ paths:
           in: query
           description: Limits the number of readings returned
           schema:
-            type: number
-            example: 0.00 # The epoch, datetime sucks. I hate it.
+            type: string
+            format: date-time
+            example: '2025-02-13T12:11:59.000Z'
         - name: end_timestamp
           in: query
           description: Limits the number of readings returned
           schema:
-            type: number
-            example: 0.00
+            type: string
+            format: date-time
+            example: '2025-02-13T12:11:59.000Z'
       responses:
         '200':
           description: Successfully returned scale events

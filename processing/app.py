@@ -25,12 +25,19 @@ logger = logging.getLogger('basicLogger')
 
 def populate_stats():
     logger.info("Periodic statistics gathering has begun!")
-    curtime = time.time()
+    curtime = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.%fZ")
+
     try:
         #Open the .json. Assuming it exists, get most recent event datetime and current time (To be used in the get request)
         with open(app_config["datastore"]["filename"], 'r') as current:
             old_data = json.load(current)
-            last_updated = old_data["time_updated"]
+            running_watch = old_data["cum_watch"]
+            running_scale = old_data["cum_scale"]
+            old_max_duration = old_data["max_duration"]
+            old_max_distance_traveled = old_data["max_distance_traveled"]
+            old_max_weight = old_data["max_weight"]
+            old_min_weight = old_data["min_weight"]
+            last_updated = old_data["recent_timestamp"]
 
         # Magic functions that gets the data necessary
         # Should add response codes to make sure the functions are working, ask Tim about it, something in the storage/app.py should give a response code?
@@ -44,90 +51,66 @@ def populate_stats():
         )
 
         #Httpx returns Response objects, need to convert to JSON
-        scaleContent = scaleContent.json()
-        watchContent = watchContent.json()
 
         logger.info("JSON file found, collecting new stats!")
-        exercise_durs = [dict_item["duration"] for dict_item in watchContent]
-        distances = [dict_item["distance"] for dict_item in watchContent]
-        heart_reads = [dict_item["avg_heart_rate"] for dict_item in watchContent]
-        weights = [dict_item["weight"] for dict_item in scaleContent]
+        if scaleContent.status_code == 200 and watchContent.status_code == 200:
+            #Getting list of durations, distances and weights
+            scaleContent = scaleContent.json()
+            watchContent = watchContent.json()
+            weights = [dict_item["weight"] for dict_item in scaleContent]
+            durations = [dict_item["duration"] for dict_item in watchContent]
+            distances = [dict_item["distance"] for dict_item in watchContent]
+            #Timestamp data to get the most recent between scale and watch later
+            scaleTimes = max([dict_item['date_created'] for dict_item in scaleContent], default=last_updated)
+            watchTimes = max([dict_item['date_created'] for dict_item in watchContent], default=last_updated)
+            new_data = {
+                "cum_watch":running_watch + len(watchContent),
+                "cum_scale":running_scale + len(scaleContent),
+                "max_duration":max(old_max_duration,max(durations,default=old_max_duration)),
+                "max_distance_traveled":max(old_max_distance_traveled,max(distances,default=old_max_distance_traveled)),
+                "max_weight":max(old_max_weight,max(weights,default=old_max_weight)),
+                "min_weight":min(old_min_weight,min(weights,default=old_min_weight)),
+                "recent_timestamp": max([last_updated,scaleTimes,watchTimes],default=last_updated)
+            }
 
-        new_data = {
-            "watchstore": {
-                "durations":exercise_durs,
-                "distances":distances,
-                "heart_rates":heart_reads,
-            },
-            "scalestore": {
-                "weights": weights
-            },
-            "time_updated": curtime
-        }
-
-        logger.info("Stats collected! Writing to JSON")
-        #Write json
-        with open(app_config["datastore"]["filename"],'w') as current:
-            json.dump(new_data,current)
-            #A debug message with the timestamp
-            logger.debug(f"JSON Updated on {datetime.fromtimestamp(curtime, tz=timezone.utc)}")
-
-        #An info message on completion.
-        logger.info("Values added to data.json!")
-        return NoContent, 200
+            logger.info("Stats collected! Writing to JSON")
+            #Write json
+            with open(app_config["datastore"]["filename"],'w') as current:
+                json.dump(new_data,current)
+                #A debug message with the timestamp
+                logger.debug("Finished populating stats with timestamp")
+            #An info message on completion.
+            logger.info("Values added to data.json!")
+            return NoContent,201
+        else:
+            logger.error("An error has occured while retrieving data")
+            return NoContent, 404
     except FileNotFoundError:
         #.json does not exist, creating and populating with default values
         logger.info("No json detected, generating default")
         #No json file yet, make it with defaults.
         default = {
-            "watchstore": {
-                "durations":[0],
-                "distances":[0],
-                "heart_rates":[0],
-            },
-            "scalestore": {
-                "weights": [0]
-            },
-            "time_updated": 0 #The epoch in utc
+            "cum_watch":0,
+            "cum_scale":0,
+            "max_duration":0,
+            "max_distance_traveled":0,
+            "max_weight":0,
+            "min_weight":10000000,
+            "recent_timestamp":datetime(1000,1,1,1,1).strftime("%Y-%m-%dT%H:%M:%S.%fZ")
         }
         default_data = json.dumps(default)
         with open(app_config["datastore"]["filename"],'w') as current:
             current.write(default_data)
         logger.info("Processing logger finished on default route!")
-        return NoContent, 200
+        return NoContent, 201
 
 def get_stats():
     logger.info("Get Stats Processing Request received")
     try:
         with open(app_config["datastore"]["filename"],'r') as current:
             loaded = json.load(current)
-        
-            #Calculate the stats needed
-            #In watch:
-            avg_ex_dur = mean(loaded["watchstore"]["durations"])
-            avg_dist_trav = mean(loaded["watchstore"]["distances"])
-            max_hr = max(loaded["watchstore"]["heart_rates"])
-            
-            #In scale:
-            max_weight, min_weight = max(loaded["scalestore"]["weights"]), min(loaded["scalestore"]["weights"])
-
-            #UTC Time to a human readable timestamp
-            human_time = datetime.fromtimestamp(loaded["time_updated"], tz=timezone.utc)
-            human_time = human_time.strftime("%Y-%m-%dT%H:%M:%S.%fZ")
-            #convert to dictionary
-            new_data = {
-                "avg_exercise_duration":avg_ex_dur,
-                "avg_distance_traveled":avg_dist_trav,
-                "max_hr_readings":max_hr,
-                "max_weight":max_weight,
-                "min_weight":min_weight,
-                "time_updated":human_time
-            }
-            logger.debug(f"{new_data}")
-            #Write to json
-            with open("./processing/stats.json", "w") as current:
-                json.dump(new_data,current)
-            logger.info("Statistics successfully updated!")
+            logger.debug(f"{loaded}")
+            logger.info("Statistics Outputted!")
     except FileNotFoundError:
         logger.error("Statistics do not exist")
         return NoContent, 404

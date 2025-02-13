@@ -55,5 +55,6 @@ class Scale(Base):
             "body_fat_percentage": self.body_fat_percentage,
             "height": self.height,
             "timestamp": self.timestamp,
+            "date_created": self.date_created,
             "trace_id": self.trace_id
             }

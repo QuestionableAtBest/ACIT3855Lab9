@@ -33,26 +33,34 @@ components:
   schemas:
     ReadingStats:
       required:
-        - avg_exercise_duration
-        - avg_distance_traveled
-        - max_hr_readings
+        - cum_watch
+        - cum_scale
+        - max_duration
+        - max_distance_traveled
         - max_weight
         - min_weight
+        - recent_timestamp
       properties:
-        avg_exercise_duration:
-          type: number
-          example: 35.40
-        avg_distance_traveled:
-          type: number
-          example: 5000
-        max_hr_readings:
+        cum_watch:
           type: integer
-          example: 130
-        max_weight:
-          type: number 
+          example: 1
+        cum_scale:
+          type: integer
+          example: 5000
+        max_duration:
+          type: number
+          example: 50.3
+        max_distance_traveled:
+          type: number
           example: 70.90
+        max_weight:
+          type: number
+          example: 70.11
         min_weight:
           type: number
           example: 50.12
+        recent_timestamp:
+          type: string
+          format: date-time
       type: object
 
