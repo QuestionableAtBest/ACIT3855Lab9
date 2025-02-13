@@ -1,284 +1,160 @@
-2025-02-06 11:50:42,926 - basicLogger - DEBUG - Stored watch results with trace id of 1738871440451205700
-2025-02-06 11:50:42,929 - basicLogger - DEBUG - Stored watch results with trace id of 1738871440512860300
-2025-02-06 11:50:43,029 - basicLogger - DEBUG - Stored watch results with trace id of 1738871440710369600
-2025-02-06 11:50:43,200 - basicLogger - DEBUG - Stored watch results with trace id of 1738871440912078400
-2025-02-06 11:50:43,390 - basicLogger - DEBUG - Stored watch results with trace id of 1738871441110137100
-2025-02-06 11:50:45,394 - basicLogger - DEBUG - Stored watch results with trace id of 1738871442955595300
-2025-02-06 11:50:45,404 - basicLogger - DEBUG - Stored watch results with trace id of 1738871442955595300
-2025-02-06 11:50:45,499 - basicLogger - DEBUG - Stored watch results with trace id of 1738871443037756100
-2025-02-06 11:50:45,648 - basicLogger - DEBUG - Stored watch results with trace id of 1738871443211499700
-2025-02-06 11:50:45,730 - basicLogger - DEBUG - Stored watch results with trace id of 1738871443399496700
-2025-02-06 11:50:47,800 - basicLogger - DEBUG - Stored watch results with trace id of 1738871445417509900
-2025-02-06 11:50:47,814 - basicLogger - DEBUG - Stored watch results with trace id of 1738871445406896000
-2025-02-06 11:50:47,936 - basicLogger - DEBUG - Stored watch results with trace id of 1738871445509823300
-2025-02-06 11:50:48,047 - basicLogger - DEBUG - Stored watch results with trace id of 1738871445659590500
-2025-02-06 11:50:48,086 - basicLogger - DEBUG - Stored watch results with trace id of 1738871445739923700
-2025-02-06 11:50:50,266 - basicLogger - DEBUG - Stored watch results with trace id of 1738871447812519500
-2025-02-06 11:50:50,274 - basicLogger - DEBUG - Stored watch results with trace id of 1738871447823462200
-2025-02-06 11:50:50,426 - basicLogger - DEBUG - Stored watch results with trace id of 1738871447945196900
-2025-02-06 11:50:50,480 - basicLogger - DEBUG - Stored watch results with trace id of 1738871448052230000
-2025-02-06 11:50:50,493 - basicLogger - DEBUG - Stored watch results with trace id of 1738871448095207800
-2025-02-06 11:50:52,728 - basicLogger - DEBUG - Stored watch results with trace id of 1738871450276760100
-2025-02-06 11:50:52,737 - basicLogger - DEBUG - Stored watch results with trace id of 1738871450288453500
-2025-02-06 11:50:52,897 - basicLogger - DEBUG - Stored watch results with trace id of 1738871450434600400
-2025-02-06 11:50:52,934 - basicLogger - DEBUG - Stored watch results with trace id of 1738871450491939300
-2025-02-06 11:50:52,943 - basicLogger - DEBUG - Stored watch results with trace id of 1738871450503182800
-2025-02-06 11:50:55,159 - basicLogger - DEBUG - Stored watch results with trace id of 1738871452739005900
-2025-02-06 11:50:55,166 - basicLogger - DEBUG - Stored watch results with trace id of 1738871452746210700
-2025-02-06 11:50:55,331 - basicLogger - DEBUG - Stored watch results with trace id of 1738871452905272800
-2025-02-06 11:50:55,362 - basicLogger - DEBUG - Stored watch results with trace id of 1738871452949775800
-2025-02-06 11:50:55,366 - basicLogger - DEBUG - Stored watch results with trace id of 1738871452943069300
-2025-02-06 11:50:57,547 - basicLogger - DEBUG - Stored watch results with trace id of 1738871455170794200
-2025-02-06 11:50:57,573 - basicLogger - DEBUG - Stored watch results with trace id of 1738871455181731700
-2025-02-06 11:50:57,778 - basicLogger - DEBUG - Stored watch results with trace id of 1738871455378343000
-2025-02-06 11:50:57,784 - basicLogger - DEBUG - Stored watch results with trace id of 1738871455372116100
-2025-02-06 11:50:57,789 - basicLogger - DEBUG - Stored watch results with trace id of 1738871455340502600
-2025-02-06 11:50:59,871 - basicLogger - DEBUG - Stored watch results with trace id of 1738871457556241000
-2025-02-06 11:50:59,919 - basicLogger - DEBUG - Stored watch results with trace id of 1738871457581956200
-2025-02-06 11:51:00,162 - basicLogger - DEBUG - Stored watch results with trace id of 1738871457786078400
-2025-02-06 11:51:00,171 - basicLogger - DEBUG - Stored watch results with trace id of 1738871457792323600
-2025-02-06 11:51:00,171 - basicLogger - DEBUG - Stored watch results with trace id of 1738871457798526600
-2025-02-06 11:51:02,288 - basicLogger - DEBUG - Stored watch results with trace id of 1738871459882945000
-2025-02-06 11:51:02,324 - basicLogger - DEBUG - Stored watch results with trace id of 1738871459930373500
-2025-02-06 11:51:02,584 - basicLogger - DEBUG - Stored watch results with trace id of 1738871460185372000
-2025-02-06 11:51:02,588 - basicLogger - DEBUG - Stored watch results with trace id of 1738871460187811200
-2025-02-06 11:51:02,590 - basicLogger - DEBUG - Stored watch results with trace id of 1738871460176926700
-2025-02-06 11:51:04,671 - basicLogger - DEBUG - Stored watch results with trace id of 1738871462297319400
-2025-02-06 11:51:04,693 - basicLogger - DEBUG - Stored watch results with trace id of 1738871462337570600
-2025-02-06 11:51:04,973 - basicLogger - DEBUG - Stored watch results with trace id of 1738871462601420000
-2025-02-06 11:51:04,978 - basicLogger - DEBUG - Stored watch results with trace id of 1738871462593215000
-2025-02-06 11:51:04,978 - basicLogger - DEBUG - Stored watch results with trace id of 1738871462601420000
-2025-02-06 11:51:07,007 - basicLogger - DEBUG - Stored watch results with trace id of 1738871464682363800
-2025-02-06 11:51:07,052 - basicLogger - DEBUG - Stored watch results with trace id of 1738871464704017500
-2025-02-06 11:51:07,386 - basicLogger - DEBUG - Stored watch results with trace id of 1738871464984772300
-2025-02-06 11:51:07,432 - basicLogger - DEBUG - Stored watch results with trace id of 1738871464995986600
-2025-02-06 11:51:07,439 - basicLogger - DEBUG - Stored watch results with trace id of 1738871464995986600
-2025-02-06 11:51:09,330 - basicLogger - DEBUG - Stored watch results with trace id of 1738871467014328900
-2025-02-06 11:51:09,366 - basicLogger - DEBUG - Stored watch results with trace id of 1738871467060054600
-2025-02-06 11:51:09,750 - basicLogger - DEBUG - Stored watch results with trace id of 1738871467394003900
-2025-02-06 11:51:09,781 - basicLogger - DEBUG - Stored watch results with trace id of 1738871467446212000
-2025-02-06 11:51:09,792 - basicLogger - DEBUG - Stored watch results with trace id of 1738871467439202000
-2025-02-06 11:51:11,669 - basicLogger - DEBUG - Stored watch results with trace id of 1738871469346087800
-2025-02-06 11:51:11,678 - basicLogger - DEBUG - Stored watch results with trace id of 1738871469376614700
-2025-02-06 11:51:12,067 - basicLogger - DEBUG - Stored watch results with trace id of 1738871469759730100
-2025-02-06 11:51:12,150 - basicLogger - DEBUG - Stored watch results with trace id of 1738871469808967400
-2025-02-06 11:51:12,155 - basicLogger - DEBUG - Stored watch results with trace id of 1738871469800426700
-2025-02-06 11:51:14,032 - basicLogger - DEBUG - Stored watch results with trace id of 1738871471680077400
-2025-02-06 11:51:14,037 - basicLogger - DEBUG - Stored watch results with trace id of 1738871471687825900
-2025-02-06 11:51:14,405 - basicLogger - DEBUG - Stored watch results with trace id of 1738871472075796700
-2025-02-06 11:51:14,515 - basicLogger - DEBUG - Stored watch results with trace id of 1738871472165240400
-2025-02-06 11:51:14,534 - basicLogger - DEBUG - Stored watch results with trace id of 1738871472158543400
-2025-02-06 11:51:16,372 - basicLogger - DEBUG - Stored watch results with trace id of 1738871474048855600
-2025-02-06 11:51:16,373 - basicLogger - DEBUG - Stored watch results with trace id of 1738871474044267200
-2025-02-06 11:51:16,726 - basicLogger - DEBUG - Stored watch results with trace id of 1738871474412077600
-2025-02-06 11:51:16,865 - basicLogger - DEBUG - Stored watch results with trace id of 1738871474542637300
-2025-02-06 11:51:16,880 - basicLogger - DEBUG - Stored watch results with trace id of 1738871474527490400
-2025-02-06 11:51:18,728 - basicLogger - DEBUG - Stored watch results with trace id of 1738871476381683400
-2025-02-06 11:51:18,735 - basicLogger - DEBUG - Stored watch results with trace id of 1738871476387151900
-2025-02-06 11:51:19,025 - basicLogger - DEBUG - Stored watch results with trace id of 1738871476751257400
-2025-02-06 11:51:19,222 - basicLogger - DEBUG - Stored watch results with trace id of 1738871476889543400
-2025-02-06 11:51:19,227 - basicLogger - DEBUG - Stored watch results with trace id of 1738871476872618200
-2025-02-06 11:51:21,094 - basicLogger - DEBUG - Stored watch results with trace id of 1738871478744912100
-2025-02-06 11:51:21,116 - basicLogger - DEBUG - Stored watch results with trace id of 1738871478748155500
-2025-02-06 11:51:21,302 - basicLogger - DEBUG - Stored watch results with trace id of 1738871479048671000
-2025-02-06 11:51:21,583 - basicLogger - DEBUG - Stored watch results with trace id of 1738871479237035000
-2025-02-06 11:51:21,599 - basicLogger - DEBUG - Stored watch results with trace id of 1738871479231202600
-2025-02-06 11:51:23,427 - basicLogger - DEBUG - Stored watch results with trace id of 1738871481103179300
-2025-02-06 11:51:23,459 - basicLogger - DEBUG - Stored watch results with trace id of 1738871481120975300
-2025-02-06 11:51:23,602 - basicLogger - DEBUG - Stored watch results with trace id of 1738871481320496900
-2025-02-06 11:51:23,903 - basicLogger - DEBUG - Stored watch results with trace id of 1738871481583701800
-2025-02-06 11:51:23,952 - basicLogger - DEBUG - Stored watch results with trace id of 1738871481604331400
-2025-02-06 11:51:25,866 - basicLogger - DEBUG - Stored watch results with trace id of 1738871483443741500
-2025-02-06 11:51:25,883 - basicLogger - DEBUG - Stored watch results with trace id of 1738871483487359800
-2025-02-06 11:51:25,997 - basicLogger - DEBUG - Stored watch results with trace id of 1738871483616312800
-2025-02-06 11:51:26,254 - basicLogger - DEBUG - Stored watch results with trace id of 1738871483911815200
-2025-02-06 11:51:26,304 - basicLogger - DEBUG - Stored watch results with trace id of 1738871483963074800
-2025-02-06 11:51:28,265 - basicLogger - DEBUG - Stored watch results with trace id of 1738871485882119300
-2025-02-06 11:51:28,273 - basicLogger - DEBUG - Stored watch results with trace id of 1738871485890958900
-2025-02-06 11:51:28,372 - basicLogger - DEBUG - Stored watch results with trace id of 1738871486017489900
-2025-02-06 11:51:28,599 - basicLogger - DEBUG - Stored watch results with trace id of 1738871486254481800
-2025-02-06 11:51:28,632 - basicLogger - DEBUG - Stored watch results with trace id of 1738871486312753300
-2025-02-06 14:22:04,040 - basicLogger - DEBUG - Stored watch results with trace id of 1738880521651417200
-2025-02-06 14:22:04,052 - basicLogger - DEBUG - Stored watch results with trace id of 1738880521749689100
-2025-02-06 14:22:04,218 - basicLogger - DEBUG - Stored watch results with trace id of 1738880521943691400
-2025-02-06 14:22:04,357 - basicLogger - DEBUG - Stored watch results with trace id of 1738880522141452300
-2025-02-06 14:22:04,568 - basicLogger - DEBUG - Stored watch results with trace id of 1738880522342338200
-2025-02-06 14:22:06,394 - basicLogger - DEBUG - Stored watch results with trace id of 1738880524059170600
-2025-02-06 14:22:06,399 - basicLogger - DEBUG - Stored watch results with trace id of 1738880524054152600
-2025-02-06 14:22:06,572 - basicLogger - DEBUG - Stored watch results with trace id of 1738880524224686000
-2025-02-06 14:22:06,695 - basicLogger - DEBUG - Stored watch results with trace id of 1738880524363171900
-2025-02-06 14:22:06,818 - basicLogger - DEBUG - Stored watch results with trace id of 1738880524574419600
-2025-02-06 14:22:08,741 - basicLogger - DEBUG - Stored watch results with trace id of 1738880526402455600
-2025-02-06 14:22:08,748 - basicLogger - DEBUG - Stored watch results with trace id of 1738880526407835400
-2025-02-06 14:22:08,924 - basicLogger - DEBUG - Stored watch results with trace id of 1738880526584651300
-2025-02-06 14:22:09,014 - basicLogger - DEBUG - Stored watch results with trace id of 1738880526703492700
-2025-02-06 14:22:09,104 - basicLogger - DEBUG - Stored watch results with trace id of 1738880526828895000
-2025-02-06 14:22:11,060 - basicLogger - DEBUG - Stored watch results with trace id of 1738880528747233100
-2025-02-06 14:22:11,086 - basicLogger - DEBUG - Stored watch results with trace id of 1738880528756217400
-2025-02-06 14:22:11,279 - basicLogger - DEBUG - Stored watch results with trace id of 1738880528930711900
-2025-02-06 14:22:11,373 - basicLogger - DEBUG - Stored watch results with trace id of 1738880529021823200
-2025-02-06 14:22:11,408 - basicLogger - DEBUG - Stored watch results with trace id of 1738880529111828300
-2025-02-06 14:22:13,391 - basicLogger - DEBUG - Stored watch results with trace id of 1738880531069755400
-2025-02-06 14:22:13,405 - basicLogger - DEBUG - Stored watch results with trace id of 1738880531093099500
-2025-02-06 14:22:13,663 - basicLogger - DEBUG - Stored watch results with trace id of 1738880531289308400
-2025-02-06 14:22:13,754 - basicLogger - DEBUG - Stored watch results with trace id of 1738880531416284100
-2025-02-06 14:22:13,759 - basicLogger - DEBUG - Stored watch results with trace id of 1738880531381103300
-2025-02-06 14:22:15,706 - basicLogger - DEBUG - Stored watch results with trace id of 1738880533398524700
-2025-02-06 14:22:15,710 - basicLogger - DEBUG - Stored watch results with trace id of 1738880533413272000
-2025-02-06 14:22:15,952 - basicLogger - DEBUG - Stored watch results with trace id of 1738880533670007900
-2025-02-06 14:22:16,111 - basicLogger - DEBUG - Stored watch results with trace id of 1738880533761634100
-2025-02-06 14:22:16,115 - basicLogger - DEBUG - Stored watch results with trace id of 1738880533767917500
-2025-02-06 14:22:18,004 - basicLogger - DEBUG - Stored watch results with trace id of 1738880535715305600
-2025-02-06 14:22:18,021 - basicLogger - DEBUG - Stored watch results with trace id of 1738880535724023300
-2025-02-06 14:22:18,239 - basicLogger - DEBUG - Stored watch results with trace id of 1738880535962517400
-2025-02-06 14:22:18,455 - basicLogger - DEBUG - Stored watch results with trace id of 1738880536125071200
-2025-02-06 14:22:18,459 - basicLogger - DEBUG - Stored watch results with trace id of 1738880536123064300
-2025-02-06 14:22:20,321 - basicLogger - DEBUG - Stored watch results with trace id of 1738880538012194000
-2025-02-06 14:22:20,334 - basicLogger - DEBUG - Stored watch results with trace id of 1738880538032939300
-2025-02-06 14:22:20,510 - basicLogger - DEBUG - Stored watch results with trace id of 1738880538246564500
-2025-02-06 14:22:20,762 - basicLogger - DEBUG - Stored watch results with trace id of 1738880538470554800
-2025-02-06 14:22:20,768 - basicLogger - DEBUG - Stored watch results with trace id of 1738880538470220700
-2025-02-06 14:22:22,681 - basicLogger - DEBUG - Stored watch results with trace id of 1738880540334318700
-2025-02-06 14:22:22,702 - basicLogger - DEBUG - Stored watch results with trace id of 1738880540343152200
-2025-02-06 14:22:22,902 - basicLogger - DEBUG - Stored watch results with trace id of 1738880540518646000
-2025-02-06 14:22:23,158 - basicLogger - DEBUG - Stored watch results with trace id of 1738880540778985600
-2025-02-06 14:22:23,162 - basicLogger - DEBUG - Stored watch results with trace id of 1738880540773248100
-2025-02-06 14:22:24,985 - basicLogger - DEBUG - Stored watch results with trace id of 1738880542688017800
-2025-02-06 14:22:24,992 - basicLogger - DEBUG - Stored watch results with trace id of 1738880542708761400
-2025-02-06 14:22:25,139 - basicLogger - DEBUG - Stored watch results with trace id of 1738880542912069400
-2025-02-06 14:22:25,507 - basicLogger - DEBUG - Stored watch results with trace id of 1738880543171814900
-2025-02-06 14:22:25,538 - basicLogger - DEBUG - Stored watch results with trace id of 1738880543167726200
-2025-02-06 14:22:27,318 - basicLogger - DEBUG - Stored watch results with trace id of 1738880544996886000
-2025-02-06 14:22:27,324 - basicLogger - DEBUG - Stored watch results with trace id of 1738880545006214100
-2025-02-06 14:22:27,427 - basicLogger - DEBUG - Stored watch results with trace id of 1738880545159868400
-2025-02-06 14:22:27,827 - basicLogger - DEBUG - Stored watch results with trace id of 1738880545525433900
-2025-02-06 14:22:27,834 - basicLogger - DEBUG - Stored watch results with trace id of 1738880545557155300
-2025-02-06 14:22:29,669 - basicLogger - DEBUG - Stored watch results with trace id of 1738880547325052600
-2025-02-06 14:22:29,690 - basicLogger - DEBUG - Stored watch results with trace id of 1738880547331481700
-2025-02-06 14:22:29,760 - basicLogger - DEBUG - Stored watch results with trace id of 1738880547437619000
-2025-02-06 14:22:30,165 - basicLogger - DEBUG - Stored watch results with trace id of 1738880547840879800
-2025-02-06 14:22:30,178 - basicLogger - DEBUG - Stored watch results with trace id of 1738880547832876300
-2025-02-06 14:22:32,025 - basicLogger - DEBUG - Stored watch results with trace id of 1738880549677770500
-2025-02-06 14:22:32,048 - basicLogger - DEBUG - Stored watch results with trace id of 1738880549699953200
-2025-02-06 14:22:32,106 - basicLogger - DEBUG - Stored watch results with trace id of 1738880549775708300
-2025-02-06 14:22:32,521 - basicLogger - DEBUG - Stored watch results with trace id of 1738880550172303500
-2025-02-06 14:22:32,545 - basicLogger - DEBUG - Stored watch results with trace id of 1738880550185324600
-2025-02-06 14:22:34,456 - basicLogger - DEBUG - Stored watch results with trace id of 1738880552054368600
-2025-02-06 14:22:34,461 - basicLogger - DEBUG - Stored watch results with trace id of 1738880552031799600
-2025-02-06 14:22:34,502 - basicLogger - DEBUG - Stored watch results with trace id of 1738880552134571400
-2025-02-06 14:22:34,817 - basicLogger - DEBUG - Stored watch results with trace id of 1738880552530327200
-2025-02-06 14:22:34,836 - basicLogger - DEBUG - Stored watch results with trace id of 1738880552550979400
-2025-02-06 14:22:36,795 - basicLogger - DEBUG - Stored watch results with trace id of 1738880554468632000
-2025-02-06 14:22:36,820 - basicLogger - DEBUG - Stored watch results with trace id of 1738880554473943400
-2025-02-06 14:22:36,845 - basicLogger - DEBUG - Stored watch results with trace id of 1738880554510241100
-2025-02-06 14:22:37,106 - basicLogger - DEBUG - Stored watch results with trace id of 1738880554824840500
-2025-02-06 14:22:37,132 - basicLogger - DEBUG - Stored watch results with trace id of 1738880554853242800
-2025-02-06 14:22:39,180 - basicLogger - DEBUG - Stored watch results with trace id of 1738880556802507800
-2025-02-06 14:22:39,247 - basicLogger - DEBUG - Stored watch results with trace id of 1738880556828256900
-2025-02-06 14:22:39,267 - basicLogger - DEBUG - Stored watch results with trace id of 1738880556852956700
-2025-02-06 14:22:39,461 - basicLogger - DEBUG - Stored watch results with trace id of 1738880557113431200
-2025-02-06 14:22:39,482 - basicLogger - DEBUG - Stored watch results with trace id of 1738880557140397400
-2025-02-06 14:22:41,513 - basicLogger - DEBUG - Stored watch results with trace id of 1738880559190929100
-2025-02-06 14:22:41,650 - basicLogger - DEBUG - Stored watch results with trace id of 1738880559273917200
-2025-02-06 14:22:41,656 - basicLogger - DEBUG - Stored watch results with trace id of 1738880559254232400
-2025-02-06 14:22:41,816 - basicLogger - DEBUG - Stored watch results with trace id of 1738880559491311000
-2025-02-06 14:22:41,842 - basicLogger - DEBUG - Stored watch results with trace id of 1738880559477631100
-2025-02-06 14:22:43,803 - basicLogger - DEBUG - Stored watch results with trace id of 1738880561520007100
-2025-02-06 14:22:44,021 - basicLogger - DEBUG - Stored watch results with trace id of 1738880561656159600
-2025-02-06 14:22:44,056 - basicLogger - DEBUG - Stored watch results with trace id of 1738880561664351000
-2025-02-06 14:22:44,192 - basicLogger - DEBUG - Stored watch results with trace id of 1738880561822914900
-2025-02-06 14:22:44,199 - basicLogger - DEBUG - Stored watch results with trace id of 1738880561849671100
-2025-02-06 14:22:46,052 - basicLogger - DEBUG - Stored watch results with trace id of 1738880563815498600
-2025-02-06 14:22:46,339 - basicLogger - DEBUG - Stored watch results with trace id of 1738880564035090600
-2025-02-06 14:22:46,404 - basicLogger - DEBUG - Stored watch results with trace id of 1738880564065823900
-2025-02-06 14:22:46,518 - basicLogger - DEBUG - Stored watch results with trace id of 1738880564210739600
-2025-02-06 14:22:46,529 - basicLogger - DEBUG - Stored watch results with trace id of 1738880564204562500
-2025-02-06 14:22:48,268 - basicLogger - DEBUG - Stored watch results with trace id of 1738880566056202000
-2025-02-06 14:22:48,649 - basicLogger - DEBUG - Stored watch results with trace id of 1738880566345649100
-2025-02-06 14:22:48,733 - basicLogger - DEBUG - Stored watch results with trace id of 1738880566412249600
-2025-02-06 14:22:48,826 - basicLogger - DEBUG - Stored watch results with trace id of 1738880566524599400
-2025-02-06 14:22:48,843 - basicLogger - DEBUG - Stored watch results with trace id of 1738880566535848200
-2025-02-12 19:53:00,842 - basicLogger - DEBUG - Stored watch results with trace id of 1739418778526593500
-2025-02-12 19:54:00,366 - basicLogger - DEBUG - Stored scale results with trace id of 1739418838111392400
-2025-02-12 19:54:00,600 - basicLogger - DEBUG - Stored scale results with trace id of 1739418838323335000
-2025-02-12 19:54:00,907 - basicLogger - DEBUG - Stored scale results with trace id of 1739418838659034500
-2025-02-12 19:54:02,627 - basicLogger - DEBUG - Stored watch results with trace id of 1739418840377163000
-2025-02-12 19:54:02,840 - basicLogger - DEBUG - Stored watch results with trace id of 1739418840605202300
-2025-02-12 19:54:03,170 - basicLogger - DEBUG - Stored watch results with trace id of 1739418840912100200
-2025-02-12 19:54:04,884 - basicLogger - DEBUG - Stored scale results with trace id of 1739418842637998300
-2025-02-12 19:54:05,087 - basicLogger - DEBUG - Stored scale results with trace id of 1739418842849893200
-2025-02-12 19:54:05,421 - basicLogger - DEBUG - Stored scale results with trace id of 1739418843177418900
-2025-02-12 19:54:07,139 - basicLogger - DEBUG - Stored watch results with trace id of 1739418844891085400
-2025-02-12 19:54:07,328 - basicLogger - DEBUG - Stored watch results with trace id of 1739418845095577900
-2025-02-12 19:54:07,677 - basicLogger - DEBUG - Stored watch results with trace id of 1739418845427963400
-2025-02-12 19:54:09,384 - basicLogger - DEBUG - Stored scale results with trace id of 1739418847147842100
-2025-02-12 19:54:09,593 - basicLogger - DEBUG - Stored scale results with trace id of 1739418847340539300
-2025-02-12 19:54:09,965 - basicLogger - DEBUG - Stored scale results with trace id of 1739418847685213500
-2025-02-12 19:54:11,623 - basicLogger - DEBUG - Stored watch results with trace id of 1739418849396968700
-2025-02-12 19:54:11,845 - basicLogger - DEBUG - Stored watch results with trace id of 1739418849598362900
-2025-02-12 19:54:12,229 - basicLogger - DEBUG - Stored watch results with trace id of 1739418849979779700
-2025-02-12 19:54:13,862 - basicLogger - DEBUG - Stored scale results with trace id of 1739418851630786800
-2025-02-12 19:54:14,140 - basicLogger - DEBUG - Stored scale results with trace id of 1739418851859722100
-2025-02-12 19:54:14,485 - basicLogger - DEBUG - Stored scale results with trace id of 1739418852237262700
-2025-02-12 19:54:16,108 - basicLogger - DEBUG - Stored watch results with trace id of 1739418853871700800
-2025-02-12 19:54:16,476 - basicLogger - DEBUG - Stored watch results with trace id of 1739418854147886900
-2025-02-12 19:54:16,735 - basicLogger - DEBUG - Stored watch results with trace id of 1739418854492584900
-2025-02-12 19:54:18,364 - basicLogger - DEBUG - Stored scale results with trace id of 1739418856115984700
-2025-02-12 19:54:18,752 - basicLogger - DEBUG - Stored scale results with trace id of 1739418856488185900
-2025-02-12 19:54:18,988 - basicLogger - DEBUG - Stored scale results with trace id of 1739418856742656000
-2025-02-12 19:54:20,646 - basicLogger - DEBUG - Stored watch results with trace id of 1739418858371071100
-2025-02-12 19:54:21,017 - basicLogger - DEBUG - Stored watch results with trace id of 1739418858757005900
-2025-02-12 19:54:21,235 - basicLogger - DEBUG - Stored watch results with trace id of 1739418858993170700
-2025-02-12 19:54:22,909 - basicLogger - DEBUG - Stored scale results with trace id of 1739418860655885400
-2025-02-12 19:54:23,264 - basicLogger - DEBUG - Stored scale results with trace id of 1739418861026240300
-2025-02-12 19:54:23,473 - basicLogger - DEBUG - Stored scale results with trace id of 1739418861242673900
-2025-02-12 19:54:25,170 - basicLogger - DEBUG - Stored watch results with trace id of 1739418862925556900
-2025-02-12 19:54:25,508 - basicLogger - DEBUG - Stored watch results with trace id of 1739418863269719700
-2025-02-12 19:54:25,695 - basicLogger - DEBUG - Stored watch results with trace id of 1739418863481031200
-2025-02-12 19:54:27,434 - basicLogger - DEBUG - Stored scale results with trace id of 1739418865177409400
-2025-02-12 19:54:27,770 - basicLogger - DEBUG - Stored scale results with trace id of 1739418865517999400
-2025-02-12 19:54:27,950 - basicLogger - DEBUG - Stored scale results with trace id of 1739418865707050000
-2025-02-12 19:54:29,652 - basicLogger - DEBUG - Stored watch results with trace id of 1739418867439361900
-2025-02-12 19:54:30,073 - basicLogger - DEBUG - Stored watch results with trace id of 1739418867776668400
-2025-02-12 19:54:30,197 - basicLogger - DEBUG - Stored watch results with trace id of 1739418867956339300
-2025-02-12 19:54:31,911 - basicLogger - DEBUG - Stored scale results with trace id of 1739418869659780500
-2025-02-12 19:54:32,332 - basicLogger - DEBUG - Stored scale results with trace id of 1739418870081892700
-2025-02-12 19:54:32,450 - basicLogger - DEBUG - Stored scale results with trace id of 1739418870208902900
-2025-02-12 19:54:34,170 - basicLogger - DEBUG - Stored watch results with trace id of 1739418871917958600
-2025-02-12 19:54:34,617 - basicLogger - DEBUG - Stored watch results with trace id of 1739418872338949900
-2025-02-12 19:54:34,742 - basicLogger - DEBUG - Stored watch results with trace id of 1739418872456819700
-2025-02-12 19:54:36,417 - basicLogger - DEBUG - Stored scale results with trace id of 1739418874180031000
-2025-02-12 19:54:36,910 - basicLogger - DEBUG - Stored scale results with trace id of 1739418874629337900
-2025-02-12 19:54:37,020 - basicLogger - DEBUG - Stored scale results with trace id of 1739418874750522600
-2025-02-12 19:54:38,675 - basicLogger - DEBUG - Stored watch results with trace id of 1739418876423205300
-2025-02-12 19:54:39,219 - basicLogger - DEBUG - Stored watch results with trace id of 1739418876916824000
-2025-02-12 19:54:39,296 - basicLogger - DEBUG - Stored watch results with trace id of 1739418877026016200
-2025-02-12 19:54:40,933 - basicLogger - DEBUG - Stored scale results with trace id of 1739418878681269800
-2025-02-12 19:54:41,512 - basicLogger - DEBUG - Stored scale results with trace id of 1739418879227367700
-2025-02-12 19:54:41,614 - basicLogger - DEBUG - Stored scale results with trace id of 1739418879303463200
-2025-02-12 19:54:43,265 - basicLogger - DEBUG - Stored watch results with trace id of 1739418880940878500
-2025-02-12 19:54:43,817 - basicLogger - DEBUG - Stored watch results with trace id of 1739418881519339300
-2025-02-12 19:54:43,901 - basicLogger - DEBUG - Stored watch results with trace id of 1739418881619311000
-2025-02-12 20:41:17,754 - basicLogger - INFO - Found 0 scale readings (start: 1970-01-01 00:00:00+00:00, end: 1970-01-01 00:01:40+00:00 )
-2025-02-12 20:41:24,618 - basicLogger - INFO - Found 0 scale readings (start: 1970-01-01 00:00:00+00:00, end: 1970-04-15 04:00:00+00:00 )
-2025-02-12 20:41:59,133 - basicLogger - INFO - Found 0 scale readings (start: 1970-01-01 00:00:00+00:00, end: 1970-04-15 04:00:00+00:00 )
-2025-02-12 20:42:21,565 - basicLogger - INFO - Found 0 scale readings (start: 1970-01-01 00:00:00+00:00, end: 1998-07-09 16:00:00+00:00 )
-2025-02-12 20:42:28,878 - basicLogger - INFO - Found 31 scale readings (start: 1970-01-01 00:00:00+00:00, end: 2255-03-14 16:00:00+00:00 )
-2025-02-12 20:43:08,975 - basicLogger - INFO - Found 31 scale readings (start: 1970-01-01 00:00:00+00:00, end: 2025-02-13 04:42:59.676977+00:00 )
-2025-02-12 20:43:20,845 - basicLogger - INFO - Found 31 scale readings (start: 1970-01-01 00:00:00+00:00, end: 2025-02-13 04:42:59.676977+00:00 )
-2025-02-12 20:43:25,170 - basicLogger - INFO - Found 31 scale readings (start: 1970-01-01 00:00:00+00:00, end: 2025-02-13 04:42:58.676977+00:00 )
-2025-02-12 20:44:40,446 - basicLogger - INFO - Found 31 scale readings (start: 1970-01-01 00:00:00+00:00, end: 2025-02-13 04:42:58+00:00 )
-2025-02-12 20:47:15,082 - basicLogger - INFO - Found 31 scale readings (start: 1970-01-01 00:00:00+00:00, end: 2025-02-13 04:42:58+00:00 )
-2025-02-12 20:47:35,500 - basicLogger - INFO - Found 31 scale readings (start: 1970-01-01 00:00:00+00:00, end: 2025-02-13 04:42:58+00:00 )
-2025-02-12 20:49:40,099 - basicLogger - INFO - Found 31 scale readings (start: 1970-01-01 00:00:00+00:00, end: 2025-02-13 04:42:58+00:00 )
-2025-02-12 20:50:38,569 - basicLogger - INFO - Found 31 scale readings (start: 1970-01-01 00:00:00+00:00, end: 2025-02-13 04:42:58+00:00 )
-2025-02-12 20:52:25,931 - basicLogger - INFO - Found 31 scale readings (start: 1970-01-01 00:00:00+00:00, end: 2025-02-13 04:42:58+00:00 )
-2025-02-12 20:59:07,319 - basicLogger - INFO - Found 31 scale readings (start: 1970-01-01 00:00:00+00:00, end: 2025-02-13 04:42:58+00:00 )
-2025-02-12 21:01:44,026 - basicLogger - INFO - Found 0 scale readings (start: 1969-12-31 16:00:00, end: 2025-02-12 20:42:58 )
-2025-02-12 21:03:03,784 - basicLogger - DEBUG - Stored scale results with trace id of 1739422981469470000
-2025-02-12 21:03:09,190 - basicLogger - DEBUG - Stored scale results with trace id of 1739422986933421100
-2025-02-12 21:03:20,809 - basicLogger - INFO - Found 0 scale readings (start: 1969-12-31 16:00:00, end: 2025-02-12 20:42:58 )
-2025-02-12 21:03:50,506 - basicLogger - INFO - Found 30 scale readings (start: 1970-01-01 00:00:00+00:00, end: 2025-02-13 04:42:58+00:00 )
-2025-02-12 21:05:07,074 - basicLogger - INFO - Found 32 scale readings (start: 1970-01-01 00:00:00+00:00, end: 2025-02-13 05:04:21.559840+00:00 )
-2025-02-12 21:05:13,083 - basicLogger - INFO - Found 31 scale readings (start: 1970-01-01 00:00:00+00:00, end: 2025-02-13 05:04:21.559840+00:00 )
-2025-02-12 21:08:40,162 - basicLogger - INFO - Found 32 scale readings (start: 1970-01-01 00:00:00+00:00, end: 2025-02-13 05:04:21.559840+00:00 )
+2025-02-12 21:25:58,415 - basicLogger - INFO - Found 32 scale readings (start: 1970-01-01 00:00:00+00:00, end: 2025-02-13 05:25:56.133842+00:00 )
+2025-02-12 21:26:00,674 - basicLogger - INFO - Found 31 scale readings (start: 1970-01-01 00:00:00+00:00, end: 2025-02-13 05:25:56.133842+00:00 )
+2025-02-12 21:27:40,562 - basicLogger - INFO - Found 32 scale readings (start: 1970-01-01 00:00:00+00:00, end: 2025-02-13 05:27:38.256413+00:00 )
+2025-02-12 21:27:42,822 - basicLogger - INFO - Found 31 scale readings (start: 1970-01-01 00:00:00+00:00, end: 2025-02-13 05:27:38.256413+00:00 )
+2025-02-12 21:27:50,545 - basicLogger - INFO - Found 32 scale readings (start: 1970-01-01 00:00:00+00:00, end: 2025-02-13 05:27:48.261866+00:00 )
+2025-02-12 21:27:52,839 - basicLogger - INFO - Found 31 scale readings (start: 1970-01-01 00:00:00+00:00, end: 2025-02-13 05:27:48.261866+00:00 )
+2025-02-12 21:29:36,236 - basicLogger - INFO - Found 32 scale readings (start: 1970-01-01 00:00:00+00:00, end: 2025-02-13 05:29:33.952462+00:00 )
+2025-02-12 21:29:38,495 - basicLogger - INFO - Found 31 scale readings (start: 1970-01-01 00:00:00+00:00, end: 2025-02-13 05:29:33.952462+00:00 )
+2025-02-12 21:29:41,208 - basicLogger - INFO - Found 0 scale readings (start: 2025-02-13 05:29:33.952462+00:00, end: 2025-02-13 05:29:38.960880+00:00 )
+2025-02-12 21:29:43,430 - basicLogger - INFO - Found 0 scale readings (start: 2025-02-13 05:29:33.952462+00:00, end: 2025-02-13 05:29:38.960880+00:00 )
+2025-02-12 21:29:46,247 - basicLogger - INFO - Found 0 scale readings (start: 2025-02-13 05:29:38.960880+00:00, end: 2025-02-13 05:29:43.955605+00:00 )
+2025-02-12 21:29:48,494 - basicLogger - INFO - Found 0 scale readings (start: 2025-02-13 05:29:38.960880+00:00, end: 2025-02-13 05:29:43.955605+00:00 )
+2025-02-12 21:29:51,222 - basicLogger - INFO - Found 0 scale readings (start: 2025-02-13 05:29:43.955605+00:00, end: 2025-02-13 05:29:48.959238+00:00 )
+2025-02-12 21:29:53,468 - basicLogger - INFO - Found 0 scale readings (start: 2025-02-13 05:29:43.955605+00:00, end: 2025-02-13 05:29:48.959238+00:00 )
+2025-02-12 21:29:56,186 - basicLogger - INFO - Found 0 scale readings (start: 2025-02-13 05:29:48.959238+00:00, end: 2025-02-13 05:29:53.951870+00:00 )
+2025-02-12 21:29:58,449 - basicLogger - INFO - Found 0 scale readings (start: 2025-02-13 05:29:48.959238+00:00, end: 2025-02-13 05:29:53.951870+00:00 )
+2025-02-12 21:30:00,371 - basicLogger - DEBUG - Stored scale results with trace id of 1739424598084330900
+2025-02-12 21:30:00,685 - basicLogger - DEBUG - Stored scale results with trace id of 1739424598417610600
+2025-02-12 21:30:01,014 - basicLogger - DEBUG - Stored scale results with trace id of 1739424598762390700
+2025-02-12 21:30:01,240 - basicLogger - INFO - Found 0 scale readings (start: 2025-02-13 05:29:53.951870+00:00, end: 2025-02-13 05:29:58.957686+00:00 )
+2025-02-12 21:30:02,641 - basicLogger - DEBUG - Stored watch results with trace id of 1739424600377828000
+2025-02-12 21:30:02,927 - basicLogger - DEBUG - Stored watch results with trace id of 1739424600692159600
+2025-02-12 21:30:03,243 - basicLogger - DEBUG - Stored watch results with trace id of 1739424601021529900
+2025-02-12 21:30:03,503 - basicLogger - INFO - Found 0 scale readings (start: 2025-02-13 05:29:53.951870+00:00, end: 2025-02-13 05:29:58.957686+00:00 )
+2025-02-12 21:30:04,882 - basicLogger - DEBUG - Stored scale results with trace id of 1739424602650440900
+2025-02-12 21:30:05,169 - basicLogger - DEBUG - Stored scale results with trace id of 1739424602936491600
+2025-02-12 21:30:05,531 - basicLogger - DEBUG - Stored scale results with trace id of 1739424603255528000
+2025-02-12 21:30:06,203 - basicLogger - INFO - Found 3 scale readings (start: 2025-02-13 05:29:58.957686+00:00, end: 2025-02-13 05:30:03.950535+00:00 )
+2025-02-12 21:30:07,121 - basicLogger - DEBUG - Stored watch results with trace id of 1739424604888514400
+2025-02-12 21:30:07,414 - basicLogger - DEBUG - Stored watch results with trace id of 1739424605184754000
+2025-02-12 21:30:07,816 - basicLogger - DEBUG - Stored watch results with trace id of 1739424605536393100
+2025-02-12 21:30:08,462 - basicLogger - INFO - Found 3 scale readings (start: 2025-02-13 05:29:58.957686+00:00, end: 2025-02-13 05:30:03.950535+00:00 )
+2025-02-12 21:30:09,423 - basicLogger - DEBUG - Stored scale results with trace id of 1739424607130612800
+2025-02-12 21:30:09,695 - basicLogger - DEBUG - Stored scale results with trace id of 1739424607421777500
+2025-02-12 21:30:10,115 - basicLogger - DEBUG - Stored scale results with trace id of 1739424607827225900
+2025-02-12 21:30:11,203 - basicLogger - INFO - Found 3 scale readings (start: 2025-02-13 05:30:03.950535+00:00, end: 2025-02-13 05:30:08.953345+00:00 )
+2025-02-12 21:30:11,725 - basicLogger - DEBUG - Stored watch results with trace id of 1739424609428923500
+2025-02-12 21:30:11,965 - basicLogger - DEBUG - Stored watch results with trace id of 1739424609700410600
+2025-02-12 21:30:12,413 - basicLogger - DEBUG - Stored watch results with trace id of 1739424610130123500
+2025-02-12 21:30:13,444 - basicLogger - INFO - Found 3 scale readings (start: 2025-02-13 05:30:03.950535+00:00, end: 2025-02-13 05:30:08.953345+00:00 )
+2025-02-12 21:30:13,981 - basicLogger - DEBUG - Stored scale results with trace id of 1739424611731437500
+2025-02-12 21:30:14,255 - basicLogger - DEBUG - Stored scale results with trace id of 1739424611973909100
+2025-02-12 21:30:14,661 - basicLogger - DEBUG - Stored scale results with trace id of 1739424612422559400
+2025-02-12 21:30:16,261 - basicLogger - INFO - Found 4 scale readings (start: 2025-02-13 05:30:08.953345+00:00, end: 2025-02-13 05:30:13.953819+00:00 )
+2025-02-12 21:30:16,301 - basicLogger - DEBUG - Stored watch results with trace id of 1739424613986065700
+2025-02-12 21:30:16,555 - basicLogger - DEBUG - Stored watch results with trace id of 1739424614260199900
+2025-02-12 21:30:16,920 - basicLogger - DEBUG - Stored watch results with trace id of 1739424614668644100
+2025-02-12 21:30:18,584 - basicLogger - INFO - Found 3 scale readings (start: 2025-02-13 05:30:08.953345+00:00, end: 2025-02-13 05:30:13.953819+00:00 )
+2025-02-12 21:30:18,654 - basicLogger - DEBUG - Stored scale results with trace id of 1739424616309526300
+2025-02-12 21:30:18,841 - basicLogger - DEBUG - Stored scale results with trace id of 1739424616565409000
+2025-02-12 21:30:19,183 - basicLogger - DEBUG - Stored scale results with trace id of 1739424616927408900
+2025-02-12 21:30:20,948 - basicLogger - DEBUG - Stored watch results with trace id of 1739424618660390900
+2025-02-12 21:30:21,161 - basicLogger - DEBUG - Stored watch results with trace id of 1739424618846372100
+2025-02-12 21:30:21,262 - basicLogger - INFO - Found 4 scale readings (start: 2025-02-13 05:30:13.953819+00:00, end: 2025-02-13 05:30:18.952864+00:00 )
+2025-02-12 21:30:21,458 - basicLogger - DEBUG - Stored watch results with trace id of 1739424619190875000
+2025-02-12 21:30:23,208 - basicLogger - DEBUG - Stored scale results with trace id of 1739424620960664600
+2025-02-12 21:30:23,457 - basicLogger - DEBUG - Stored scale results with trace id of 1739424621168377500
+2025-02-12 21:30:23,543 - basicLogger - INFO - Found 3 scale readings (start: 2025-02-13 05:30:13.953819+00:00, end: 2025-02-13 05:30:18.952864+00:00 )
+2025-02-12 21:30:23,734 - basicLogger - DEBUG - Stored scale results with trace id of 1739424621464648600
+2025-02-12 21:30:25,467 - basicLogger - DEBUG - Stored watch results with trace id of 1739424623214974200
+2025-02-12 21:30:25,751 - basicLogger - DEBUG - Stored watch results with trace id of 1739424623464857200
+2025-02-12 21:30:25,981 - basicLogger - DEBUG - Stored watch results with trace id of 1739424623739133500
+2025-02-12 21:30:26,211 - basicLogger - INFO - Found 4 scale readings (start: 2025-02-13 05:30:18.952864+00:00, end: 2025-02-13 05:30:23.955971+00:00 )
+2025-02-12 21:30:27,735 - basicLogger - DEBUG - Stored scale results with trace id of 1739424625476769300
+2025-02-12 21:30:27,974 - basicLogger - DEBUG - Stored scale results with trace id of 1739424625758485100
+2025-02-12 21:30:28,231 - basicLogger - DEBUG - Stored scale results with trace id of 1739424625990816400
+2025-02-12 21:30:28,457 - basicLogger - INFO - Found 3 scale readings (start: 2025-02-13 05:30:18.952864+00:00, end: 2025-02-13 05:30:23.955971+00:00 )
+2025-02-12 21:30:29,989 - basicLogger - DEBUG - Stored watch results with trace id of 1739424627740910500
+2025-02-12 21:30:30,224 - basicLogger - DEBUG - Stored watch results with trace id of 1739424627979374000
+2025-02-12 21:30:30,486 - basicLogger - DEBUG - Stored watch results with trace id of 1739424628236175000
+2025-02-12 21:30:31,186 - basicLogger - INFO - Found 3 scale readings (start: 2025-02-13 05:30:23.955971+00:00, end: 2025-02-13 05:30:28.958682+00:00 )
+2025-02-12 21:30:32,311 - basicLogger - DEBUG - Stored scale results with trace id of 1739424629998258400
+2025-02-12 21:30:32,500 - basicLogger - DEBUG - Stored scale results with trace id of 1739424630233045000
+2025-02-12 21:30:32,748 - basicLogger - DEBUG - Stored scale results with trace id of 1739424630492382900
+2025-02-12 21:30:33,441 - basicLogger - INFO - Found 3 scale readings (start: 2025-02-13 05:30:23.955971+00:00, end: 2025-02-13 05:30:28.958682+00:00 )
+2025-02-12 21:30:34,594 - basicLogger - DEBUG - Stored watch results with trace id of 1739424632318970700
+2025-02-12 21:30:34,782 - basicLogger - DEBUG - Stored watch results with trace id of 1739424632507748400
+2025-02-12 21:30:35,042 - basicLogger - DEBUG - Stored watch results with trace id of 1739424632753259300
+2025-02-12 21:30:36,218 - basicLogger - INFO - Found 3 scale readings (start: 2025-02-13 05:30:28.958682+00:00, end: 2025-02-13 05:30:33.963133+00:00 )
+2025-02-12 21:30:36,848 - basicLogger - DEBUG - Stored scale results with trace id of 1739424634603420200
+2025-02-12 21:30:37,016 - basicLogger - DEBUG - Stored scale results with trace id of 1739424634789249400
+2025-02-12 21:30:37,360 - basicLogger - DEBUG - Stored scale results with trace id of 1739424635049492700
+2025-02-12 21:30:38,529 - basicLogger - INFO - Found 3 scale readings (start: 2025-02-13 05:30:28.958682+00:00, end: 2025-02-13 05:30:33.963133+00:00 )
+2025-02-12 21:30:39,154 - basicLogger - DEBUG - Stored watch results with trace id of 1739424636853758400
+2025-02-12 21:30:39,412 - basicLogger - DEBUG - Stored watch results with trace id of 1739424637026700100
+2025-02-12 21:30:39,692 - basicLogger - DEBUG - Stored watch results with trace id of 1739424637369549300
+2025-02-12 21:30:41,225 - basicLogger - INFO - Found 3 scale readings (start: 2025-02-13 05:30:33.963133+00:00, end: 2025-02-13 05:30:38.964520+00:00 )
+2025-02-12 21:30:41,403 - basicLogger - DEBUG - Stored scale results with trace id of 1739424639162672800
+2025-02-12 21:30:41,721 - basicLogger - DEBUG - Stored scale results with trace id of 1739424639418352400
+2025-02-12 21:30:41,953 - basicLogger - DEBUG - Stored scale results with trace id of 1739424639699799000
+2025-02-12 21:30:43,473 - basicLogger - INFO - Found 3 scale readings (start: 2025-02-13 05:30:33.963133+00:00, end: 2025-02-13 05:30:38.964520+00:00 )
+2025-02-12 21:30:43,680 - basicLogger - DEBUG - Stored watch results with trace id of 1739424641408773400
+2025-02-12 21:30:43,982 - basicLogger - DEBUG - Stored watch results with trace id of 1739424641731813300
+2025-02-12 21:30:44,205 - basicLogger - DEBUG - Stored watch results with trace id of 1739424641959318400
+2025-02-12 21:30:46,309 - basicLogger - INFO - Found 3 scale readings (start: 2025-02-13 05:30:38.964520+00:00, end: 2025-02-13 05:30:43.951355+00:00 )
+2025-02-12 21:30:48,560 - basicLogger - INFO - Found 5 scale readings (start: 2025-02-13 05:30:38.964520+00:00, end: 2025-02-13 05:30:43.951355+00:00 )
+2025-02-12 21:30:51,246 - basicLogger - INFO - Found 0 scale readings (start: 2025-02-13 05:30:43.951355+00:00, end: 2025-02-13 05:30:48.959670+00:00 )
+2025-02-12 21:30:53,498 - basicLogger - INFO - Found 1 scale readings (start: 2025-02-13 05:30:43.951355+00:00, end: 2025-02-13 05:30:48.959670+00:00 )
+2025-02-12 21:31:05,832 - basicLogger - DEBUG - Stored scale results with trace id of 1739424663528569100
+2025-02-12 21:31:06,117 - basicLogger - DEBUG - Stored scale results with trace id of 1739424663870990200
+2025-02-12 21:31:06,449 - basicLogger - DEBUG - Stored scale results with trace id of 1739424664210630100
+2025-02-12 21:31:08,123 - basicLogger - DEBUG - Stored watch results with trace id of 1739424665846052400
+2025-02-12 21:31:08,376 - basicLogger - DEBUG - Stored watch results with trace id of 1739424666124230000
+2025-02-12 21:31:08,707 - basicLogger - DEBUG - Stored watch results with trace id of 1739424666455471800
+2025-02-12 21:31:10,418 - basicLogger - DEBUG - Stored scale results with trace id of 1739424668135196100
+2025-02-12 21:31:10,644 - basicLogger - DEBUG - Stored scale results with trace id of 1739424668385972600
+2025-02-12 21:31:10,965 - basicLogger - DEBUG - Stored scale results with trace id of 1739424668721103700
+2025-02-12 21:31:12,733 - basicLogger - DEBUG - Stored watch results with trace id of 1739424670427890500
+2025-02-12 21:31:12,919 - basicLogger - DEBUG - Stored watch results with trace id of 1739424670650035600
+2025-02-12 21:31:13,274 - basicLogger - DEBUG - Stored watch results with trace id of 1739424670970296700
+2025-02-12 21:31:15,096 - basicLogger - DEBUG - Stored scale results with trace id of 1739424672741307000
+2025-02-12 21:31:15,270 - basicLogger - DEBUG - Stored scale results with trace id of 1739424672929901100
+2025-02-12 21:31:15,548 - basicLogger - DEBUG - Stored scale results with trace id of 1739424673285474400
+2025-02-12 21:31:17,410 - basicLogger - DEBUG - Stored watch results with trace id of 1739424675110577300
+2025-02-12 21:31:17,552 - basicLogger - DEBUG - Stored watch results with trace id of 1739424675277894000
+2025-02-12 21:31:17,847 - basicLogger - DEBUG - Stored watch results with trace id of 1739424675555041700
+2025-02-12 21:31:19,781 - basicLogger - DEBUG - Stored scale results with trace id of 1739424677418793400
+2025-02-12 21:31:19,906 - basicLogger - DEBUG - Stored scale results with trace id of 1739424677560888500
+2025-02-12 21:31:20,157 - basicLogger - DEBUG - Stored scale results with trace id of 1739424677854251800
+2025-02-12 21:31:22,146 - basicLogger - DEBUG - Stored watch results with trace id of 1739424679794076800
+2025-02-12 21:31:22,327 - basicLogger - DEBUG - Stored watch results with trace id of 1739424679913277200
+2025-02-12 21:31:22,518 - basicLogger - DEBUG - Stored watch results with trace id of 1739424680166942300
+2025-02-12 21:31:24,465 - basicLogger - DEBUG - Stored scale results with trace id of 1739424682154463500
+2025-02-12 21:31:24,693 - basicLogger - DEBUG - Stored scale results with trace id of 1739424682336957200
+2025-02-12 21:31:24,830 - basicLogger - DEBUG - Stored scale results with trace id of 1739424682529785100
+2025-02-12 21:31:26,748 - basicLogger - DEBUG - Stored watch results with trace id of 1739424684472123400
+2025-02-12 21:31:27,037 - basicLogger - DEBUG - Stored watch results with trace id of 1739424684701968900
+2025-02-12 21:31:27,169 - basicLogger - DEBUG - Stored watch results with trace id of 1739424684835998100
+2025-02-12 21:31:29,047 - basicLogger - DEBUG - Stored scale results with trace id of 1739424686759759000
+2025-02-12 21:31:29,304 - basicLogger - DEBUG - Stored scale results with trace id of 1739424687049111900
+2025-02-12 21:31:29,430 - basicLogger - DEBUG - Stored scale results with trace id of 1739424687177892400
+2025-02-12 21:31:31,307 - basicLogger - DEBUG - Stored watch results with trace id of 1739424689054460400
+2025-02-12 21:31:31,605 - basicLogger - DEBUG - Stored watch results with trace id of 1739424689312455400
+2025-02-12 21:31:31,756 - basicLogger - DEBUG - Stored watch results with trace id of 1739424689436191800
+2025-02-12 21:31:33,592 - basicLogger - DEBUG - Stored scale results with trace id of 1739424691317612600
+2025-02-12 21:31:33,920 - basicLogger - DEBUG - Stored scale results with trace id of 1739424691612675200
+2025-02-12 21:31:34,023 - basicLogger - DEBUG - Stored scale results with trace id of 1739424691765844800
+2025-02-12 21:31:35,836 - basicLogger - DEBUG - Stored watch results with trace id of 1739424693599499600
+2025-02-12 21:31:36,200 - basicLogger - DEBUG - Stored watch results with trace id of 1739424693926388700
+2025-02-12 21:31:36,290 - basicLogger - DEBUG - Stored watch results with trace id of 1739424694028835900
+2025-02-12 21:31:38,093 - basicLogger - DEBUG - Stored scale results with trace id of 1739424695844312200
+2025-02-12 21:31:38,505 - basicLogger - DEBUG - Stored scale results with trace id of 1739424696208098300
+2025-02-12 21:31:38,601 - basicLogger - DEBUG - Stored scale results with trace id of 1739424696305489100
+2025-02-12 21:31:40,345 - basicLogger - DEBUG - Stored watch results with trace id of 1739424698098353300
+2025-02-12 21:31:40,840 - basicLogger - DEBUG - Stored watch results with trace id of 1739424698510861200
+2025-02-12 21:31:40,934 - basicLogger - DEBUG - Stored watch results with trace id of 1739424698609306800
+2025-02-12 21:31:42,630 - basicLogger - DEBUG - Stored scale results with trace id of 1739424700359531300
+2025-02-12 21:31:43,153 - basicLogger - DEBUG - Stored scale results with trace id of 1739424700847450100
+2025-02-12 21:31:43,262 - basicLogger - DEBUG - Stored scale results with trace id of 1739424700943566500
+2025-02-12 21:31:44,892 - basicLogger - DEBUG - Stored watch results with trace id of 1739424702635249200
+2025-02-12 21:31:45,485 - basicLogger - DEBUG - Stored watch results with trace id of 1739424703159383200
+2025-02-12 21:31:45,577 - basicLogger - DEBUG - Stored watch results with trace id of 1739424703273874000
+2025-02-12 21:31:47,150 - basicLogger - DEBUG - Stored scale results with trace id of 1739424704902234400
+2025-02-12 21:31:47,832 - basicLogger - DEBUG - Stored scale results with trace id of 1739424705495057500
+2025-02-12 21:31:47,928 - basicLogger - DEBUG - Stored scale results with trace id of 1739424705590567800
+2025-02-12 21:31:49,399 - basicLogger - DEBUG - Stored watch results with trace id of 1739424707156099400
+2025-02-12 21:31:50,159 - basicLogger - DEBUG - Stored watch results with trace id of 1739424707838585800
+2025-02-12 21:31:50,233 - basicLogger - DEBUG - Stored watch results with trace id of 1739424707934310900
+2025-02-12 21:34:38,159 - basicLogger - INFO - Found 30 scale readings (start: 2025-02-13 05:30:48.959670+00:00, end: 2025-02-13 05:34:35.839003+00:00 )
+2025-02-12 21:34:40,422 - basicLogger - INFO - Found 30 scale readings (start: 2025-02-13 05:30:48.959670+00:00, end: 2025-02-13 05:34:35.839003+00:00 )

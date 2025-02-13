@@ -1,0 +1,16 @@
+meta {
+  name: Manual Processing Populate Stats
+  type: http
+  seq: 7
+}
+
+get {
+  url: http://localhost:8090/fitscale/watch/?start_timestamp=0&end_timestamp=1739423061.55984
+  body: none
+  auth: none
+}
+
+params:query {
+  start_timestamp: 0
+  end_timestamp: 1739423061.55984
+}

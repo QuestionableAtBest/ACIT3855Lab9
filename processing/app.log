@@ -1,32 +1,110 @@
-2025-02-12 20:38:38,332 - basicLogger - INFO - Periodic statistics gathering has begun!
-2025-02-12 20:38:38,333 - basicLogger - INFO - No json detected, generating default
-2025-02-12 20:38:38,334 - basicLogger - INFO - Processing logger finished on default route!
-2025-02-12 20:38:48,336 - basicLogger - INFO - Periodic statistics gathering has begun!
-2025-02-12 20:38:52,943 - basicLogger - INFO - JSON file found, collecting new stats!
-2025-02-12 20:38:58,332 - basicLogger - INFO - Periodic statistics gathering has begun!
-2025-02-12 20:39:02,838 - basicLogger - INFO - JSON file found, collecting new stats!
-2025-02-12 20:40:45,308 - basicLogger - INFO - Periodic statistics gathering has begun!
-2025-02-12 20:40:49,996 - basicLogger - INFO - JSON file found, collecting new stats!
-2025-02-12 20:40:55,296 - basicLogger - INFO - Periodic statistics gathering has begun!
-2025-02-12 20:40:59,931 - basicLogger - INFO - JSON file found, collecting new stats!
-2025-02-12 20:51:01,093 - basicLogger - INFO - Periodic statistics gathering has begun!
-2025-02-12 20:51:05,666 - basicLogger - INFO - JSON file found, collecting new stats!
-2025-02-12 20:51:11,086 - basicLogger - INFO - Periodic statistics gathering has begun!
-2025-02-12 20:51:15,606 - basicLogger - INFO - JSON file found, collecting new stats!
-2025-02-12 20:53:35,941 - basicLogger - INFO - Periodic statistics gathering has begun!
-2025-02-12 20:53:40,611 - basicLogger - INFO - JSON file found, collecting new stats!
-2025-02-12 20:53:45,936 - basicLogger - INFO - Periodic statistics gathering has begun!
-2025-02-12 20:54:13,182 - basicLogger - INFO - Periodic statistics gathering has begun!
-2025-02-12 20:54:17,775 - basicLogger - INFO - JSON file found, collecting new stats!
-2025-02-12 20:56:18,636 - basicLogger - INFO - Periodic statistics gathering has begun!
-2025-02-12 20:56:23,158 - basicLogger - INFO - JSON file found, collecting new stats!
-2025-02-12 21:01:32,237 - basicLogger - INFO - Periodic statistics gathering has begun!
-2025-02-12 21:01:36,738 - basicLogger - INFO - JSON file found, collecting new stats!
-2025-02-12 21:01:42,251 - basicLogger - INFO - Periodic statistics gathering has begun!
-2025-02-12 21:01:46,741 - basicLogger - INFO - JSON file found, collecting new stats!
-2025-02-12 21:01:52,250 - basicLogger - INFO - Periodic statistics gathering has begun!
-2025-02-12 21:01:56,847 - basicLogger - INFO - JSON file found, collecting new stats!
-2025-02-12 21:04:11,560 - basicLogger - INFO - Periodic statistics gathering has begun!
-2025-02-12 21:04:16,082 - basicLogger - INFO - JSON file found, collecting new stats!
-2025-02-12 21:04:21,558 - basicLogger - INFO - Periodic statistics gathering has begun!
-2025-02-12 21:04:26,109 - basicLogger - INFO - JSON file found, collecting new stats!
+2025-02-12 21:25:56,132 - basicLogger - INFO - Periodic statistics gathering has begun!
+2025-02-12 21:26:00,678 - basicLogger - INFO - JSON file found, collecting new stats!
+2025-02-12 21:27:38,256 - basicLogger - INFO - Periodic statistics gathering has begun!
+2025-02-12 21:27:42,827 - basicLogger - INFO - JSON file found, collecting new stats!
+2025-02-12 21:27:42,827 - basicLogger - INFO - Stats collected! Writing to JSON
+2025-02-12 21:27:48,260 - basicLogger - INFO - Periodic statistics gathering has begun!
+2025-02-12 21:27:52,845 - basicLogger - INFO - JSON file found, collecting new stats!
+2025-02-12 21:27:52,845 - basicLogger - INFO - Stats collected! Writing to JSON
+2025-02-12 21:29:33,950 - basicLogger - INFO - Periodic statistics gathering has begun!
+2025-02-12 21:29:38,500 - basicLogger - INFO - JSON file found, collecting new stats!
+2025-02-12 21:29:38,500 - basicLogger - INFO - Stats collected! Writing to JSON
+2025-02-12 21:29:38,501 - basicLogger - DEBUG - JSON Updated on 2025-02-13 05:29:33.952462+00:00
+2025-02-12 21:29:38,501 - basicLogger - INFO - Values added to data.json!
+2025-02-12 21:29:38,960 - basicLogger - INFO - Periodic statistics gathering has begun!
+2025-02-12 21:29:43,433 - basicLogger - INFO - JSON file found, collecting new stats!
+2025-02-12 21:29:43,434 - basicLogger - INFO - Stats collected! Writing to JSON
+2025-02-12 21:29:43,434 - basicLogger - DEBUG - JSON Updated on 2025-02-13 05:29:38.960880+00:00
+2025-02-12 21:29:43,435 - basicLogger - INFO - Values added to data.json!
+2025-02-12 21:29:43,955 - basicLogger - INFO - Periodic statistics gathering has begun!
+2025-02-12 21:29:48,497 - basicLogger - INFO - JSON file found, collecting new stats!
+2025-02-12 21:29:48,497 - basicLogger - INFO - Stats collected! Writing to JSON
+2025-02-12 21:29:48,497 - basicLogger - DEBUG - JSON Updated on 2025-02-13 05:29:43.955605+00:00
+2025-02-12 21:29:48,497 - basicLogger - INFO - Values added to data.json!
+2025-02-12 21:29:48,958 - basicLogger - INFO - Periodic statistics gathering has begun!
+2025-02-12 21:29:53,473 - basicLogger - INFO - JSON file found, collecting new stats!
+2025-02-12 21:29:53,474 - basicLogger - INFO - Stats collected! Writing to JSON
+2025-02-12 21:29:53,475 - basicLogger - DEBUG - JSON Updated on 2025-02-13 05:29:48.959238+00:00
+2025-02-12 21:29:53,475 - basicLogger - INFO - Values added to data.json!
+2025-02-12 21:29:53,950 - basicLogger - INFO - Periodic statistics gathering has begun!
+2025-02-12 21:29:58,452 - basicLogger - INFO - JSON file found, collecting new stats!
+2025-02-12 21:29:58,452 - basicLogger - INFO - Stats collected! Writing to JSON
+2025-02-12 21:29:58,453 - basicLogger - DEBUG - JSON Updated on 2025-02-13 05:29:53.951870+00:00
+2025-02-12 21:29:58,453 - basicLogger - INFO - Values added to data.json!
+2025-02-12 21:29:58,957 - basicLogger - INFO - Periodic statistics gathering has begun!
+2025-02-12 21:30:03,509 - basicLogger - INFO - JSON file found, collecting new stats!
+2025-02-12 21:30:03,510 - basicLogger - INFO - Stats collected! Writing to JSON
+2025-02-12 21:30:03,511 - basicLogger - DEBUG - JSON Updated on 2025-02-13 05:29:58.957686+00:00
+2025-02-12 21:30:03,512 - basicLogger - INFO - Values added to data.json!
+2025-02-12 21:30:03,950 - basicLogger - INFO - Periodic statistics gathering has begun!
+2025-02-12 21:30:08,465 - basicLogger - INFO - JSON file found, collecting new stats!
+2025-02-12 21:30:08,465 - basicLogger - INFO - Stats collected! Writing to JSON
+2025-02-12 21:30:08,465 - basicLogger - DEBUG - JSON Updated on 2025-02-13 05:30:03.950535+00:00
+2025-02-12 21:30:08,465 - basicLogger - INFO - Values added to data.json!
+2025-02-12 21:30:08,952 - basicLogger - INFO - Periodic statistics gathering has begun!
+2025-02-12 21:30:13,447 - basicLogger - INFO - JSON file found, collecting new stats!
+2025-02-12 21:30:13,447 - basicLogger - INFO - Stats collected! Writing to JSON
+2025-02-12 21:30:13,448 - basicLogger - DEBUG - JSON Updated on 2025-02-13 05:30:08.953345+00:00
+2025-02-12 21:30:13,448 - basicLogger - INFO - Values added to data.json!
+2025-02-12 21:30:13,953 - basicLogger - INFO - Periodic statistics gathering has begun!
+2025-02-12 21:30:18,588 - basicLogger - INFO - JSON file found, collecting new stats!
+2025-02-12 21:30:18,588 - basicLogger - INFO - Stats collected! Writing to JSON
+2025-02-12 21:30:18,588 - basicLogger - DEBUG - JSON Updated on 2025-02-13 05:30:13.953819+00:00
+2025-02-12 21:30:18,589 - basicLogger - INFO - Values added to data.json!
+2025-02-12 21:30:18,952 - basicLogger - INFO - Periodic statistics gathering has begun!
+2025-02-12 21:30:23,547 - basicLogger - INFO - JSON file found, collecting new stats!
+2025-02-12 21:30:23,547 - basicLogger - INFO - Stats collected! Writing to JSON
+2025-02-12 21:30:23,547 - basicLogger - DEBUG - JSON Updated on 2025-02-13 05:30:18.952864+00:00
+2025-02-12 21:30:23,548 - basicLogger - INFO - Values added to data.json!
+2025-02-12 21:30:23,954 - basicLogger - INFO - Periodic statistics gathering has begun!
+2025-02-12 21:30:28,460 - basicLogger - INFO - JSON file found, collecting new stats!
+2025-02-12 21:30:28,460 - basicLogger - INFO - Stats collected! Writing to JSON
+2025-02-12 21:30:28,461 - basicLogger - DEBUG - JSON Updated on 2025-02-13 05:30:23.955971+00:00
+2025-02-12 21:30:28,461 - basicLogger - INFO - Values added to data.json!
+2025-02-12 21:30:28,958 - basicLogger - INFO - Periodic statistics gathering has begun!
+2025-02-12 21:30:33,445 - basicLogger - INFO - JSON file found, collecting new stats!
+2025-02-12 21:30:33,445 - basicLogger - INFO - Stats collected! Writing to JSON
+2025-02-12 21:30:33,446 - basicLogger - DEBUG - JSON Updated on 2025-02-13 05:30:28.958682+00:00
+2025-02-12 21:30:33,446 - basicLogger - INFO - Values added to data.json!
+2025-02-12 21:30:33,962 - basicLogger - INFO - Periodic statistics gathering has begun!
+2025-02-12 21:30:38,534 - basicLogger - INFO - JSON file found, collecting new stats!
+2025-02-12 21:30:38,534 - basicLogger - INFO - Stats collected! Writing to JSON
+2025-02-12 21:30:38,534 - basicLogger - DEBUG - JSON Updated on 2025-02-13 05:30:33.963133+00:00
+2025-02-12 21:30:38,535 - basicLogger - INFO - Values added to data.json!
+2025-02-12 21:30:38,963 - basicLogger - INFO - Periodic statistics gathering has begun!
+2025-02-12 21:30:43,477 - basicLogger - INFO - JSON file found, collecting new stats!
+2025-02-12 21:30:43,477 - basicLogger - INFO - Stats collected! Writing to JSON
+2025-02-12 21:30:43,478 - basicLogger - DEBUG - JSON Updated on 2025-02-13 05:30:38.964520+00:00
+2025-02-12 21:30:43,478 - basicLogger - INFO - Values added to data.json!
+2025-02-12 21:30:43,951 - basicLogger - INFO - Periodic statistics gathering has begun!
+2025-02-12 21:30:48,563 - basicLogger - INFO - JSON file found, collecting new stats!
+2025-02-12 21:30:48,563 - basicLogger - INFO - Stats collected! Writing to JSON
+2025-02-12 21:30:48,564 - basicLogger - DEBUG - JSON Updated on 2025-02-13 05:30:43.951355+00:00
+2025-02-12 21:30:48,564 - basicLogger - INFO - Values added to data.json!
+2025-02-12 21:30:48,959 - basicLogger - INFO - Periodic statistics gathering has begun!
+2025-02-12 21:30:53,502 - basicLogger - INFO - JSON file found, collecting new stats!
+2025-02-12 21:30:53,502 - basicLogger - INFO - Stats collected! Writing to JSON
+2025-02-12 21:30:53,502 - basicLogger - DEBUG - JSON Updated on 2025-02-13 05:30:48.959670+00:00
+2025-02-12 21:30:53,503 - basicLogger - INFO - Values added to data.json!
+2025-02-12 21:34:35,838 - basicLogger - INFO - Periodic statistics gathering has begun!
+2025-02-12 21:34:40,428 - basicLogger - INFO - JSON file found, collecting new stats!
+2025-02-12 21:34:40,428 - basicLogger - INFO - Stats collected! Writing to JSON
+2025-02-12 21:34:40,428 - basicLogger - DEBUG - JSON Updated on 2025-02-13 05:34:35.839003+00:00
+2025-02-12 21:34:40,429 - basicLogger - INFO - Values added to data.json!
+2025-02-12 21:35:47,034 - basicLogger - INFO - Get Stats Processing Request received
+2025-02-12 21:36:17,444 - basicLogger - INFO - Get Stats Processing Request received
+2025-02-12 21:36:17,445 - basicLogger - DEBUG - {'avg_exercise_duration': 21.4, 'avg_distance_traveled': 55.0, 'max_hr_readings': 120.0, 'max_weight': 160, 'min_weight': 70, 'time_updated': datetime.datetime(2025, 2, 13, 5, 34, 35, 839003, tzinfo=datetime.timezone.utc)}
+2025-02-12 21:37:01,641 - basicLogger - INFO - Get Stats Processing Request received
+2025-02-12 21:37:01,642 - basicLogger - DEBUG - {'avg_exercise_duration': 21.4, 'avg_distance_traveled': 55.0, 'max_hr_readings': 120.0, 'max_weight': 160, 'min_weight': 70, 'time_updated': datetime.datetime(2025, 2, 13, 5, 34, 35, 839003, tzinfo=datetime.timezone.utc)}
+2025-02-12 21:41:55,336 - basicLogger - INFO - Get Stats Processing Request received
+2025-02-12 21:42:17,531 - basicLogger - INFO - Get Stats Processing Request received
+2025-02-12 21:42:17,532 - basicLogger - DEBUG - {'avg_exercise_duration': 21.4, 'avg_distance_traveled': 55.0, 'max_hr_readings': 120.0, 'max_weight': 160, 'min_weight': 70, 'time_updated': '2025-02-13T05:34:35.839003Z'}
+2025-02-12 21:42:17,532 - basicLogger - INFO - Statistics successfully updated!
+2025-02-12 21:42:59,978 - basicLogger - INFO - Get Stats Processing Request received
+2025-02-12 21:42:59,979 - basicLogger - DEBUG - {'avg_exercise_duration': 21.4, 'avg_distance_traveled': 55.0, 'max_hr_readings': 120.0, 'max_weight': 160, 'min_weight': 70, 'time_updated': '2025-02-13T05:34:35.839003Z'}
+2025-02-12 21:42:59,979 - basicLogger - INFO - Statistics successfully updated!
+2025-02-12 21:43:51,274 - basicLogger - INFO - Get Stats Processing Request received
+2025-02-12 21:43:51,276 - basicLogger - DEBUG - {'avg_exercise_duration': 21.4, 'avg_distance_traveled': 55.0, 'max_hr_readings': 120.0, 'max_weight': 160, 'min_weight': 70, 'time_updated': '2025-02-13T05:34:35.839003Z'}
+2025-02-12 21:43:51,276 - basicLogger - INFO - Statistics successfully updated!
+2025-02-12 21:45:36,779 - basicLogger - INFO - Get Stats Processing Request received
+2025-02-12 21:45:36,779 - basicLogger - ERROR - Statistics do not exist

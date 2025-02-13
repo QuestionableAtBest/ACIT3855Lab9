@@ -38,11 +38,14 @@ def populate_stats():
             app_config["scalestats"]["url"], 
             params={"start_timestamp":last_updated,"end_timestamp":curtime}
         )
-
         watchContent = httpx.get(
             app_config["watchstats"]["url"], 
             params={"start_timestamp":last_updated,"end_timestamp":curtime}
         )
+
+        #Httpx returns Response objects, need to convert to JSON
+        scaleContent = scaleContent.json()
+        watchContent = watchContent.json()
 
         logger.info("JSON file found, collecting new stats!")
         exercise_durs = [dict_item["duration"] for dict_item in watchContent]
@@ -63,12 +66,11 @@ def populate_stats():
         }
 
         logger.info("Stats collected! Writing to JSON")
-        json_new_data = json.dump(new_data)
         #Write json
         with open(app_config["datastore"]["filename"],'w') as current:
-            current.write(json_new_data)
+            json.dump(new_data,current)
             #A debug message with the timestamp
-            logger.debug(f"JSON Updated on {curtime}")
+            logger.debug(f"JSON Updated on {datetime.fromtimestamp(curtime, tz=timezone.utc)}")
 
         #An info message on completion.
         logger.info("Values added to data.json!")
@@ -107,10 +109,11 @@ def get_stats():
             max_hr = max(loaded["watchstore"]["heart_rates"])
             
             #In scale:
-            max_weight, min_weight = max(loaded["scalestore"]["weight"]), min(loaded["scalestore"]["weight"])
+            max_weight, min_weight = max(loaded["scalestore"]["weights"]), min(loaded["scalestore"]["weights"])
 
             #UTC Time to a human readable timestamp
             human_time = datetime.fromtimestamp(loaded["time_updated"], tz=timezone.utc)
+            human_time = human_time.strftime("%Y-%m-%dT%H:%M:%S.%fZ")
             #convert to dictionary
             new_data = {
                 "avg_exercise_duration":avg_ex_dur,
@@ -121,12 +124,10 @@ def get_stats():
                 "time_updated":human_time
             }
             logger.debug(f"{new_data}")
-            #convert to json
-            datajson = json.dump(new_data)
+            #Write to json
             with open("./processing/stats.json", "w") as current:
-                current.write(datajson)
+                json.dump(new_data,current)
             logger.info("Statistics successfully updated!")
-
     except FileNotFoundError:
         logger.error("Statistics do not exist")
         return NoContent, 404

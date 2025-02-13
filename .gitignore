@@ -5,6 +5,6 @@
 ./receiver/app_conf.yml
 ./storage/app_conf.yml
 ./storage/app.log
-./receiver/app.log
+./receiver.app.log
 ./processing/app.log
 ./processing/data.json
