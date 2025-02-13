@@ -1,0 +1,32 @@
+2025-02-12 20:38:38,332 - basicLogger - INFO - Periodic statistics gathering has begun!
+2025-02-12 20:38:38,333 - basicLogger - INFO - No json detected, generating default
+2025-02-12 20:38:38,334 - basicLogger - INFO - Processing logger finished on default route!
+2025-02-12 20:38:48,336 - basicLogger - INFO - Periodic statistics gathering has begun!
+2025-02-12 20:38:52,943 - basicLogger - INFO - JSON file found, collecting new stats!
+2025-02-12 20:38:58,332 - basicLogger - INFO - Periodic statistics gathering has begun!
+2025-02-12 20:39:02,838 - basicLogger - INFO - JSON file found, collecting new stats!
+2025-02-12 20:40:45,308 - basicLogger - INFO - Periodic statistics gathering has begun!
+2025-02-12 20:40:49,996 - basicLogger - INFO - JSON file found, collecting new stats!
+2025-02-12 20:40:55,296 - basicLogger - INFO - Periodic statistics gathering has begun!
+2025-02-12 20:40:59,931 - basicLogger - INFO - JSON file found, collecting new stats!
+2025-02-12 20:51:01,093 - basicLogger - INFO - Periodic statistics gathering has begun!
+2025-02-12 20:51:05,666 - basicLogger - INFO - JSON file found, collecting new stats!
+2025-02-12 20:51:11,086 - basicLogger - INFO - Periodic statistics gathering has begun!
+2025-02-12 20:51:15,606 - basicLogger - INFO - JSON file found, collecting new stats!
+2025-02-12 20:53:35,941 - basicLogger - INFO - Periodic statistics gathering has begun!
+2025-02-12 20:53:40,611 - basicLogger - INFO - JSON file found, collecting new stats!
+2025-02-12 20:53:45,936 - basicLogger - INFO - Periodic statistics gathering has begun!
+2025-02-12 20:54:13,182 - basicLogger - INFO - Periodic statistics gathering has begun!
+2025-02-12 20:54:17,775 - basicLogger - INFO - JSON file found, collecting new stats!
+2025-02-12 20:56:18,636 - basicLogger - INFO - Periodic statistics gathering has begun!
+2025-02-12 20:56:23,158 - basicLogger - INFO - JSON file found, collecting new stats!
+2025-02-12 21:01:32,237 - basicLogger - INFO - Periodic statistics gathering has begun!
+2025-02-12 21:01:36,738 - basicLogger - INFO - JSON file found, collecting new stats!
+2025-02-12 21:01:42,251 - basicLogger - INFO - Periodic statistics gathering has begun!
+2025-02-12 21:01:46,741 - basicLogger - INFO - JSON file found, collecting new stats!
+2025-02-12 21:01:52,250 - basicLogger - INFO - Periodic statistics gathering has begun!
+2025-02-12 21:01:56,847 - basicLogger - INFO - JSON file found, collecting new stats!
+2025-02-12 21:04:11,560 - basicLogger - INFO - Periodic statistics gathering has begun!
+2025-02-12 21:04:16,082 - basicLogger - INFO - JSON file found, collecting new stats!
+2025-02-12 21:04:21,558 - basicLogger - INFO - Periodic statistics gathering has begun!
+2025-02-12 21:04:26,109 - basicLogger - INFO - JSON file found, collecting new stats!

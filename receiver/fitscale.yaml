@@ -23,36 +23,6 @@ paths:
         '400':
           description: 'invalid input, object invalid'
     parameters: []
-    get: 
-      tags:
-        - watches
-      summary: Watch stats from exercise events.
-      operationId: app.report_watch
-      description: Gets exercise event stats added after a timestamp
-      parameters:
-        - name: start_timestamp
-      in: query
-      description: Limits the number of readings returned
-      schema:
-        type: string
-        format: date-time
-        example: 2016-08-29T09:12:33.001Z
-      - name: end_timestamp
-      in: query
-      description: Limits the number of readings returned
-      schema:
-        type: string
-        format: date-time
-        example: 2016-08-29T09:12:33.001Z
-      responses:
-        '200':
-          description: Successfully returned a list of exercise events
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Watch'
   /fitscale/scale:
     post:
       summary: reports scale data
@@ -70,36 +40,6 @@ paths:
         '400':
           description: 'invalid input, object invalid'
     parameters: []
-    get: 
-      tags:
-        - devices
-      summary: Scale event statistics
-      operationId: app.report_scale
-      description: Gets scale event stats added after a timestamp
-      parameters:
-        - name: start_timestamp
-      in: query
-      description: Limits the number of readings returned
-      schema:
-        type: string
-        format: date-time
-        example: 2016-08-29T09:12:33.001Z
-      - name: end_timestamp
-      in: query
-      description: Limits the number of readings returned
-      schema:
-        type: string
-        format: date-time
-        example: 2016-08-29T09:12:33.001Z
-      responses:
-        '200':
-          description: Successfully returned a scale events
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Scale'
 components:
   schemas:
     Watch:
@@ -113,7 +53,6 @@ components:
         - duration
         - avg_heart_rate
         - timestamp
-        - trace_id
       properties:
         device_id:
           type: string
@@ -126,8 +65,6 @@ components:
           example: Harry
         exercise_type:
           type: string
-          x-stoplight:
-            id: 5gptu1jhyxt2r
           example: Swimming
         distance:
           type: number
@@ -135,16 +72,12 @@ components:
           example: 120
           minimum: 0
         duration:
-          type: integer
-          x-stoplight:
-            id: l2est8hnv4ciq
-          example: '60'
-          minimum: 0
+          type: number
+          example: '60.0'
+          minimum: 0.0
         avg_heart_rate:
-          type: integer
-          x-stoplight:
-            id: viezz7ewve097
-          minimum: 0
+          type: number
+          minimum: 0.0
         timestamp:
           type: string
           description: timestamp when exercise was logged
@@ -152,8 +85,6 @@ components:
           example: '2016-08-29T09:12:33.001Z'
         trace_id:
           type: integer
-          x-stoplight:
-            id: hierz7ewve097
           minimum: 0
     Scale:
       type: object
@@ -178,24 +109,16 @@ components:
           minimum: 0
         age:
           type: integer
-          x-stoplight:
-            id: 8z0wbcvtqy272
           example: 10
         gender:
           type: string
-          x-stoplight:
-            id: zgxuwcvjnmkr2
           example: Male
         body_fat_percentage:
           type: number
-          x-stoplight:
-            id: h28lsaff05fj8
           example: 15.7
           minimum: 0
         height:
           type: number
-          x-stoplight:
-            id: rsyuyv2lvbd81
           example: 170
           minimum: 0
         timestamp:
@@ -204,5 +127,3 @@ components:
           example: '2016-08-29T09:12:33.001Z'
         trace_id:
           type: integer
-          x-stoplight:
-            id: benra8ewve087

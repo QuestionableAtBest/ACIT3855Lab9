@@ -1,3 +1,9 @@
 version: 1
+datastore:
+  filename: ./processing/data.json
 scheduler:
-  interval: 30
+  interval: 10
+scalestats:
+  url: http://localhost:8090/fitscale/scale/
+watchstats:
+  url: http://localhost:8090/fitscale/watch/

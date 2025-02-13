@@ -1,3 +1,4 @@
+#Use docker-compose up -d in this file directory to start it up.
 services:
   db:
     image: mysql

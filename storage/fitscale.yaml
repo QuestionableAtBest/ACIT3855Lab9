@@ -27,26 +27,24 @@ paths:
       tags:
         - watches
       summary: Watch stats from exercise events.
-      operationId: app.report_watch
+      operationId: app.get_watch_readings
       description: Gets exercise event stats added after a timestamp
       parameters:
         - name: start_timestamp
           in: query
           description: Limits the number of readings returned
           schema:
-            type: string
-            format: date-time
-            example: 2016-08-29T09:12:33.001Z
+            type: number
+            example: 0.00
         - name: end_timestamp
           in: query
           description: Limits the number of readings returned
           schema:
-            type: string
-            format: date-time
-            example: 2016-08-29T09:12:33.001Z
+            type: number
+            example: 0.00
       responses:
         '200':
-          description: Successfully returned a list of exercise events
+          description: Successfully returned watch events
           content:
             application/json:
               schema:
@@ -74,26 +72,24 @@ paths:
       tags:
         - devices
       summary: Scale event statistics
-      operationId: app.report_scale
+      operationId: app.get_scale_readings
       description: Gets scale event stats added after a timestamp
       parameters:
         - name: start_timestamp
           in: query
           description: Limits the number of readings returned
           schema:
-            type: string
-            format: date-time
-            example: 2016-08-29T09:12:33.001Z
+            type: number
+            example: 0.00 # The epoch, datetime sucks. I hate it.
         - name: end_timestamp
           in: query
           description: Limits the number of readings returned
           schema:
-            type: string
-            format: date-time
-            example: 2016-08-29T09:12:33.001Z
+            type: number
+            example: 0.00
       responses:
         '200':
-          description: Successfully returned a scale events
+          description: Successfully returned scale events
           content:
             application/json:
               schema:
@@ -113,7 +109,6 @@ components:
         - duration
         - avg_heart_rate
         - timestamp
-        - trace_id
       properties:
         device_id:
           type: string
@@ -135,15 +130,11 @@ components:
           example: 120
           minimum: 0
         duration:
-          type: integer
-          x-stoplight:
-            id: l2est8hnv4ciq
-          example: '60'
+          type: number
+          example: '60.0'
           minimum: 0
         avg_heart_rate:
-          type: integer
-          x-stoplight:
-            id: viezz7ewve097
+          type: number
           minimum: 0
         timestamp:
           type: string
@@ -152,8 +143,6 @@ components:
           example: '2016-08-29T09:12:33.001Z'
         trace_id:
           type: integer
-          x-stoplight:
-            id: hierz7ewve097
           minimum: 0
     Scale:
       type: object
@@ -165,7 +154,6 @@ components:
         - body_fat_percentage
         - height
         - timestamp
-        - trace_id
       properties:
         scale_id:
           type: string
@@ -179,24 +167,16 @@ components:
           minimum: 0
         age:
           type: integer
-          x-stoplight:
-            id: 8z0wbcvtqy272
           example: 10
         gender:
           type: string
-          x-stoplight:
-            id: zgxuwcvjnmkr2
           example: Male
         body_fat_percentage:
           type: number
-          x-stoplight:
-            id: h28lsaff05fj8
           example: 15.7
           minimum: 0
         height:
           type: number
-          x-stoplight:
-            id: rsyuyv2lvbd81
           example: 170
           minimum: 0
         timestamp:
@@ -205,5 +185,3 @@ components:
           example: '2016-08-29T09:12:33.001Z'
         trace_id:
           type: integer
-          x-stoplight:
-            id: benra8ewve087

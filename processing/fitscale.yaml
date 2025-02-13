@@ -9,11 +9,11 @@ paths:
   /stats:
     get:
       summary: Gets the event stats
-      operationId: app.populate_stats
+      operationId: app.get_stats
       description: Gets Exercise and Scale processsed statistics
       responses:
         '200':
-          description: Successfully returned a list of blood pressure events
+          description: Successfully returned a list of scale and watch events
           content:
             application/json:
               schema:
@@ -35,9 +35,9 @@ components:
       required:
         - avg_exercise_duration
         - avg_distance_traveled
+        - max_hr_readings
         - max_weight
         - min_weight
-        - max_hr_readings
       properties:
         avg_exercise_duration:
           type: number
@@ -45,14 +45,14 @@ components:
         avg_distance_traveled:
           type: number
           example: 5000
+        max_hr_readings:
+          type: integer
+          example: 130
         max_weight:
           type: number 
           example: 70.90
         min_weight:
           type: number
           example: 50.12
-        max_hr_readings:
-          type: integer
-          example: 130
       type: object
 

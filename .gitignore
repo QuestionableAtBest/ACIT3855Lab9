@@ -7,3 +7,4 @@
 ./storage/app.log
 ./receiver/app.log
 ./processing/app.log
+./processing/data.json
