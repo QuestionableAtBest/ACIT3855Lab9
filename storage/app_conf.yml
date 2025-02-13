@@ -1,7 +1,0 @@
-version: 1
-datastore:
-  user: harry
-  password: harry
-  hostname: localhost
-  port: 3306
-  db: fitscale
