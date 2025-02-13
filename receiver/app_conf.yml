@@ -1,8 +1,4 @@
 version: 1
-scalestore:
-  url: http://localhost:8090/fitscale/scale
-watchstore:
-  url: http://localhost:8090/fitscale/watch
 events:
   hostname: localhost
   port: 9092

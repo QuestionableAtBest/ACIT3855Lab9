@@ -7,22 +7,6 @@ info:
   version: 1.0.0
 paths:
   /fitscale/watch:
-    post:
-      summary: reports watch data
-      description: Adds a new exercise log report to the system
-      operationId: app.report_watch
-      requestBody:
-        description: Exercise report to add
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Watch'
-      responses:
-        '201':
-          description: item created
-        '400':
-          description: 'invalid input, object invalid'
-    parameters: []
     get: 
       tags:
         - watches
@@ -54,22 +38,6 @@ paths:
                 items:
                   $ref: '#/components/schemas/Watch'
   /fitscale/scale:
-    post:
-      summary: reports scale data
-      description: Adds a new scale results to the system
-      operationId: app.report_scale
-      requestBody:
-        description: Scale results to add
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Scale'
-      responses:
-        '201':
-          description: item created
-        '400':
-          description: 'invalid input, object invalid'
-    parameters: []
     get: 
       tags:
         - devices

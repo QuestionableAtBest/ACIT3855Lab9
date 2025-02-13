@@ -12,6 +12,7 @@ from sqlalchemy.sql import select
 from datetime import datetime
 from pykafka import KafkaClient
 from pykafka.common import OffsetType
+from threading import Thread
 import json
 app = connexion.FlaskApp(__name__, specification_dir='')
 app.add_api("fitscale.yaml", strict_validation=True,validate_responses=True)
@@ -29,44 +30,6 @@ logger = logging.getLogger('basicLogger')
 #New storage
 def make_session():
     return sessionmaker(bind=engine)()
-
-# def report_watch(body):
-#     session = make_session()
-#     event = Watch(
-#         device_id=body["device_id"],
-#         user_id = body["user_id"],
-#         exercise_type = body["exercise_type"],
-#         distance = body["distance"],
-#         duration = body["duration"],
-#         avg_heart_rate = body["avg_heart_rate"],
-#         timestamp = datetime.strptime(body["timestamp"], "%Y-%m-%dT%H:%M:%S.%fZ"),
-#         trace_id = body["trace_id"]
-#     )
-#     session.add(event)
-#     session.commit()
-#     session.close()
-
-#     logger.debug(f"Stored watch results with trace id of {body['trace_id']}")
-#     return NoContent, 201
-
-# def report_scale(body):
-#     session = make_session()
-#     event = Scale(
-#         scale_id=body["scale_id"],
-#         weight = body["weight"],
-#         age = body["age"],
-#         gender = body["gender"],
-#         height = body["height"],
-#         body_fat_percentage = body["body_fat_percentage"],
-#         timestamp = datetime.strptime(body["timestamp"], "%Y-%m-%dT%H:%M:%S.%fZ"),
-#         trace_id = body["trace_id"]
-#     )
-#     session.add(event)
-#     session.commit()
-#     session.close()
-#     logger.debug(f"Stored scale results with trace id of {body['trace_id']}")
-#     return NoContent, 201
-
 
 def get_scale_readings(start_timestamp, end_timestamp):
     session = make_session()
@@ -146,6 +109,12 @@ def process_messages():
             return NoContent, 201
         consumer.commit_offsets()
 
+def setup_kafka_thread():
+    t1 = Thread(target=process_messages)
+    t1.setDaemon(True)
+    t1.start()
+
 if __name__ == "__main__":
     live.make_tables()
+    setup_kafka_thread()
     app.run(port=8090)
