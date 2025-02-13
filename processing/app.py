@@ -111,6 +111,7 @@ def get_stats():
             loaded = json.load(current)
             logger.debug(f"{loaded}")
             logger.info("Statistics Outputted!")
+            return loaded, 201
     except FileNotFoundError:
         logger.error("Statistics do not exist")
         return NoContent, 404
