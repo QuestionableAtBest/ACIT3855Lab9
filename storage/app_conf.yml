@@ -5,3 +5,7 @@ datastore:
   hostname: localhost
   port: 3306
   db: fitscale
+events:
+  hostname: localhost
+  port: 9092
+  topic: events

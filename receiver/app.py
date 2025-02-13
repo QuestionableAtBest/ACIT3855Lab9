@@ -4,7 +4,10 @@ import time
 import yaml
 import logging
 import logging.config
+from pykafka import KafkaClient
 from connexion import NoContent
+from datetime import datetime as dt
+import json
 app = connexion.FlaskApp(__name__, specification_dir='')
 app.add_api("fitscale.yaml", strict_validation=True,validate_responses=True)
 
@@ -21,17 +24,31 @@ def report_watch(body):
     trace_id = time.time_ns()
     logger.info(f"Received event watch results with trace id of {trace_id}")
     body["trace_id"] = trace_id
-    r = httpx.post(app_config["watchstore"]["url"],json=body)
-    logger.info(f"Response for event watch results, id:{trace_id} has status {r.status_code}")
-    return NoContent,r.status_code
+    client = KafkaClient(hosts=f"{app_config['events']['hostname']}:{app_config['events']['port']}")
+    topic = client.topics[str.encode(app_config["events"]["topic"])]
+    producer = topic.get_sync_producer()
+    msg = { "type": "watch_event",
+        "datetime": dt.now().strftime("%Y-%m-%dT%H:%M:%S"),
+        "payload": body
+    }
+    msg_str = json.dumps(msg)
+    producer.produce(msg_str.encode('utf-8'))
+    return NoContent, 201
 
 def report_scale(body):
     trace_id = time.time_ns()
+    logger.info(f"Received event watch results with trace id of {trace_id}")
     body["trace_id"] = trace_id
-    logger.info(f"Received event scale results with trace id of {trace_id}")
-    r = httpx.post(app_config["scalestore"]["url"],json=body)
-    logger.info(f"Response for event scale results, id:{trace_id} has status {r.status_code}")
-    return NoContent, r.status_code
+    client = KafkaClient(hosts=f"{app_config['events']['hostname']}:{app_config['events']['port']}")
+    topic = client.topics[str.encode(app_config["events"]["topic"])]
+    producer = topic.get_sync_producer()
+    msg = { "type": "scale_event",
+        "datetime": dt.now().strftime("%Y-%m-%dT%H:%M:%S"),
+        "payload": body
+    }
+    msg_str = json.dumps(msg)
+    producer.produce(msg_str.encode('utf-8'))
+    return NoContent, 201
 
 if __name__ == "__main__":
     app.run(port=8080)
