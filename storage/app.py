@@ -74,7 +74,7 @@ def process_messages():
         # Store the event1 (i.e., the payload) to the DB
             session = make_session()
             event = Scale(
-                scale_id=payload["scale_id"],
+                device_id=payload["scale_id"],
                 weight = payload["weight"],
                 age = payload["age"],
                 gender = payload["gender"],
