@@ -25,9 +25,7 @@ Base.metadata.create_all(engine)
 logger = logging.getLogger('basicLogger')
 #New storage
 def make_session():
-    session = sessionmaker(bind=engine)()
-    session.execute(text("SET time_zone = 'UTC'"))
-    return session
+    return sessionmaker(bind=engine)()
 
 def report_watch(body):
     session = make_session()
