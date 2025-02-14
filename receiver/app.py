@@ -33,6 +33,7 @@ def report_watch(body):
     }
     msg_str = json.dumps(msg)
     producer.produce(msg_str.encode('utf-8'))
+    time.sleep(0.1)
     return NoContent, 201
 
 def report_scale(body):

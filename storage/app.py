@@ -63,7 +63,7 @@ def process_messages():
     # Create a consume on a consumer group, that only reads new messages
     # (uncommitted messages) when the service re-starts (i.e., it doesn't
     # read all the old messages from the history in the message queue).
-    consumer = topic.get_simple_consumer(consumer_group=b'event_group',reset_offset_on_start=False, auto_offset_reset=OffsetType.LATEST)
+    consumer = topic.get_simple_consumer(consumer_group=b'event_group',reset_offset_on_start=False,auto_offset_reset=OffsetType.LATEST)
     # This is blocking - it will wait for a new message
     for msg in consumer:
         msg_str = msg.value.decode('utf-8')
@@ -73,13 +73,13 @@ def process_messages():
         if msg["type"] == "watch_event": # Change this to your event type
         # Store the event1 (i.e., the payload) to the DB
             session = make_session()
-            event = Scale(
-                device_id=payload["scale_id"],
-                weight = payload["weight"],
-                age = payload["age"],
-                gender = payload["gender"],
-                height = payload["height"],
-                body_fat_percentage = payload["body_fat_percentage"],
+            event = Watch(
+                device_id=payload["device_id"],
+                user_id = payload["user_id"],
+                exercise_type = payload["exercise_type"],
+                distance = payload["distance"],
+                duration = payload["duration"],
+                avg_heart_rate = payload["avg_heart_rate"],
                 timestamp = datetime.strptime(payload["timestamp"], "%Y-%m-%dT%H:%M:%S.%fZ"),
                 trace_id = payload["trace_id"]
             )
@@ -87,7 +87,6 @@ def process_messages():
             session.commit()
             session.close()
             logger.debug(f"Stored scale results with trace id of {payload['trace_id']}")
-            return NoContent, 201
         elif msg["type"] == "scale_event": # Change this to your event type
         # Store the event2 (i.e., the payload) to the DB
         # Commit the new message as being read
@@ -106,7 +105,6 @@ def process_messages():
             session.commit()
             session.close()
             logger.debug(f"Stored scale results with trace id of {payload['trace_id']}")
-            return NoContent, 201
         consumer.commit_offsets()
 
 def setup_kafka_thread():
