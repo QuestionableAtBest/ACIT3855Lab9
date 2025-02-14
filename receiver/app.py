@@ -1,5 +1,4 @@
 import connexion
-import httpx
 import time
 import yaml
 import logging
