@@ -1,0 +1,86 @@
+openapi: 3.0.0
+info:
+  title: Audit API
+  description: This API provides audit info
+  contact:
+    email: hzhou51@my.bcit.ca
+  version: 1.0.0
+paths:
+  /stats:
+    get: 
+      tags:
+        - stats
+      summary: Return statistics about watch and scale events.
+      operationId: app.get_event_stats
+      description: Return statistics about events
+      responses:
+        '200':
+          description: Successfully returned stats
+          content:
+            application/json:
+              schema:
+                  $ref: '#/components/schemas/Watch'
+  /scale:
+    get: 
+      tags:
+        - query
+      summary: get a scale reading from history
+      operationId: app.get_scale
+      description: gets scaling readings from event store
+      parameters:
+        - name: index
+          in: query
+          description: Gets the scale at the index in the event store
+          schema:
+            type: integer
+            example: 100
+      responses:
+        '200':
+          description: Successfully returned scale reading
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Scale'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+  /watch:
+      get: 
+        tags:
+          - query
+        summary: get a scale reading from history
+        operationId: app.get_watch
+        description: gets watch readings from event store
+        parameters:
+          - name: index
+            in: query
+            description: Index of the desired event
+            schema:
+              type: integer
+              example: 100
+        responses:
+          '200':
+            description: Successfully returned scale events
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Scale'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
