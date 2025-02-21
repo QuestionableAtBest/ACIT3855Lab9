@@ -1,10 +1,8 @@
 import connexion
 import live
-from sqlalchemy import text
 import logging
 import logging.config
 import yaml
-from connexion import NoContent
 from models import Base,Watch,Scale
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker

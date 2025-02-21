@@ -5,9 +5,13 @@ meta {
 }
 
 post {
-  url: http://127.0.0.1:8080/fitscale/scale
+  url: http://127.0.0.1:8110/scale?index=1
   body: json
   auth: none
+}
+
+params:query {
+  index: 1
 }
 
 body:json {

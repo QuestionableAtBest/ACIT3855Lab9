@@ -6,7 +6,6 @@ from statistics import mean
 import yaml,httpx,connexion
 from connexion import NoContent
 from datetime import datetime,timezone
-import time
 # Proccessing needed
 import apscheduler.schedulers.background as apsched
 app = connexion.FlaskApp(__name__, specification_dir='')

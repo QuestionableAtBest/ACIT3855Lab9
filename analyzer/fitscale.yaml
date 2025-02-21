@@ -11,7 +11,7 @@ paths:
       tags:
         - stats
       summary: Return statistics about watch and scale events.
-      operationId: app.get_event_stats
+      operationId: app.get_stats
       description: Return statistics about events
       responses:
         '200':
@@ -40,7 +40,7 @@ paths:
           content:
             application/json:
               schema:
-                type: array
+                type: object
                 items:
                   $ref: '#/components/schemas/Scale'
         '400':
@@ -72,18 +72,18 @@ paths:
             content:
               application/json:
                 schema:
-                  type: array
+                  type: object
                   items:
                     $ref: '#/components/schemas/Watch'
-        '400':
-          description: Invalid request
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    type: string
+          '400':
+            description: Invalid request
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    message:
+                      type: string
 
 components:
   schemas:
@@ -173,8 +173,8 @@ components:
           type: integer
     Stats:
       required:
-        - num_bp
-        - num_hr
+        - num_w
+        - num_s
       properties:
         num_w:
           type: integer
