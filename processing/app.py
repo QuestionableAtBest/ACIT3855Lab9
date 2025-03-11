@@ -10,11 +10,11 @@ app = connexion.FlaskApp(__name__, specification_dir='')
 app.add_api("fitscale.yaml", strict_validation=True,validate_responses=True)
 
 #Pull app config (variables)
-with open('processing_conf.yml', 'r') as f:
+with open('./configs/processing_conf.yml', 'r') as f:
     app_config = yaml.safe_load(f.read())
 
 #Pull logging config and create logger
-with open("processing_log_conf.yml", "r") as f:
+with open("./configs/processing_log_conf.yml", "r") as f:
     LOG_CONFIG = yaml.safe_load(f.read()) 
     logging.config.dictConfig(LOG_CONFIG)
 

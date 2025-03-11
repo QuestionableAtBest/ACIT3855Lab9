@@ -1,8 +1,7 @@
 storage/__pycache__
 receiver/__pycache__
 processing/__pycache__
-storage/app.log
-receiver/app.log
-processing/app.log
-processing/data.json
 HTTP Request Watch.jmx
+configs
+data
+logs

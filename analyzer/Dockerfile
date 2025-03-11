@@ -10,9 +10,6 @@ WORKDIR /app
 RUN pip3 install -r requirements.txt
 # Copy the source code
 COPY . /app
-# Copy the config files
-COPY ../configs/analyzer_conf.yml /app
-COPY ../configs/analyzer_log_conf.yml /app
 # Change permissions and become a non-privileged user
 RUN chown -R nobody:nogroup /app
 USER nobody

@@ -15,11 +15,11 @@ import json
 app = connexion.FlaskApp(__name__, specification_dir='')
 app.add_api("fitscale.yaml", strict_validation=True,validate_responses=True)
 
-with open("storage_log_conf.yml", "r") as f:
+with open("./configs/storage_log_conf.yml", "r") as f:
     LOG_CONFIG = yaml.safe_load(f.read()) 
     logging.config.dictConfig(LOG_CONFIG)
 
-with open('storage_conf.yml', 'r') as f:
+with open('./configs/storage_conf.yml', 'r') as f:
     app_config = yaml.safe_load(f.read())
 
 engine = create_engine(f"mysql://{app_config['datastore']['user']}:{app_config['datastore']['password']}@{app_config['datastore']['hostname']}:{app_config['datastore']['port']}/{app_config['datastore']['db']}")

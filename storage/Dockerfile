@@ -10,9 +10,6 @@ WORKDIR /app
 RUN pip3 install -r requirements.txt
 # Copy the source code
 COPY . /app
-#Copy config file
-COPY ../configs/storage_conf.yml /app
-COPY ../configs/storage_log_conf.yml /app
 # Change permissions and become a non-privileged user
 RUN chown -R nobody:nogroup /app
 USER nobody
