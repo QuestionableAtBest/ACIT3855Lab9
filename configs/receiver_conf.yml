@@ -1,5 +1,5 @@
 version: 1
 events:
-  hostname: localhost
+  hostname: kafla
   port: 9092
   topic: events

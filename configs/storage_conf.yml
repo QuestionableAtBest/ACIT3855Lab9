@@ -2,10 +2,10 @@ version: 1
 datastore:
   user: harry
   password: harry
-  hostname: localhost
+  hostname: db
   port: 3306
   db: fitscale
 events:
-  hostname: localhost
+  hostname: kafka
   port: 9092
   topic: events
