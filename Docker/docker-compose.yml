@@ -1,6 +1,7 @@
 #Use docker-compose up -d in this file directory to start it up.
 services:
   receiver:
+    container_name: receiver
     build:
       context: ../receiver
       dockerfile: Dockerfile
@@ -10,9 +11,13 @@ services:
       - type: bind
         source: ../logs/
         target: /app/logs/
+      - type: bind
+        source: ../configs/receiver/
+        target: /app/configs/
     depends_on:
       - kafka
   storage:
+    container_name: storage
     build:
       context: ../storage
       dockerfile: Dockerfile
@@ -20,10 +25,14 @@ services:
       - type: bind
         source: ../logs/
         target: /app/logs/
+      - type: bind
+        source: ../configs/storage/
+        target: /app/configs/
     depends_on:
       - db
       - kafka
   processing:
+    container_name: processing
     build:
       context: ../processing
       dockerfile: Dockerfile
@@ -36,9 +45,13 @@ services:
       - type: bind
         source: ../data/
         target: /app/data/
+      - type: bind
+        source: ../configs/processing/
+        target: /app/configs/
     depends_on:
       - db
   analyzer:
+    container_name: analyzer
     build:
       context: ../analyzer
       dockerfile: Dockerfile
@@ -48,13 +61,18 @@ services:
       - type: bind
         source: ../logs/
         target: /app/logs/
+      - type: bind
+        source: ../configs/analyzer/
+        target: /configs
     depends_on:
       - kafka
   zookeeper:
+    container_name: zookeeper
     image: wurstmeister/zookeeper
     volumes:
       - zookeeper_db:/data
   kafka:
+    container_name: kafka
     image: wurstmeister/kafka
     command: [start-kafka.sh]
     environment:
@@ -71,6 +89,7 @@ services:
     depends_on:
       - "zookeeper"
   db:
+    container_name: db
     image: mysql
     restart: always
     environment:
@@ -78,10 +97,8 @@ services:
       MYSQL_USER: harry
       MYSQL_PASSWORD: harry
       MYSQL_DATABASE: fitscale
-    ports:
-      - 3306:3306
     volumes:
       # Where our data will be persisted
       - ../data/database/:/var/lib/mysql
 volumes:
-  zookeeper_db
+  zookeeper_db:
