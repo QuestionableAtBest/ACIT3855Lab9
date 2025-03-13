@@ -2,6 +2,7 @@ storage/__pycache__
 receiver/__pycache__
 processing/__pycache__
 analyzer/__pycache__
+Microservices
 *.csv
 *.jmx
 configs
