@@ -2,10 +2,8 @@ storage/__pycache__
 receiver/__pycache__
 processing/__pycache__
 analyzer/__pycache__
-Microservices
-HTTP Request Watch.jmx
-*.csv
-*.jmx
-configs/*
-data/*
+configs_prod
+data/database/*
+data/kafka/kafka-logs-kafka/*
+data/processing/*
 logs/*
