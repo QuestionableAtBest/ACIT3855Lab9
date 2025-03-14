@@ -1,6 +1,7 @@
 #Use docker-compose up -d in this file directory to start it up.
 services:
   receiver:
+    restart: always
     container_name: receiver
     build:
       context: ../receiver
@@ -33,6 +34,7 @@ services:
       - db
       - kafka
   processing:
+    restart: always
     container_name: processing
     build:
       context: ../processing
@@ -52,6 +54,7 @@ services:
     depends_on:
       - db
   analyzer:
+    restart: always
     container_name: analyzer
     build:
       context: ../analyzer
@@ -68,11 +71,13 @@ services:
     depends_on:
       - kafka
   zookeeper:
+    restart: always
     container_name: zookeeper
     image: wurstmeister/zookeeper
     volumes:
       - zookeeper_db:/data
   kafka:
+    restart: always
     container_name: kafka
     image: wurstmeister/kafka
     command: bash -c "if [ -f /kafka/kafka-logs-kafka/meta.properties ]; then rm /kafka/kafka-logs-kafka/meta.properties; fi && start-kafka.sh"
