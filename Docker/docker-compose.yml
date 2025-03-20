@@ -102,6 +102,9 @@ services:
     env_file: ".env"
     environment:
       MYSQL_RANDOM_ROOT_PASSWORD: 1
+      MYSQL_USER: "${DB_USER}"
+      MYSQL_PASSWORD: "${DB_PASSWORD}"
+      MYSQL_DATABASE: "${DB_DATABASE}"
     volumes:
       # Where our data will be persisted
       - ../data/database/:/var/lib/mysql
