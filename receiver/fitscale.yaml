@@ -1,0 +1,129 @@
+openapi: 3.0.0
+info:
+  title: FitScale API
+  description: Simple API for smart watches and smart scales.
+  contact:
+    email: hzhou51@my.bcit.ca
+  version: 1.0.0
+paths:
+  /fitscale/watch:
+    post:
+      summary: reports watch data
+      description: Adds a new exercise log report to the system
+      operationId: app.report_watch
+      requestBody:
+        description: Exercise report to add
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Watch'
+      responses:
+        '201':
+          description: item created
+        '400':
+          description: 'invalid input, object invalid'
+    parameters: []
+  /fitscale/scale:
+    post:
+      summary: reports scale data
+      description: Adds a new scale results to the system
+      operationId: app.report_scale
+      requestBody:
+        description: Scale results to add
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Scale'
+      responses:
+        '201':
+          description: item created
+        '400':
+          description: 'invalid input, object invalid'
+    parameters: []
+components:
+  schemas:
+    Watch:
+      type: object
+      x-examples: {}
+      required:
+        - device_id
+        - user_id
+        - exercise_type
+        - distance
+        - duration
+        - avg_heart_rate
+        - timestamp
+      properties:
+        device_id:
+          type: string
+          description: The watch ID for reporting exercise logs
+          format: uuid
+          example: d290f1ee-6c54-4b01-90e6-d701748f0851
+        user_id:
+          type: string
+          description: user's name
+          example: Harry
+        exercise_type:
+          type: string
+          example: Swimming
+        distance:
+          type: number
+          description: distance traveled during exercise
+          example: 120
+          minimum: 0
+        duration:
+          type: number
+          example: '60.0'
+          minimum: 0.0
+        avg_heart_rate:
+          type: number
+          minimum: 0.0
+        timestamp:
+          type: string
+          description: timestamp when exercise was logged
+          format: date-time
+          example: '2016-08-29T09:12:33.001Z'
+        trace_id:
+          type: integer
+          minimum: 0
+    Scale:
+      type: object
+      required:
+        - scale_id
+        - weight
+        - age
+        - gender
+        - body_fat_percentage
+        - height
+        - timestamp
+      properties:
+        scale_id:
+          type: string
+          description: Scale ID for the report
+          format: uuid
+          example: d290f1ee-6c54-4b01-90e6-d701748f0851
+        weight:
+          type: number
+          description: user's measured weight
+          example: 72.5
+          minimum: 0
+        age:
+          type: integer
+          example: 10
+        gender:
+          type: string
+          example: Male
+        body_fat_percentage:
+          type: number
+          example: 15.7
+          minimum: 0
+        height:
+          type: number
+          example: 170
+          minimum: 0
+        timestamp:
+          type: string
+          format: date-time
+          example: '2016-08-29T09:12:33.001Z'
+        trace_id:
+          type: integer

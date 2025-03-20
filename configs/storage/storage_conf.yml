@@ -1,0 +1,11 @@
+version: 1
+datastore:
+  user: //ADD USER HERE
+  password: //ADD PASSWORD HERE
+  hostname: db
+  port: 3306
+  db: fitscale
+events:
+  hostname: kafka
+  port: 29092
+  topic: events

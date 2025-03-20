@@ -1,0 +1,9 @@
+version: 1
+datastore:
+  filename: ./data/processing/data.json
+scheduler:
+  interval: 5
+scalestats:
+  url: http://storage:8090/fitscale/scale
+watchstats:
+  url: http://storage:8090/fitscale/watch
