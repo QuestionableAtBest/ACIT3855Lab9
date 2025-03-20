@@ -5,3 +5,4 @@ analyzer/__pycache__
 configs_prod
 data/
 logs/
+Docker/.env
