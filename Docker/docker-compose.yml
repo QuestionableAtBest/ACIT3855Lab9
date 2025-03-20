@@ -108,5 +108,12 @@ services:
     volumes:
       # Where our data will be persisted
       - ../data/database/:/var/lib/mysql
+  
+  nginx:
+    restart: always
+    container_name: nginx
+    build:
+      context: ../dashboard
+      dockerfile: Dockerfile
 volumes:
   zookeeper_db:

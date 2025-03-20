@@ -4,10 +4,18 @@ import logging
 import logging.config
 from pykafka import KafkaClient
 import json
-import time
+from connexion.middleware import MiddlewarePosition
+from starlette.middleware.cors import CORSMiddleware
 app = connexion.FlaskApp(__name__, specification_dir='')
 app.add_api("fitscale.yaml", strict_validation=True,validate_responses=True)
-
+app.add_middleware(
+    CORSMiddleware,
+    position=MiddlewarePosition.BEFORE_EXCEPTION,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 with open('/configs/analyzer_conf.yml', 'r') as f:
     app_config = yaml.safe_load(f.read())
 

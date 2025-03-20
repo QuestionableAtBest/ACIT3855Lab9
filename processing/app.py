@@ -4,11 +4,21 @@ import json,logging,logging.config
 import yaml,httpx,connexion
 from connexion import NoContent
 from datetime import datetime,timezone
+from connexion.middleware import MiddlewarePosition
+from starlette.middleware.cors import CORSMiddleware
+
 # Proccessing needed
 import apscheduler.schedulers.background as apsched
 app = connexion.FlaskApp(__name__, specification_dir='')
 app.add_api("fitscale.yaml", strict_validation=True,validate_responses=True)
-
+app.add_middleware(
+    CORSMiddleware,
+    position=MiddlewarePosition.BEFORE_EXCEPTION,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 #Pull app config (variables)
 with open('./configs/processing_conf.yml', 'r') as f:
     app_config = yaml.safe_load(f.read())

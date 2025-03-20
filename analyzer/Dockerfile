@@ -11,8 +11,8 @@ RUN pip3 install -r requirements.txt
 # Copy the source code
 COPY . /app
 # Change permissions and become a non-privileged user
-RUN chown -R azureuser:nogroup /app
-USER azureuser
+RUN chown -R nobody:nogroup /app
+USER nobody
 # Tells on which port the service listens in the container
 EXPOSE 8110
 # Entrypoint = run Python

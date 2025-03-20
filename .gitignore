@@ -6,3 +6,4 @@ configs_prod
 data/
 logs/
 Docker/.env
+dashboard
