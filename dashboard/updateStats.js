@@ -25,13 +25,13 @@ const getLocaleDateStr = () => (new Date()).toLocaleString()
 const getStats = () => {
     document.getElementById("last-updated-value").innerText = getLocaleDateStr()
     makeReq(PROCESSING_STATS_API_URL, (result) => updateCodeDiv(result, "processing-stats"))
-    makeReq(ANALYZER_API_URL.stats, (result) => updateCodeDiv(result, "analyzer-stats"),
-    console.log(results),
-    randWatch = ANALYZER_API_URL.watch + String(Math.random()*results["num_w"]),
-    randScale = ANALYZER_API_URL.scale + String(Math.random()*results["num_s"]),
-    makeReq(randWatch, (result) => updateCodeDiv(result, "event-watch")),
-    makeReq(randScale, (result) => updateCodeDiv(result, "event-scale"))
-    )
+    makeReq(ANALYZER_API_URL.stats, (result) => {
+        updateCodeDiv(result, "analyzer-stats")
+        randWatch = ANALYZER_API_URL.watch + String(Math.floor(Math.random()*stats["num_w"]))
+        randScale = ANALYZER_API_URL.scale + String(Math.floor(Math.random()*stats["num_s"]))
+        makeReq(randWatch, (result) => updateCodeDiv(result, "event-watch"))
+        makeReq(randScale, (result) => updateCodeDiv(result, "event-scale"))
+    })
 }
 
 const updateErrorMessages = (message) => {
