@@ -27,8 +27,8 @@ const getStats = () => {
     makeReq(PROCESSING_STATS_API_URL, (result) => updateCodeDiv(result, "processing-stats"))
     makeReq(ANALYZER_API_URL.stats, (result) => {
         updateCodeDiv(result, "analyzer-stats")
-        randWatch = ANALYZER_API_URL.watch + String(Math.floor(Math.random()*stats["num_w"]))
-        randScale = ANALYZER_API_URL.scale + String(Math.floor(Math.random()*stats["num_s"]))
+        randWatch = ANALYZER_API_URL.watch + String(Math.floor(Math.random()*result["num_w"]))
+        randScale = ANALYZER_API_URL.scale + String(Math.floor(Math.random()*result["num_s"]))
         makeReq(randWatch, (result) => updateCodeDiv(result, "event-watch"))
         makeReq(randScale, (result) => updateCodeDiv(result, "event-scale"))
     })
