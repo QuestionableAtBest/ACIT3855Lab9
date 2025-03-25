@@ -93,7 +93,7 @@ def get_checks():
             jsonny = json.load(s)
             return jsonny
     except FileNotFoundError:
-        return NoContent, 404
+        return {"message":"Update has not been ran yet"}
 
 if __name__ == "__main__":
     app.run(port=8120, host="0.0.0.0")
