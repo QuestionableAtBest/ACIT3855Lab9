@@ -83,6 +83,8 @@ services:
       - type: bind
         source: ../configs/consistency_check/
         target: /app/configs/
+    ports:
+      - "8110:8110"
     depends_on:
       - processing
       - analyzer
