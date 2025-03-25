@@ -84,7 +84,7 @@ services:
         source: ../configs/consistency_check/
         target: /app/configs/
     ports:
-      - "8110:8110"
+      - "8120:8120"
     depends_on:
       - processing
       - analyzer
