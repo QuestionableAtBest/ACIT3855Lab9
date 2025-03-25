@@ -62,23 +62,23 @@ components:
             db:
               type: object
               properties:
-                event1:
+                watch:
                   type: integer
-                event2:
+                scale:
                   type: integer
             queue:
               type: object
               properties:
-                event1:
+                watch:
                   type: integer
-                event2:
+                scale:
                   type: integer
             processing:
               type: object
               properties:
-                event1:
+                watch:
                   type: integer
-                event2:
+                scale:
                   type: integer
         not_in_db:
           type: array
@@ -89,6 +89,8 @@ components:
                 type: integer
               trace_id:
                 type: integer
+              type:
+                type: string
         not_in_queue:
           type: array
           items:
@@ -98,4 +100,6 @@ components:
                 type: integer
               trace_id:
                 type: integer
+              type:
+                type: string
 
