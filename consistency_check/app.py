@@ -8,7 +8,7 @@ from connexion.middleware import MiddlewarePosition
 from starlette.middleware.cors import CORSMiddleware
 import time
 app = connexion.FlaskApp(__name__, specification_dir='')
-app.add_api("fitscale.yaml", strict_validation=True,validate_responses=True)
+app.add_api("consistency_check.yaml", strict_validation=True,validate_responses=True)
 app.add_middleware(
     CORSMiddleware,
     position=MiddlewarePosition.BEFORE_EXCEPTION,

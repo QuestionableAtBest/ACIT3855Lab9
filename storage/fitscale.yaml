@@ -68,75 +68,75 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Scale'
-    /count:
-        get: 
-          tags:
-            - devices
-          summary: Count of watch and scale records
-          operationId: app.get_count
-          description: Gets total watch and scale events
-          responses:
-            '200':
-              description: Successfully returned count
-              content:
-                application/json:
-                  schema:
-                    type: object
-                    properties:
-                      watch_count:
-                        type: integer
-                        example: 5
-                      scale_count:
-                        type: integer
-                        example: 100
-    /watchlist:
-        get: 
-          tags:
-            - devices
-          summary: List of watch devices
-          operationId: app.get_watch_list
-          description: Gets list of all watch event's event ID and traice ID
-          responses:
-            '200':
-              description: Successfully returned watch events
-              content:
-                application/json:
-                  schema:
-                    type: object
-                    properties:
-                      watch_list:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            event_id:
-                              type: integer
-                            trace_id:
-                              type: string
-    /scalelist:
-        get: 
-          tags:
-            - devices
-          summary: List of scale devices
-          operationId: app.get_scale_list
-          description: Gets list of all scale event's event ID and traice ID
-          responses:
-            '200':
-              description: Successfully returned scale events
-              content:
-                application/json:
-                  schema:
-                    type: object
-                    properties:
-                      scale_list:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            event_id:
-                              type: integer
-                            trace_id:
-                              type: string
+  /count:
+      get: 
+        tags:
+          - devices
+        summary: Count of watch and scale records
+        operationId: app.get_count
+        description: Gets total watch and scale events
+        responses:
+          '200':
+            description: Successfully returned count
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    watch_count:
+                      type: integer
+                      example: 5
+                    scale_count:
+                      type: integer
+                      example: 100
+  /watchlist:
+      get: 
+        tags:
+          - devices
+        summary: List of watch devices
+        operationId: app.get_watch_list
+        description: Gets list of all watch event's event ID and trace ID
+        responses:
+          '200':
+            description: Successfully returned watch events
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    watch_list:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          event_id:
+                            type: integer
+                          trace_id:
+                            type: string
+  /scalelist:
+      get: 
+        tags:
+          - devices
+        summary: List of scale devices
+        operationId: app.get_scale_list
+        description: Gets list of all scale event's event ID and trace ID
+        responses:
+          '200':
+            description: Successfully returned scale events
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    scale_list:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          event_id:
+                            type: integer
+                          trace_id:
+                            type: string
 components:
   schemas:
     Watch:
