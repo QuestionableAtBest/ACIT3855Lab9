@@ -6,7 +6,7 @@ from connexion import NoContent
 from datetime import datetime,timezone
 from connexion.middleware import MiddlewarePosition
 from starlette.middleware.cors import CORSMiddleware
-
+import time
 app = connexion.FlaskApp(__name__, specification_dir='')
 app.add_api("fitscale.yaml", strict_validation=True,validate_responses=True)
 app.add_middleware(
@@ -30,10 +30,70 @@ with open("./configs/consistency_check_log_conf.yml", "r") as f:
 logger = logging.getLogger('basicLogger')
 
 def run_consistency_checks():
-    logger.info
+    start = time.perf_counter_ns()
+    logger.info("Beginning consistency check!")
+    proccessing_count = httpx.get(f"http://{app_config["datastore"]["proc_hostname"]}:{app_config["datastore"]["proc_port"]}")
+    analyzer_count = httpx.get(f"http://{app_config["datastore"]["ana_hostname"]}:{app_config["datastore"]["ana_port"]}/stats")
+    storage_count = httpx.get(f"http://{app_config["datastore"]["store_hostname"]}:{app_config["datastore"]["store_port"]}/count")
+    storage_watch_list = httpx.get(f"http://{app_config["datastore"]["store_hostname"]}:{app_config["datastore"]["store_port"]}/watchlist")
+    storage_scale_list = httpx.get(f"http://{app_config["datastore"]["store_hostname"]}:{app_config["datastore"]["store_port"]}/scalelist")
+    analyzer_watch_list = httpx.get(f"http://{app_config["datastore"]["ana_hostname"]}:{app_config["datastore"]["ana_port"]}/watchlist")
+    analyzer_scale_list = httpx.get(f"http://{app_config["datastore"]["ana_hostname"]}:{app_config["datastore"]["ana_port"]}/scalelist")
+    missing_in_db = 0
+    missing_in_queue = 0
+    jsonny = {"counts":{
+                "db":{"watch":storage_count["watch_count"],
+                    "scale":storage_count["scale_count"]},
+                "queue":{"watch":analyzer_count["num_w"],
+                        "scale":analyzer_count["num_s"]},
+                "processing":{"watch":proccessing_count["num_w"],
+                            "scale":proccessing_count["num_s"]}},
+              "missing_db":[],
+              "missing_queue":[],
+              "last_updated":datetime.strptime(datetime.now(), "%Y-%m-%dT%H:%M:%S.%fZ")}
+    #Checking watch counts
+    watch_storage_traces = [watch_event["trace_id"] for watch_event in storage_watch_list]
+    watch_analyzer_traces = [watch_event["trace_id"] for watch_event in analyzer_watch_list]
+    for watch_event in storage_watch_list:
+        if watch_event["trace_id"] not in watch_storage_traces:
+            missing_in_db += 1
+            watch_event["type"] = "watch"
+            jsonny["missing_db"].append(watch_event)
+    for watch_event in analyzer_watch_list:
+        if watch_event not in watch_analyzer_traces:
+            missing_in_queue += 1
+            watch_event["type"] = "watch"
+            jsonny["missing_queue"].append(watch_event)
+
+    #Checking scale counts
+    scale_storage_traces = [scale_event["trace_id"] for scale_event in storage_scale_list]
+    scale_analyzer_traces = [scale_event["trace_id"] for scale_event in analyzer_scale_list]
+    for scale_event in storage_scale_list:
+        if scale_event["trace_id"] not in scale_storage_traces:
+            missing_in_db += 1
+            scale_event["type"] = "scale"
+            jsonny["missing_db"].append(scale_event)
+    for scale_event in analyzer_scale_list:
+        if scale_event not in scale_analyzer_traces:
+            missing_in_queue += 1
+            scale_event["type"] = "scale"
+            jsonny["missing_queue"].append(scale_event)
+
+    with open(app_config["datastore"]["data_path"], 'w') as s:
+        jsonned = json.dump(jsonny)
+        s.write(jsonned)
+    end = time.perf_counter_ns()
+    processing_time_ms = (end - start) / 1000000
+    logger.info(f"Consistency checks completed | processing_time_ms= {processing_time_ms} | missing_in_db: {missing_in_db} | missing_in_queue: {missing_in_queue}")
+    return {"processing_time_ms":processing_time_ms}
 
 def get_checks():
-    pass
+    try:
+        with open(app_config["datastore"]["data_path"], 'r') as s:
+            jsonny = json.load(s)
+            return jsonny
+    except FileNotFoundError:
+        return NoContent, 404
 
 if __name__ == "__main__":
     app.run(port=8120, host="0.0.0.0")

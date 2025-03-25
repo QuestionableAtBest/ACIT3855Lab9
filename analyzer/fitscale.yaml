@@ -84,7 +84,54 @@ paths:
                   properties:
                     message:
                       type: string
-
+  /scalelist:
+      get: 
+        tags:
+          - devices
+        summary: List of scale devices
+        operationId: app.get_scale_list
+        description: Gets list of all scale event's event ID and traice ID
+        responses:
+          '200':
+            description: Successfully returned scale events
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    scale_list:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          event_id:
+                            type: integer
+                          trace_id:
+                            type: string
+  /watchlist:
+    get: 
+      tags:
+        - devices
+      summary: List of watch devices
+      operationId: app.get_watch_list
+      description: Gets list of all watch event's event ID and traice ID
+      responses:
+        '200':
+          description: Successfully returned watch events
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  watch_list:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        event_id:
+                          type: integer
+                        trace_id:
+                          type: string
 components:
   schemas:
     Watch:

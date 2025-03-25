@@ -76,8 +76,31 @@ def get_stats():
             count_scale += 1
     return {"num_w": count_watch,
             "num_s": count_scale}, 200
-    
 
-
+def get_watch_list():
+    client = KafkaClient(hosts=f"{app_config['events']['hostname']}:{app_config['events']['port']}")
+    topic = client.topics[str.encode(app_config["events"]["topic"])]
+    consumer = topic.get_simple_consumer(reset_offset_on_start=True, consumer_timeout_ms=1000)
+    event_list = []
+    for msg in consumer:
+        message = msg.value.decode("utf-8")
+        data = json.loads(message)
+        if data["type"] == "watch_event":
+            event = {"event_id": data["payload"]["device_id"], "trace_id": data["payload"]["trace_id"]}
+            event_list.append(event)
+    return event_list, 200
+            
+def get_scale_list():
+    client = KafkaClient(hosts=f"{app_config['events']['hostname']}:{app_config['events']['port']}")
+    topic = client.topics[str.encode(app_config["events"]["topic"])]
+    consumer = topic.get_simple_consumer(reset_offset_on_start=True, consumer_timeout_ms=1000)
+    event_list = []
+    for msg in consumer:
+        message = msg.value.decode("utf-8")
+        data = json.loads(message)
+        if data["type"] == "watch_event":
+            event = {"event_id": data["payload"]["device_id"], "trace_id": data["payload"]["trace_id"]}
+            event_list.append(event)
+    return event_list, 200
 if __name__ == "__main__":
     app.run(port=8110, host="0.0.0.0")

@@ -70,6 +70,20 @@ services:
         target: /configs
     depends_on:
       - kafka
+  consistency_check:
+    restart: always
+    container_name: consistency_check
+    build:
+      context: ../consistency_check
+      dockerfile: Dockerfile
+    volumes:
+      - type: bind
+        source: ../configs/consistency_check/
+        target: /app/configs/
+    depends_on:
+      - processing
+      - analyzer
+      - storage
   zookeeper:
     restart: always
     container_name: zookeeper

@@ -53,6 +53,32 @@ def get_watch_readings(start_timestamp, end_timestamp):
     #Should add a status code here?
     return results
 
+def get_count():
+    session = make_session()
+    scale_count = session.query(Scale).count()
+    watch_count = session.query(Watch).count()
+    session.close()
+    return {"watch_count": watch_count, "scale_count": scale_count}
+
+def get_watch_list():
+    session = make_session()
+    watch_list = session.query(Watch.device_id, Watch.trace_id).all()
+    scale_list = session.query(Scale.device_id, Scale.trace_id).all()
+    session.close()
+    return {
+        "watch_list": [{"event_id": watch.device_id, "trace_id": watch.trace_id} for watch in watch_list],
+    }
+
+def get_scale_list():
+    session = make_session()
+    scale_list = session.query(Scale.device_id, Scale.trace_id).all()
+    session.close()
+    return {
+        "scale_list": [{"event_id": scale.device_id, "trace_id": scale.trace_id} for scale in scale_list]
+    }
+
+
+
 def process_messages():
     """ Process event messages """
     hostname = f"{app_config['events']['hostname']}:{app_config['events']['port']}"
