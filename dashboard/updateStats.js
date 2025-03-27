@@ -31,6 +31,7 @@ const getStats = () => {
         randScale = ANALYZER_API_URL.scale + String(Math.floor(Math.random()*result["num_s"]))
         makeReq(randWatch, (result) => updateCodeDiv(result, "event-watch"))
         makeReq(randScale, (result) => updateCodeDiv(result, "event-scale"))
+        makeReq("http://microservices-acit3855-harry.westus2.cloudapp.azure.com:8120/checks", (result) => updateCodeDiv(result, "event-consistency"))
     })
 }
 

@@ -95,9 +95,9 @@ def get_checks():
     try:
         with open(app_config["datastore"]["data_path"], 'r') as s:
             jsonny = json.load(s)
-            return jsonny
+            return jsonny, 200
     except FileNotFoundError:
-        return {"message":"Update has not been ran yet"}
+        return {"message":"Update has not been ran yet"}, 404
 
 if __name__ == "__main__":
     app.run(port=8120, host="0.0.0.0")
