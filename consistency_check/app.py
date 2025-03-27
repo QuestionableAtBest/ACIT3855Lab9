@@ -70,21 +70,16 @@ def run_consistency_checks():
     #Checking scale counts
     scale_storage_traces = [scale_event["trace_id"] for scale_event in storage_scale_list]
     scale_analyzer_traces = [scale_event["trace_id"] for scale_event in analyzer_scale_list]
-    print(storage_scale_list)
-    print(scale_analyzer_traces)
-    print("===============")
-    print(analyzer_scale_list)
-    print(scale_storage_traces)
     for scale_event in storage_scale_list:
         if scale_event["trace_id"] not in scale_analyzer_traces:
-            missing_in_db += 1
-            scale_event["type"] = "scale"
-            jsonny["not_in_db"].append(scale_event)
-    for scale_event in analyzer_scale_list:
-        if scale_event["trace_id"] not in scale_storage_traces:
             missing_in_queue += 1
             scale_event["type"] = "scale"
             jsonny["not_in_queue"].append(scale_event)
+    for scale_event in analyzer_scale_list:
+        if scale_event["trace_id"] not in scale_storage_traces:
+            missing_in_db += 1
+            scale_event["type"] = "scale"
+            jsonny["not_in_db"].append(scale_event)
 
     with open(app_config["datastore"]["data_path"], 'w') as s:
         jsonned = json.dumps(jsonny)
