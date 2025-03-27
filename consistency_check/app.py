@@ -58,14 +58,14 @@ def run_consistency_checks():
     print(watch_analyzer_traces)
     for watch_event in storage_watch_list:
         if watch_event["trace_id"] not in watch_analyzer_traces:
-            missing_in_db += 1
-            watch_event["type"] = "watch"
-            jsonny["not_in_db"].append(watch_event)
-    for watch_event in analyzer_watch_list:
-        if watch_event["trace_id"] not in watch_storage_traces:
             missing_in_queue += 1
             watch_event["type"] = "watch"
             jsonny["not_in_queue"].append(watch_event)
+    for watch_event in analyzer_watch_list:
+        if watch_event["trace_id"] not in watch_storage_traces:
+            missing_in_db += 1
+            watch_event["type"] = "watch"
+            jsonny["not_in_db"].append(watch_event)
 
     #Checking scale counts
     scale_storage_traces = [scale_event["trace_id"] for scale_event in storage_scale_list]
