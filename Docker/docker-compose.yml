@@ -23,6 +23,8 @@ services:
     build:
       context: ../storage
       dockerfile: Dockerfile
+    ports:
+      - "8090-8099:8090"
     volumes:
       - type: bind
         source: ../logs/
