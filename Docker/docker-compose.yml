@@ -78,6 +78,9 @@ services:
       dockerfile: Dockerfile
     volumes:
       - type: bind
+        source: ../data/
+        target: /app/data/
+      - type: bind
         source: ../logs/
         target: /app/logs/
       - type: bind
