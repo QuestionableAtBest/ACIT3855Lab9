@@ -55,27 +55,30 @@ def run_consistency_checks():
     watch_storage_traces = [watch_event["trace_id"] for watch_event in storage_watch_list]
     watch_analyzer_traces = [watch_event["trace_id"] for watch_event in analyzer_watch_list]
     for watch_event in storage_watch_list:
-        if watch_event["trace_id"] not in watch_storage_traces:
+        if watch_event["trace_id"] not in watch_analyzer_traces:
             missing_in_db += 1
             watch_event["type"] = "watch"
             jsonny["not_in_db"].append(watch_event)
     for watch_event in analyzer_watch_list:
-        if watch_event not in watch_analyzer_traces:
+        if watch_event["trace_id"] not in watch_storage_traces:
             missing_in_queue += 1
             watch_event["type"] = "watch"
             jsonny["not_in_queue"].append(watch_event)
 
     #Checking scale counts
     scale_storage_traces = [scale_event["trace_id"] for scale_event in storage_scale_list]
+    print(scale_storage_traces)
+    print("=========================")
     scale_analyzer_traces = [scale_event["trace_id"] for scale_event in analyzer_scale_list]
+    print(scale_analyzer_traces)
     print(watch_analyzer_traces)
     for scale_event in storage_scale_list:
-        if scale_event["trace_id"] not in scale_storage_traces:
+        if scale_event["trace_id"] not in scale_analyzer_traces:
             missing_in_db += 1
             scale_event["type"] = "scale"
             jsonny["not_in_db"].append(scale_event)
     for scale_event in analyzer_scale_list:
-        if scale_event not in scale_analyzer_traces:
+        if scale_event["trace_id"] not in scale_storage_traces:
             missing_in_queue += 1
             scale_event["type"] = "scale"
             jsonny["not_in_queue"].append(scale_event)
