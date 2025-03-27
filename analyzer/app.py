@@ -98,8 +98,8 @@ def get_scale_list():
     for msg in consumer:
         message = msg.value.decode("utf-8")
         data = json.loads(message)
-        if data["type"] == "watch_event":
-            event = {"event_id": data["payload"]["device_id"], "trace_id": data["payload"]["trace_id"]}
+        if data["type"] == "scale_event":
+            event = {"event_id": data["payload"]["scale_id"], "trace_id": data["payload"]["trace_id"]}
             event_list.append(event)
     return event_list, 200
 if __name__ == "__main__":
