@@ -39,7 +39,6 @@ def run_consistency_checks():
     storage_scale_list = httpx.get(f"http://{app_config["datastore"]["store_hostname"]}:{app_config["datastore"]["store_port"]}/scalelist").json()
     analyzer_watch_list = httpx.get(f"http://{app_config["datastore"]["ana_hostname"]}:{app_config["datastore"]["ana_port"]}/watchlist").json()
     analyzer_scale_list = httpx.get(f"http://{app_config["datastore"]["ana_hostname"]}:{app_config["datastore"]["ana_port"]}/scalelist").json()
-    print(analyzer_watch_list)
     missing_in_db = 0
     missing_in_queue = 0
     jsonny = {"counts":{
@@ -55,6 +54,8 @@ def run_consistency_checks():
     #Checking watch counts
     watch_storage_traces = [watch_event["trace_id"] for watch_event in storage_watch_list]
     watch_analyzer_traces = [watch_event["trace_id"] for watch_event in analyzer_watch_list]
+    print(storage_watch_list)
+    print(watch_analyzer_traces)
     for watch_event in storage_watch_list:
         if watch_event["trace_id"] not in watch_analyzer_traces:
             missing_in_db += 1
@@ -68,11 +69,12 @@ def run_consistency_checks():
 
     #Checking scale counts
     scale_storage_traces = [scale_event["trace_id"] for scale_event in storage_scale_list]
-    print(scale_storage_traces)
-    print("=========================")
     scale_analyzer_traces = [scale_event["trace_id"] for scale_event in analyzer_scale_list]
+    print(storage_scale_list)
     print(scale_analyzer_traces)
-    print(watch_analyzer_traces)
+    print("===============")
+    print(analyzer_scale_list)
+    print(scale_storage_traces)
     for scale_event in storage_scale_list:
         if scale_event["trace_id"] not in scale_analyzer_traces:
             missing_in_db += 1
