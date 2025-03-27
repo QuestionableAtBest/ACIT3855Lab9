@@ -1,6 +1,7 @@
 # Logging and storage
 import json,logging,logging.config
 # API packages
+import os
 import yaml,httpx,connexion
 from connexion import NoContent
 from datetime import datetime,timezone
@@ -10,15 +11,16 @@ from starlette.middleware.cors import CORSMiddleware
 # Proccessing needed
 import apscheduler.schedulers.background as apsched
 app = connexion.FlaskApp(__name__, specification_dir='')
-app.add_api("fitscale.yaml", strict_validation=True,validate_responses=True)
-app.add_middleware(
-    CORSMiddleware,
-    position=MiddlewarePosition.BEFORE_EXCEPTION,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+app.add_api("fitscale.yaml", base_path="/processing",strict_validation=True,validate_responses=True)
+if "CORS_ALLOW_ALL" in os.environ and os.environ["CORS_ALLOW_ALL"] == "yes":
+    app.add_middleware(
+        CORSMiddleware,
+        position=MiddlewarePosition.BEFORE_EXCEPTION,
+        allow_origins=["*"],
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
 #Pull app config (variables)
 with open('./configs/processing_conf.yml', 'r') as f:
     app_config = yaml.safe_load(f.read())

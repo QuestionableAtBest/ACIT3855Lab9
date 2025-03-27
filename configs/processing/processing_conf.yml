@@ -4,6 +4,6 @@ datastore:
 scheduler:
   interval: 5
 scalestats:
-  url: http://storage:8090/fitscale/scale
+  url: http://storage/storage/fitscale/scale
 watchstats:
-  url: http://storage:8090/fitscale/watch
+  url: http://storage/storage/fitscale/watch

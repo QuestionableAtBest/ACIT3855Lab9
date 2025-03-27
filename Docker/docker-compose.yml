@@ -41,6 +41,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8100:8100"
+    environment:
+      CORS_ALLOW_ALL: no
     volumes:
       - type: bind
         source: ../logs/
@@ -61,6 +63,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8110:8110"
+    environment:
+      CORS_ALLOW_ALL: no
     volumes:
       - type: bind
         source: ../logs/
@@ -139,5 +143,9 @@ services:
     build:
       context: ../dashboard
       dockerfile: Dockerfile
+    depends_on:
+      - processing
+      - analyzer
+      - storage
 volumes:
   zookeeper_db:

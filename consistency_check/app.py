@@ -8,15 +8,7 @@ from connexion.middleware import MiddlewarePosition
 from starlette.middleware.cors import CORSMiddleware
 import time
 app = connexion.FlaskApp(__name__, specification_dir='')
-app.add_api("consistency_check.yaml", strict_validation=True,validate_responses=True)
-app.add_middleware(
-    CORSMiddleware,
-    position=MiddlewarePosition.BEFORE_EXCEPTION,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+
 #Pull app config (variables)
 with open('./configs/consistency_check_conf.yml', 'r') as f:
     app_config = yaml.safe_load(f.read())
@@ -54,32 +46,36 @@ def run_consistency_checks():
     #Checking watch counts
     watch_storage_traces = [watch_event["trace_id"] for watch_event in storage_watch_list]
     watch_analyzer_traces = [watch_event["trace_id"] for watch_event in analyzer_watch_list]
-    print(storage_watch_list)
+    print(analyzer_watch_list)
     print(watch_analyzer_traces)
+    print(watch_storage_traces)
     for watch_event in storage_watch_list:
         if watch_event["trace_id"] not in watch_analyzer_traces:
-            missing_in_queue += 1
-            watch_event["type"] = "watch"
-            jsonny["not_in_queue"].append(watch_event)
-    for watch_event in analyzer_watch_list:
-        if watch_event["trace_id"] not in watch_storage_traces:
             missing_in_db += 1
             watch_event["type"] = "watch"
             jsonny["not_in_db"].append(watch_event)
+    for watch_event in analyzer_watch_list:
+        if watch_event["trace_id"] not in watch_storage_traces:
+            missing_in_queue += 1
+            watch_event["type"] = "watch"
+            jsonny["not_in_queue"].append(watch_event)
 
     #Checking scale counts
     scale_storage_traces = [scale_event["trace_id"] for scale_event in storage_scale_list]
+    print("=========================")
+    print(scale_storage_traces)
     scale_analyzer_traces = [scale_event["trace_id"] for scale_event in analyzer_scale_list]
+    print(scale_analyzer_traces)
     for scale_event in storage_scale_list:
         if scale_event["trace_id"] not in scale_analyzer_traces:
-            missing_in_queue += 1
-            scale_event["type"] = "scale"
-            jsonny["not_in_queue"].append(scale_event)
-    for scale_event in analyzer_scale_list:
-        if scale_event["trace_id"] not in scale_storage_traces:
             missing_in_db += 1
             scale_event["type"] = "scale"
             jsonny["not_in_db"].append(scale_event)
+    for scale_event in analyzer_scale_list:
+        if scale_event["trace_id"] not in scale_storage_traces:
+            missing_in_queue += 1
+            scale_event["type"] = "scale"
+            jsonny["not_in_queue"].append(scale_event)
 
     with open(app_config["datastore"]["data_path"], 'w') as s:
         jsonned = json.dumps(jsonny)
