@@ -39,7 +39,7 @@ def run_consistency_checks():
     storage_scale_list = httpx.get(f"http://{app_config["datastore"]["store_hostname"]}:{app_config["datastore"]["store_port"]}/scalelist").json()
     analyzer_watch_list = httpx.get(f"http://{app_config["datastore"]["ana_hostname"]}:{app_config["datastore"]["ana_port"]}/watchlist").json()
     analyzer_scale_list = httpx.get(f"http://{app_config["datastore"]["ana_hostname"]}:{app_config["datastore"]["ana_port"]}/scalelist").json()
-    print(storage_watch_list)
+    print(analyzer_watch_list)
     missing_in_db = 0
     missing_in_queue = 0
     jsonny = {"counts":{
