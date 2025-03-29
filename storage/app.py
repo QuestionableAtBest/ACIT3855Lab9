@@ -13,7 +13,7 @@ from pykafka.common import OffsetType
 from threading import Thread
 import json
 app = connexion.FlaskApp(__name__, specification_dir='')
-app.add_api("fitscale.yaml", strict_validation=True,validate_responses=True)
+app.add_api("fitscale.yaml", strict_validation=True,base_path="/storage",validate_responses=True)
 
 with open("./configs/storage_log_conf.yml", "r") as f:
     LOG_CONFIG = yaml.safe_load(f.read()) 

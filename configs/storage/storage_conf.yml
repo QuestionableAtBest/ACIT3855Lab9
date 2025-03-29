@@ -1,7 +1,7 @@
 version: 1
 datastore:
-  user: harry
-  password: harry
+  user: //ADD USER HERE
+  password: //ADD PASSWORD HERE
   hostname: db
   port: 3306
   db: fitscale
