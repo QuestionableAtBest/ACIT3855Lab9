@@ -1,5 +1,6 @@
 import connexion
 import yaml
+import os
 import logging
 import logging.config
 from pykafka import KafkaClient
@@ -7,15 +8,17 @@ import json
 from connexion.middleware import MiddlewarePosition
 from starlette.middleware.cors import CORSMiddleware
 app = connexion.FlaskApp(__name__, specification_dir='')
-app.add_api("fitscale.yaml", strict_validation=True,validate_responses=True)
-app.add_middleware(
-    CORSMiddleware,
-    position=MiddlewarePosition.BEFORE_EXCEPTION,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+app.add_api("fitscale.yaml", base_path="/analyzer", strict_validation=True,validate_responses=True)
+if "CORS_ALLOW_ALL" in os.environ and os.environ["CORS_ALLOW_ALL"] == "yes":
+    app.add_middleware(
+        CORSMiddleware,
+        position=MiddlewarePosition.BEFORE_EXCEPTION,
+        allow_origins=["*"],
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
+
 with open('/configs/analyzer_conf.yml', 'r') as f:
     app_config = yaml.safe_load(f.read())
 
@@ -88,6 +91,7 @@ def get_watch_list():
         if data["type"] == "watch_event":
             event = {"event_id": data["payload"]["device_id"], "trace_id": data["payload"]["trace_id"]}
             event_list.append(event)
+    print(event_list)
     return event_list, 200
             
 def get_scale_list():
@@ -98,9 +102,11 @@ def get_scale_list():
     for msg in consumer:
         message = msg.value.decode("utf-8")
         data = json.loads(message)
-        if data["type"] == "watch_event":
-            event = {"event_id": data["payload"]["device_id"], "trace_id": data["payload"]["trace_id"]}
+        print(data)
+        if data["type"] == "scale_event":
+            event = {"event_id": data["payload"]["scale_id"], "trace_id": data["payload"]["trace_id"]}
             event_list.append(event)
+    print(event_list)
     return event_list, 200
 if __name__ == "__main__":
     app.run(port=8110, host="0.0.0.0")

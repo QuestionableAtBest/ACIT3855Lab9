@@ -1,9 +1,9 @@
 /* UPDATE THESE VALUES TO MATCH YOUR SETUP */
-const PROCESSING_STATS_API_URL = "http://microservices-acit3855-harry.westus2.cloudapp.azure.com:8100/stats"
+const PROCESSING_STATS_API_URL = "http://microservices-acit3855-harry.westus2.cloudapp.azure.com/processing/stats"
 const ANALYZER_API_URL = {
-    stats: "http://microservices-acit3855-harry.westus2.cloudapp.azure.com:8110/stats",
-    watch: "http://microservices-acit3855-harry.westus2.cloudapp.azure.com:8110/scale?index=",
-    scale: "http://microservices-acit3855-harry.westus2.cloudapp.azure.com:8110/watch?index="
+    stats: "http://microservices-acit3855-harry.westus2.cloudapp.azure.com/analyzer/stats",
+    watch: "http://microservices-acit3855-harry.westus2.cloudapp.azure.com/analyzer/scale?index=",
+    scale: "http://microservices-acit3855-harry.westus2.cloudapp.azure.com/analyzer/watch?index="
 }
 
 // This function fetches and updates the general statistics
@@ -31,6 +31,7 @@ const getStats = () => {
         randScale = ANALYZER_API_URL.scale + String(Math.floor(Math.random()*result["num_s"]))
         makeReq(randWatch, (result) => updateCodeDiv(result, "event-watch"))
         makeReq(randScale, (result) => updateCodeDiv(result, "event-scale"))
+        makeReq("http://microservices-acit3855-harry.westus2.cloudapp.azure.com:8120/checks", (result) => updateCodeDiv(result, "event-consistency"))
     })
 }
 

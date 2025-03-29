@@ -7,7 +7,7 @@ services:
       context: ../receiver
       dockerfile: Dockerfile
     ports:
-      - "8080:8080"
+      - "8080-8089:8080"
     volumes:
       - type: bind
         source: ../logs/
@@ -40,7 +40,9 @@ services:
       context: ../processing
       dockerfile: Dockerfile
     ports:
-      - "8100:8100"
+      - "8100-8109:8100"
+    environment:
+      CORS_ALLOW_ALL: no
     volumes:
       - type: bind
         source: ../logs/
@@ -60,7 +62,9 @@ services:
       context: ../analyzer
       dockerfile: Dockerfile
     ports:
-      - "8110:8110"
+      - "8110-8119:8110"
+    environment:
+      CORS_ALLOW_ALL: no
     volumes:
       - type: bind
         source: ../logs/
@@ -78,13 +82,16 @@ services:
       dockerfile: Dockerfile
     volumes:
       - type: bind
+        source: ../data/
+        target: /app/data/
+      - type: bind
         source: ../logs/
         target: /app/logs/
       - type: bind
         source: ../configs/consistency_check/
         target: /app/configs/
     ports:
-      - "8120:8120"
+      - "8120-8129:8120"
     depends_on:
       - processing
       - analyzer
@@ -136,5 +143,9 @@ services:
     build:
       context: ../dashboard
       dockerfile: Dockerfile
+    depends_on:
+      - processing
+      - analyzer
+      - storage
 volumes:
   zookeeper_db:

@@ -13,7 +13,7 @@ from pykafka.common import OffsetType
 from threading import Thread
 import json
 app = connexion.FlaskApp(__name__, specification_dir='')
-app.add_api("fitscale.yaml", strict_validation=True,validate_responses=True)
+app.add_api("fitscale.yaml", strict_validation=True,base_path="/storage",validate_responses=True)
 
 with open("./configs/storage_log_conf.yml", "r") as f:
     LOG_CONFIG = yaml.safe_load(f.read()) 
@@ -63,19 +63,16 @@ def get_count():
 def get_watch_list():
     session = make_session()
     watch_list = session.query(Watch.device_id, Watch.trace_id).all()
-    scale_list = session.query(Scale.device_id, Scale.trace_id).all()
     session.close()
-    return {
-        "watch_list": [{"event_id": watch.device_id, "trace_id": watch.trace_id} for watch in watch_list],
-    }
+    print(watch_list)
+    return [{"event_id": watch.device_id, "trace_id": watch.trace_id} for watch in watch_list]
 
 def get_scale_list():
     session = make_session()
-    scale_list = session.query(Scale.device_id, Scale.trace_id).all()
+    scale_list = session.query(Scale.scale_id, Scale.trace_id).all()
     session.close()
-    return {
-        "scale_list": [{"event_id": scale.device_id, "trace_id": scale.trace_id} for scale in scale_list]
-    }
+    print(scale_list)
+    return [{"scale_id": scale.scale_id, "trace_id": scale.trace_id} for scale in scale_list]
 
 
 

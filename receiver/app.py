@@ -8,7 +8,7 @@ from connexion import NoContent
 from datetime import datetime as dt
 import json
 app = connexion.FlaskApp(__name__, specification_dir='')
-app.add_api("fitscale.yaml", strict_validation=True,validate_responses=True)
+app.add_api("fitscale.yaml", base_path="/receiver",strict_validation=True,validate_responses=True)
 
 with open('./configs/receiver_conf.yml', 'r') as f:
     app_config = yaml.safe_load(f.read())

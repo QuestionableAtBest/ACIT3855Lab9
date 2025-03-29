@@ -97,17 +97,14 @@ paths:
             content:
               application/json:
                 schema:
-                  type: object
-                  properties:
-                    scale_list:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          event_id:
-                            type: integer
-                          trace_id:
-                            type: string
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      event_id:
+                        type: string
+                      trace_id:
+                        type: integer
   /watchlist:
     get: 
       tags:
@@ -121,17 +118,14 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  watch_list:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        event_id:
-                          type: integer
-                        trace_id:
-                          type: string
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      event_id:
+                        type: string
+                      trace_id:
+                        type: integer
 components:
   schemas:
     Watch:
