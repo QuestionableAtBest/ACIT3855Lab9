@@ -2,7 +2,6 @@
 services:
   receiver:
     restart: always
-    container_name: receiver
     build:
       context: ../receiver
       dockerfile: Dockerfile
