@@ -4,6 +4,6 @@ datastore:
 scheduler:
   interval: 5
 scalestats:
-  url: http://storage/storage/fitscale/scale
+  url: http://microservices-acit3855-harry.westus2.cloudapp.azure.com/storage/fitscale/scale
 watchstats:
-  url: http://storage/storage/fitscale/watch
+  url: http://microservices-acit3855-harry.westus2.cloudapp.azure.com/storage/fitscale/watch

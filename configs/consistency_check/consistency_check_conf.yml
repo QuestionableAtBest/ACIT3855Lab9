@@ -3,10 +3,8 @@ datastore:
   kaf_hostname: kafka
   kaf_port: 29092
   topic: events
+  vm_hostname: microservices-acit3855-harry.westus2.cloudapp.azure.com
   ana_hostname: analyzer
-  ana_port: 8110
   proc_hostname: processing
-  proc_port: 8100
   store_hostname: storage
-  store_port: 8090
   data_path: ./data/check.json

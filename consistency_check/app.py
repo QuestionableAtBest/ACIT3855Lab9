@@ -34,13 +34,13 @@ logger = logging.getLogger('basicLogger')
 def run_consistency_checks():
     start = time.perf_counter_ns()
     logger.info("Beginning consistency check!")
-    proccessing_count = httpx.get(f"http://{app_config["datastore"]["proc_hostname"]}:{app_config["datastore"]["proc_port"]}/stats").json()
-    analyzer_count = httpx.get(f"http://{app_config["datastore"]["ana_hostname"]}:{app_config["datastore"]["ana_port"]}/stats").json()
-    storage_count = httpx.get(f"http://{app_config["datastore"]["store_hostname"]}:{app_config["datastore"]["store_port"]}/count").json()
-    storage_watch_list = httpx.get(f"http://{app_config["datastore"]["store_hostname"]}:{app_config["datastore"]["store_port"]}/watchlist").json()
-    storage_scale_list = httpx.get(f"http://{app_config["datastore"]["store_hostname"]}:{app_config["datastore"]["store_port"]}/scalelist").json()
-    analyzer_watch_list = httpx.get(f"http://{app_config["datastore"]["ana_hostname"]}:{app_config["datastore"]["ana_port"]}/watchlist").json()
-    analyzer_scale_list = httpx.get(f"http://{app_config["datastore"]["ana_hostname"]}:{app_config["datastore"]["ana_port"]}/scalelist").json()
+    proccessing_count = httpx.get(f"http://{app_config["datastore"]["vm_hostname"]}/{app_config["datastore"]["proc_hostname"]}/stats").json()
+    analyzer_count = httpx.get(f"http://{app_config["datastore"]["vm_hostname"]}/{app_config["datastore"]["ana_hostname"]}/stats").json()
+    storage_count = httpx.get(f"http://{app_config["datastore"]["vm_hostname"]}/{app_config["datastore"]["store_hostname"]}/count").json()
+    storage_watch_list = httpx.get(f"http://{app_config["datastore"]["vm_hostname"]}/{app_config["datastore"]["store_hostname"]}/watchlist").json()
+    storage_scale_list = httpx.get(f"http://{app_config["datastore"]["vm_hostname"]}/{app_config["datastore"]["store_hostname"]}/scalelist").json()
+    analyzer_watch_list = httpx.get(f"http://{app_config["datastore"]["vm_hostname"]}/{app_config["datastore"]["ana_hostname"]}/watchlist").json()
+    analyzer_scale_list = httpx.get(f"http://{app_config["datastore"]["vm_hostname"]}/{app_config["datastore"]["ana_hostname"]}/scalelist").json()
     missing_in_db = 0
     missing_in_queue = 0
     jsonny = {"counts":{
