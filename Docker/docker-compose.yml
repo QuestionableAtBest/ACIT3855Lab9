@@ -5,8 +5,6 @@ services:
     build:
       context: ../receiver
       dockerfile: Dockerfile
-    ports:
-      - "8080-8089:8080"
     volumes:
       - type: bind
         source: ../logs/
@@ -40,8 +38,6 @@ services:
     build:
       context: ../processing
       dockerfile: Dockerfile
-    ports:
-      - "8100-8109:8100"
     environment:
       CORS_ALLOW_ALL: no
     volumes:
