@@ -117,6 +117,7 @@ def process_messages():
             session.commit()
             session.close()
             logger.debug(f"Stored scale results with trace id of {payload['trace_id']}")
+        kaf_consumer.commit()
 
 def setup_kafka_thread():
     t1 = Thread(target=process_messages)
