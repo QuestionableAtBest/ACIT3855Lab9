@@ -123,7 +123,7 @@ services:
       - ../data/kafka/:/kafka
     healthcheck:
       # From https://stackoverflow.com/questions/78131893/how-to-add-health-check-for-kafka-in-docker-compose
-      test: /kafka/bin/kafka-cluster.sh cluster-id --bootstrap-server kafka:9092 || exit 1
+      test: ["CMD-SHELL", "echo 'test-message' | kafka-console-producer.sh --broker-list localhost:9092 --topic health-check-topic && kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic health-check-topic --from-beginning --max-messages 1 | grep 'test-message'"]
       interval: 1s
       timeout: 60s
       retries: 60
