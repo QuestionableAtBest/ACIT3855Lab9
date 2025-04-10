@@ -77,13 +77,12 @@ def get_scale_list():
 
 def process_messages():
     """ Process event messages """
-    for msg in kaf_consumer.messages():
+    for msg in kaf_consumer:
         msg_str = msg.value.decode('utf-8')
         msg = json.loads(msg_str)
         logger.info("Message: %s" % msg)
         payload = msg["payload"]
-        if msg["type"] == "watch_event": # Change this to your event type
-        # Store the event1 (i.e., the payload) to the DB
+        if msg["type"] == "watch_event":
             session = make_session()
             event = Watch(
                 device_id=payload["device_id"],
@@ -99,9 +98,7 @@ def process_messages():
             session.commit()
             session.close()
             logger.debug(f"Stored scale results with trace id of {payload['trace_id']}")
-        elif msg["type"] == "scale_event": # Change this to your event type
-        # Store the event2 (i.e., the payload) to the DB
-        # Commit the new message as being read
+        elif msg["type"] == "scale_event":
             session = make_session()
             event = Scale(
                 scale_id=payload["scale_id"],
