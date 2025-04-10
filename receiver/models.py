@@ -32,7 +32,7 @@ class KafkaProducer:
         if self.producer is not None:
             return True
         try:
-            self.client = KafkaClient(hostname=self.hostname)
+            self.client = KafkaClient(hostname="kafka:29092")
             topic = self.client.topics[self.topic]
             self.producer = topic.get_sync_producer()
             logger.info("Kafka producer created!")
