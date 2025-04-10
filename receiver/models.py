@@ -111,7 +111,7 @@ class KafkaConsumer:
         if self.producer is None:
             self.connect()
         try:
-            self.producer.producer(message.encode('utf-8'))
+            self.producer.produce(message.encode('utf-8'))
             logger.info("Message added to Kafka")
             return True
         except KafkaException as e:
