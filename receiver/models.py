@@ -10,7 +10,8 @@ logger = logging.getLogger(__name__)
 class KafkaProducer:
     def __init__(self, hostname, topic):
         self.hostname = hostname
-        self.client = KafkaClient(str.encode(hostname), str.encode(topic))
+        self.topic = topic
+        self.client = None
         self.producer = None
         self.connect()
     def connect(self):
@@ -30,7 +31,9 @@ class KafkaProducer:
         if self.producer is not None:
             return True
         try:
-            self.producer = self.client.topic.get_sync_producer()
+            self.client = KafkaClient(hostname=self.hostname)
+            topic = self.client.topics[self.topic]
+            self.producer = topic.get_sync_producer()
             logger.info("Kafka producer created!")
             return True
         except KafkaException as e:
