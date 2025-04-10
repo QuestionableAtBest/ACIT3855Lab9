@@ -49,10 +49,9 @@ def populate_stats():
             last_updated = old_data["recent_timestamp"]
 
         # Magic functions that gets the data necessary
-        # Should add response codes to make sure the functions are working, ask Tim about it, something in the storage/app.py should give a response code?
         scaleContent = httpx.get(
             app_config["scalestats"]["url"], 
-            params={"start_timestamp":last_updated,"end_timestamp":curtime}
+            params={"start_timestamp": last_updated, "end_timestamp": curtime}
         )
         watchContent = httpx.get(
             app_config["watchstats"]["url"], 
