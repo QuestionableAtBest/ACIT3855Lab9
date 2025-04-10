@@ -57,6 +57,7 @@ class KafkaConsumer:
         try:
             topic = self.client.topics[self.topic]
             self.consumer = topic.get_simple_consumer(
+                consumer_group=topic,
                 reset_offset_on_start=False,
                 auto_offset_reset=OffsetType.LATEST
             )
