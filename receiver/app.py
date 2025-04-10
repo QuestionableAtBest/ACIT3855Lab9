@@ -18,7 +18,8 @@ with open("./configs/receiver_log_conf.yml", "r") as f:
     logging.config.dictConfig(LOG_CONFIG)
 
 logger = logging.getLogger('basicLogger')
-kaf_prod = KafkaProducer(f"{app_config['events']['hostname']}:{app_config['events']['port']}",app_config['events']['topic'])
+# kaf_prod = KafkaProducer(f"{app_config['events']['hostname']}:{app_config['events']['port']}",app_config['events']['topic'])
+kaf_prod = KafkaProducer("kafka:29092","events")
 def report_watch(body):
     trace_id = time.time_ns()
     logger.info(f"Received event watch results with trace id of {trace_id}")

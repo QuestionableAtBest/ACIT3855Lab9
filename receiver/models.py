@@ -1,7 +1,6 @@
 import time
 import random
 from pykafka import KafkaClient
-from pykafka.common import OffsetType
 from  confluent_kafka import KafkaException 
 import logging
 
@@ -9,7 +8,7 @@ logger = logging.getLogger(__name__)
 
 class KafkaProducer:
     def __init__(self, hostname, topic):
-        self.client = KafkaClient(hosts=hostname)
+        self.client = KafkaClient(hosts=str.encode(hostname))
         self.topic = self.client.topics[str.encode(topic)]
         self.producer = None
         self.connect()
