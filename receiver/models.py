@@ -10,6 +10,7 @@ logger = logging.getLogger(__name__)
 class KafkaProducer:
     def __init__(self, hostname, topic):
         self.hostname = hostname
+        print(self.hostname)
         self.topic = topic
         self.client = None
         self.producer = None
