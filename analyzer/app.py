@@ -34,7 +34,8 @@ def get_watch(index):
     counter = 0
     payload = { "message": f"No message at index {index}!"}
     status_code = 404
-    for msg in kaf.messages():
+    messages = kaf.messages()
+    for msg in messages:
         message = msg.value.decode("utf-8")
         data = json.loads(message)
         # Look for the index requested and return the payload with 200 status code
@@ -49,7 +50,8 @@ def get_scale(index):
     counter = 0
     payload = { "message": f"No message at index {index}!"}
     status_code = 404
-    for msg in kaf.messages():
+    messages = kaf.messages()
+    for msg in messages:
         message = msg.value.decode("utf-8")
         data = json.loads(message)
         # Look for the index requested and return the payload with 200 status code
@@ -63,7 +65,10 @@ def get_scale(index):
 def get_stats():
     count_scale = 0
     count_watch = 0
-    for msg in kaf.messages():
+    messages = kaf.messages()
+    print("I made it right before the loop!")
+    for msg in messages:
+        print("Im in the loop!")
         message = msg.value.decode("utf-8")
         data = json.loads(message)
         if data["type"] == "watch_event":
@@ -75,7 +80,8 @@ def get_stats():
 
 def get_watch_list():
     event_list = []
-    for msg in kaf.messages():
+    messages = kaf.messages()
+    for msg in messages:
         message = msg.value.decode("utf-8")
         data = json.loads(message)
         if data["type"] == "watch_event":
@@ -86,7 +92,8 @@ def get_watch_list():
             
 def get_scale_list():
     event_list = []
-    for msg in kaf.messages():
+    messages = kaf.messages()
+    for msg in messages:
         message = msg.value.decode("utf-8")
         data = json.loads(message)
         print(data)
