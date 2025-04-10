@@ -28,7 +28,7 @@ def report_watch(body):
         "payload": body
     }
     msg_str = json.dumps(msg)
-    kaf_prod.send_request(msg_str.encode('utf-8'))
+    kaf_prod.produce(msg_str.encode('utf-8'))
     return NoContent, 201
 
 def report_scale(body):
@@ -40,7 +40,7 @@ def report_scale(body):
         "payload": body
     }
     msg_str = json.dumps(msg)
-    kaf_prod.send_request(msg_str.encode('utf-8'))
+    kaf_prod.produce(msg_str.encode('utf-8'))
     return NoContent, 201
 
 if __name__ == "__main__":
