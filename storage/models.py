@@ -4,7 +4,7 @@ from pykafka import KafkaClient
 from pykafka.common import OffsetType
 from sqlalchemy.orm import DeclarativeBase, mapped_column
 from sqlalchemy import Integer, String, DateTime, BigInteger, Float, func
-from  confluent_kafka import KafkaException 
+from  pykafka.exceptions import KafkaException 
 import logging
 
 logger = logging.getLogger(__name__)

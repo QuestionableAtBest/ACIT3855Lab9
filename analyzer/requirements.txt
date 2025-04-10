@@ -2,4 +2,3 @@ connexion[flask,uvicorn,swagger-ui]
 httpx
 pykafka
 setuptools
-confluent_kafka

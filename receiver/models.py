@@ -2,7 +2,7 @@ import time
 import random
 from pykafka import KafkaClient
 from pykafka.common import OffsetType
-from  confluent_kafka import KafkaException 
+from  pykafka.exceptions import KafkaException 
 import logging
 
 logger = logging.getLogger(__name__)
