@@ -34,8 +34,7 @@ def get_watch(index):
     counter = 0
     payload = { "message": f"No message at index {index}!"}
     status_code = 404
-    messages = kaf.messages()
-    for msg in messages:
+    for msg in kaf.messages():
         message = msg.value.decode("utf-8")
         data = json.loads(message)
         # Look for the index requested and return the payload with 200 status code
@@ -50,8 +49,7 @@ def get_scale(index):
     counter = 0
     payload = { "message": f"No message at index {index}!"}
     status_code = 404
-    messages = kaf.messages()
-    for msg in messages:
+    for msg in kaf.messages():
         message = msg.value.decode("utf-8")
         data = json.loads(message)
         # Look for the index requested and return the payload with 200 status code
@@ -65,9 +63,8 @@ def get_scale(index):
 def get_stats():
     count_scale = 0
     count_watch = 0
-    messages = kaf.messages()
     print("I made it right before the loop!")
-    for msg in messages:
+    for msg in kaf.messages():
         print("Im in the loop!")
         message = msg.value.decode("utf-8")
         data = json.loads(message)
@@ -80,27 +77,23 @@ def get_stats():
 
 def get_watch_list():
     event_list = []
-    messages = kaf.messages()
-    for msg in messages:
+    for msg in kaf.messages():
         message = msg.value.decode("utf-8")
         data = json.loads(message)
         if data["type"] == "watch_event":
             event = {"event_id": data["payload"]["device_id"], "trace_id": data["payload"]["trace_id"]}
             event_list.append(event)
-    print(event_list)
     return event_list, 200
             
 def get_scale_list():
     event_list = []
-    messages = kaf.messages()
-    for msg in messages:
+    for msg in kaf.messages():
         message = msg.value.decode("utf-8")
         data = json.loads(message)
         print(data)
         if data["type"] == "scale_event":
             event = {"event_id": data["payload"]["scale_id"], "trace_id": data["payload"]["trace_id"]}
             event_list.append(event)
-    print(event_list)
     return event_list, 200
 if __name__ == "__main__":
     app.run(port=8110, host="0.0.0.0")
