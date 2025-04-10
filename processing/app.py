@@ -35,7 +35,7 @@ logger = logging.getLogger('basicLogger')
 def populate_stats():
     logger.info("Periodic statistics gathering has begun!")
     curtime = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.%fZ")
-
+    curtime = curtime.replace(":", "%3A")
     try:
         #Open the .json. Assuming it exists, get most recent event datetime and current time (To be used in the get request)
         with open(app_config["datastore"]["filename"], 'r') as current:
