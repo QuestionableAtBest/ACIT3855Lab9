@@ -3,3 +3,4 @@ pykafka
 sqlalchemy
 mysqlclient
 setuptools
+confluent_kafka
