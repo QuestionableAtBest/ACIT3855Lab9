@@ -77,7 +77,7 @@ def get_scale_list():
 
 def process_messages():
     """ Process event messages """
-    for msg in kaf_consumer:
+    for msg in kaf_consumer.messages():
         msg_str = msg.value.decode('utf-8')
         msg = json.loads(msg_str)
         logger.info("Message: %s" % msg)

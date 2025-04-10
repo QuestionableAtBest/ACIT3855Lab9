@@ -111,6 +111,7 @@ class KafkaConsumer:
         try:
             topic = self.client.topics[self.topic]
             self.consumer = topic.get_simple_consumer(
+                consumer_group=b'events',
                 reset_offset_on_start=False,
                 auto_offset_reset=OffsetType.LATEST
             )
@@ -160,6 +161,8 @@ class KafkaConsumer:
         if self.consumer is not None:
             self.consumer.commit_offsets()
             logger.debug("Offsets committed!")
+        else:
+            logger.warning("No consumer initialized!")
 
     def produce(self,message):
         if self.producer is None:
