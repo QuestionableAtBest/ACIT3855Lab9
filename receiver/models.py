@@ -13,6 +13,7 @@ class KafkaConsumer:
         self.topic = topic
         self.client = None
         self.consumer = None
+        self.producer = None
         self.connect()
 
     def connect(self):
@@ -21,6 +22,7 @@ class KafkaConsumer:
             logger.debug("Trying to connect to Kafka...")
             if self.make_client():
                 if self.make_consumer():
+                    self.make_producer()
                     break
             # Sleeps for a random amount of time (0.5 to 1.5s)
             time.sleep(random.randint(500, 1500) / 1000)
