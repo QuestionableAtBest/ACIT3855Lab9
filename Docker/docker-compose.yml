@@ -13,7 +13,8 @@ services:
         source: ../configs/receiver/
         target: /app/configs/
     depends_on:
-      - kafka
+      kafka:
+        condition: service_healthy
   storage:
     restart: always
     container_name: storage
@@ -30,8 +31,10 @@ services:
         source: ../configs/storage/
         target: /app/configs/
     depends_on:
-      - db
-      - kafka
+      db:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
   processing:
     restart: always
     container_name: processing
@@ -51,7 +54,8 @@ services:
         source: ../configs/processing/
         target: /app/configs/
     depends_on:
-      - db
+      db:
+        condition: service_healthy
   analyzer:
     restart: always
     container_name: analyzer
@@ -70,7 +74,8 @@ services:
         source: ../configs/analyzer/
         target: /configs
     depends_on:
-      - kafka
+      kafka:
+        condition: service_healthy
   consistency_check:
     restart: always
     container_name: consistency_check
@@ -116,6 +121,12 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ../data/kafka/:/kafka
+    healthcheck:
+      # From https://stackoverflow.com/questions/78131893/how-to-add-health-check-for-kafka-in-docker-compose
+      test: /kafka/bin/kafka-cluster.sh cluster-id --bootstrap-server kafka:9092 || exit 1
+      interval: 1s
+      timeout: 60s
+      retries: 60
     depends_on:
       - "zookeeper"
   db:
@@ -131,6 +142,12 @@ services:
     volumes:
       # Where our data will be persisted
       - ../data/database/:/var/lib/mysql
+    healthcheck:
+      # From https://stackoverflow.com/questions/42567475/docker-compose-check-if-mysql-connection-is-ready
+      test: mysqladmin ping -h 127.0.0.1 -u $$MYSQL_USER --password=$$MYSQL_PASSWORD
+      interval: 10s
+      timeout: 5s
+      retries: 5
   
   nginx:
     restart: always

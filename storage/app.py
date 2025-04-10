@@ -3,13 +3,11 @@ import live
 import logging
 import logging.config
 import yaml
-from models import Base,Watch,Scale
+from models import Base,Watch,Scale,KafkaConsumer
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.sql import select
 from datetime import datetime
-from pykafka import KafkaClient
-from pykafka.common import OffsetType
 from threading import Thread
 import json
 app = connexion.FlaskApp(__name__, specification_dir='')
@@ -22,9 +20,10 @@ with open("./configs/storage_log_conf.yml", "r") as f:
 with open('./configs/storage_conf.yml', 'r') as f:
     app_config = yaml.safe_load(f.read())
 
-engine = create_engine(f"mysql://{app_config['datastore']['user']}:{app_config['datastore']['password']}@{app_config['datastore']['hostname']}:{app_config['datastore']['port']}/{app_config['datastore']['db']}")
+engine = create_engine(f"mysql://{app_config['datastore']['user']}:{app_config['datastore']['password']}@{app_config['datastore']['hostname']}:{app_config['datastore']['port']}/{app_config['datastore']['db']}", pool_size=10,pool_recycle=1800,pool_pre_ping=True)
 Base.metadata.create_all(engine)
 logger = logging.getLogger('basicLogger')
+kaf_consumer = KafkaConsumer(f"{app_config['events']['hostname']}:{app_config['events']['port']}",str.encode(app_config["events"]["topic"]))
 #New storage
 def make_session():
     return sessionmaker(bind=engine)()
@@ -78,15 +77,7 @@ def get_scale_list():
 
 def process_messages():
     """ Process event messages """
-    hostname = f"{app_config['events']['hostname']}:{app_config['events']['port']}"
-    client = KafkaClient(hosts=hostname)
-    topic = client.topics[str.encode(app_config['events']['topic'])]
-    # Create a consume on a consumer group, that only reads new messages
-    # (uncommitted messages) when the service re-starts (i.e., it doesn't
-    # read all the old messages from the history in the message queue).
-    consumer = topic.get_simple_consumer(consumer_group=b'event_group',reset_offset_on_start=False,auto_offset_reset=OffsetType.LATEST)
-    # This is blocking - it will wait for a new message
-    for msg in consumer:
+    for msg in kaf_consumer.messages():
         msg_str = msg.value.decode('utf-8')
         msg = json.loads(msg_str)
         logger.info("Message: %s" % msg)
@@ -126,7 +117,6 @@ def process_messages():
             session.commit()
             session.close()
             logger.debug(f"Stored scale results with trace id of {payload['trace_id']}")
-        consumer.commit_offsets()
 
 def setup_kafka_thread():
     t1 = Thread(target=process_messages)

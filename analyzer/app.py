@@ -3,7 +3,7 @@ import yaml
 import os
 import logging
 import logging.config
-from pykafka import KafkaClient
+from models import KafkaConsumer
 import json
 from connexion.middleware import MiddlewarePosition
 from starlette.middleware.cors import CORSMiddleware
@@ -27,15 +27,14 @@ with open("/configs/analyzer_log_conf.yml", "r") as f:
     logging.config.dictConfig(LOG_CONFIG)
 
 logger = logging.getLogger('basicLogger')
+# Global kafka client yahoooooo
+kaf = KafkaConsumer(f"{app_config['events']['hostname']}:{app_config['events']['port']}",str.encode(app_config["events"]["topic"]))
 
 def get_watch(index):
-    client = KafkaClient(hosts=f"{app_config['events']['hostname']}:{app_config['events']['port']}")
-    topic = client.topics[str.encode(app_config["events"]["topic"])]
-    consumer = topic.get_simple_consumer(reset_offset_on_start=True, consumer_timeout_ms=1000)
     counter = 0
     payload = { "message": f"No message at index {index}!"}
     status_code = 404
-    for msg in consumer:
+    for msg in kaf.messages():
         message = msg.value.decode("utf-8")
         data = json.loads(message)
         # Look for the index requested and return the payload with 200 status code
@@ -47,13 +46,10 @@ def get_watch(index):
     return payload, status_code
 
 def get_scale(index):
-    client = KafkaClient(hosts=f"{app_config['events']['hostname']}:{app_config['events']['port']}")
-    topic = client.topics[str.encode(app_config["events"]["topic"])]
-    consumer = topic.get_simple_consumer(reset_offset_on_start=True, consumer_timeout_ms=1000)
     counter = 0
     payload = { "message": f"No message at index {index}!"}
     status_code = 404
-    for msg in consumer:
+    for msg in kaf.messages():
         message = msg.value.decode("utf-8")
         data = json.loads(message)
         # Look for the index requested and return the payload with 200 status code
@@ -65,12 +61,9 @@ def get_scale(index):
     return payload, status_code
 
 def get_stats():
-    client = KafkaClient(hosts=f"{app_config['events']['hostname']}:{app_config['events']['port']}")
-    topic = client.topics[str.encode(app_config["events"]["topic"])]
-    consumer = topic.get_simple_consumer(reset_offset_on_start=True, consumer_timeout_ms=1000)
     count_scale = 0
     count_watch = 0
-    for msg in consumer:
+    for msg in kaf.messages():
         message = msg.value.decode("utf-8")
         data = json.loads(message)
         if data["type"] == "watch_event":
@@ -81,11 +74,8 @@ def get_stats():
             "num_s": count_scale}, 200
 
 def get_watch_list():
-    client = KafkaClient(hosts=f"{app_config['events']['hostname']}:{app_config['events']['port']}")
-    topic = client.topics[str.encode(app_config["events"]["topic"])]
-    consumer = topic.get_simple_consumer(reset_offset_on_start=True, consumer_timeout_ms=1000)
     event_list = []
-    for msg in consumer:
+    for msg in kaf.messages():
         message = msg.value.decode("utf-8")
         data = json.loads(message)
         if data["type"] == "watch_event":
@@ -95,11 +85,8 @@ def get_watch_list():
     return event_list, 200
             
 def get_scale_list():
-    client = KafkaClient(hosts=f"{app_config['events']['hostname']}:{app_config['events']['port']}")
-    topic = client.topics[str.encode(app_config["events"]["topic"])]
-    consumer = topic.get_simple_consumer(reset_offset_on_start=True, consumer_timeout_ms=1000)
     event_list = []
-    for msg in consumer:
+    for msg in kaf.messages():
         message = msg.value.decode("utf-8")
         data = json.loads(message)
         print(data)
