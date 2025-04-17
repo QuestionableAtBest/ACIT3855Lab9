@@ -51,7 +51,7 @@ def update_anomalies():
             if data["payload"]["avg_heart_rate"] > max_hr:
                 logger.debug(f"Anomaly detected with heartrate {data["payload"]["avg_heart_rate"]} exceeding {max_hr}")
                 count += 1
-                anomaly = {"id": data["payload"]["device_id"],
+                anomaly = {"event_id": data["payload"]["device_id"],
                            "trace_id":data["payload"]["trace_id"],
                            "event_type":data["type"],
                            "Description":f"Anomaly detected with heartrate {data["payload"]["avg_heart_rate"]} exceeding {max_hr}"}
