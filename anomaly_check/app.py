@@ -53,18 +53,18 @@ def update_anomalies():
                 count += 1
                 anomaly = {"event_id": data["payload"]["device_id"],
                            "trace_id":data["payload"]["trace_id"],
-                           "event_type":data["type"],
-                           "Description":f"Anomaly detected with heartrate {data["payload"]["avg_heart_rate"]} exceeding {max_hr}"}
+                           "anomaly_type":data["type"],
+                           "description":f"Anomaly detected with heartrate {data["payload"]["avg_heart_rate"]} exceeding {max_hr}"}
                 jsonny["anomaly_list"].append(anomaly)
                 
         elif data["type"] == "scale_event":
             if data["payload"]["weight"] < min_weight:
                 logger.debug(f"Anomaly detected with weight {data["payload"]["weight"]} below {min_weight}")
                 count += 1
-                anomaly = {"id": data["payload"]["scale_id"],
+                anomaly = {"event_id": data["payload"]["scale_id"],
                            "trace_id":data["payload"]["trace_id"],
-                           "event_type":data["type"],
-                           "Description":f"Anomaly detected with weight {data["payload"]["weight"]} below {min_weight}"}
+                           "anomaly_type":data["type"],
+                           "description":f"Anomaly detected with weight {data["payload"]["weight"]} below {min_weight}"}
                 jsonny["anomaly_list"].append(anomaly)
 
     with open(app_config["datastore"]["data_path"], 'w') as s:
