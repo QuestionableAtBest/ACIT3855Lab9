@@ -52,7 +52,7 @@ def update_anomalies():
                 logger.debug(f"Anomaly detected with heartrate {data["payload"]["avg_heart_rate"]} exceeding {max_hr}")
                 count += 1
                 anomaly = {"event_id": data["payload"]["device_id"],
-                           "trace_id":data["payload"]["trace_id"],
+                           "trace_id":str(data["payload"]["trace_id"]),
                            "event_type":data["type"],
                            "anomaly_type":"Too high",
                            "description":f"Anomaly detected with heartrate {data["payload"]["avg_heart_rate"]} exceeding {max_hr}"}
@@ -63,7 +63,7 @@ def update_anomalies():
                 logger.debug(f"Anomaly detected with weight {data["payload"]["weight"]} below {min_weight}")
                 count += 1
                 anomaly = {"event_id": data["payload"]["scale_id"],
-                           "trace_id":data["payload"]["trace_id"],
+                           "trace_id":str(data["payload"]["trace_id"]),
                            "event_type":data["type"],
                            "anomaly_type":"Too low",
                            "description":f"Anomaly detected with weight {data["payload"]["weight"]} below {min_weight}"}
