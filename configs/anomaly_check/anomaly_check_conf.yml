@@ -1,0 +1,6 @@
+version: 1
+datastore:
+  hostname: kafka
+  port: 9092
+  topic: events
+  data_path: ./data/data.json
