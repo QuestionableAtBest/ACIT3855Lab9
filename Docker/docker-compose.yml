@@ -98,6 +98,9 @@ services:
     build:
       context: ../anomaly_check
       dockerfile: Dockerfile
+    environment:
+      - MIN_WEIGHT=30
+      - MAX_HR=250
     volumes:
       - type: bind
         source: ../data/

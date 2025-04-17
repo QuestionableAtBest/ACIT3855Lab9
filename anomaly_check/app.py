@@ -42,8 +42,8 @@ def update_anomalies():
     topic = client.topics[str.encode(app_config["datastore"]["topic"])]
     consumer = topic.get_simple_consumer(reset_offset_on_start=True, consumer_timeout_ms=1000)
     #Change these two to be the environment variables
-    max_hr = 250
-    min_weight = 30
+    max_hr = os.environ['MAX_HR']
+    min_weight = os.environ['MIN_WEIGHT']
     for msg in consumer:
         message = msg.value.decode("utf-8")
         data = json.loads(message)
