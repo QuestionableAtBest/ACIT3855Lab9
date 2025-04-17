@@ -104,7 +104,7 @@ def get_anomalies(event_type=None):
                 return data["anomaly_list"],200
     except FileNotFoundError:
         logger.debug("Anomaly check has not been ran before!")
-        return "Not found", 404
+        return {"message":"Not found"}, 404
 if __name__ == "__main__":
     logger.info(f"Service start up. Threshholds are max heart rate: {250} for watch events and min weight: {30} for scale events")
     app.run(port=8300, host="0.0.0.0")
