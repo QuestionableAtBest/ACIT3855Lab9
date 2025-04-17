@@ -91,13 +91,13 @@ def get_anomalies(event_type=None):
             if event_type == "scale":
                 listy = []
                 for data in data["anomaly_list"]:
-                    if data["anomaly_list"]["type"] == "scale_event":
+                    if data["anomaly_list"]["event_type"] == "scale_event":
                         listy.append(data)
                 logger.debug("Returning anomaly list for scale events")
                 return listy, 200
             elif event_type == "watch":
                 for data in data["anomaly_list"]:
-                    if data["anomaly_list"]["type"] == "watch_event":
+                    if data["anomaly_list"]["event_type"] == "watch_event":
                         listy.append(data)
                 logger.debug("Returning anomaly list for watch events")
                 return listy, 200
