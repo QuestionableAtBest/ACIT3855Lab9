@@ -93,6 +93,21 @@ services:
       - processing
       - analyzer
       - storage
+  anomaly_check:
+    container_name: anomaly_check
+    build:
+      context: ../anomaly_check
+      dockerfile: Dockerfile
+    volumes:
+      - type: bind
+        source: ../data/
+        target: /app/data/
+      - type: bind
+        source: ../logs/
+        target: /app/logs/
+      - type: bind
+        source: ../configs/anomaly_check/
+        target: /app/configs/
   zookeeper:
     restart: always
     container_name: zookeeper
